@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SearchPariksha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Main Content Area -->
+    <main class="main-content glass-panel">
+      
+      <div class="header" style="position: relative;">
+        <button id="theme-toggle" class="theme-btn" title="Toggle Dark Mode">🌙</button>
+        <h1>🎓 SearchPariksha</h1>
+        <p>Your personalized gateway to M.Tech, PhD, and Job exams in India</p>
+      </div>
+
+      <div class="tab-container">
+        <!-- TAB 1: Course Selection -->
+        <div id="tab-1" class="tab active">
+          <h2 class="tab-title">Which course are you enrolled in?</h2>
+          
+          <h3 class="group-title">Undergraduate</h3>
+          <div class="options-grid" id="ug-courses">
+            <div class="option-card" data-val="B.Tech">💻<br>B.Tech</div>
+            <div class="option-card" data-val="B.Sc">🔬<br>B.Sc</div>
+            <div class="option-card" data-val="B.Arch">🏛️<br>B.Arch</div>
+            <div class="option-card" data-val="B.Pharm">💊<br>B.Pharm</div>
+            <div class="option-card" data-val="B.A">🎭<br>B.A</div>
+            <div class="option-card" data-val="B.Com">📊<br>B.Com</div>
+            <div class="option-card" data-val="BCA">💻<br>BCA</div>
+            <div class="option-card" data-val="LLB">⚖️<br>LLB</div>
+            <div class="option-card" data-val="B.Ed">📚<br>B.Ed</div>
+          </div>
+
+          <h3 class="group-title">Post-Graduate</h3>
+          <div class="options-grid" id="pg-courses">
+            <div class="option-card" data-val="M.Tech">⚙️<br>M.Tech</div>
+            <div class="option-card" data-val="M.Sc">🧪<br>M.Sc</div>
+            <div class="option-card" data-val="MBA">💼<br>MBA</div>
+            <div class="option-card" data-val="MCA">💻<br>MCA</div>
+            <div class="option-card" data-val="M.A">🎨<br>M.A</div>
+            <div class="option-card" data-val="LL.M">⚖️<br>LL.M</div>
+            <div class="option-card" data-val="M.Des">🖌️<br>M.Des</div>
+          </div>
+        </div>
+
+        <!-- TAB 2: Year and Branch -->
+        <div id="tab-2" class="tab">
+          <div class="history-bar" id="history-tab-2"></div>
+          <h2 class="tab-title">Which Year and Branch?</h2>
+          
+          <h3 class="group-title">Select Year</h3>
+          <div class="options-grid" id="year-selection">
+            <!-- Dynamically populated by JS based on Course -->
+          </div>
+
+          <div class="input-group" id="branch-input-wrapper">
+            <h3 class="group-title">Select Branch/Specialization</h3>
+            <select id="branch-input" class="text-input" style="cursor: pointer;">
+              <option value="">-- Select Specialization --</option>
+              <!-- Populated dynamically via JS -->
+            </select>
+          </div>
+        </div>
+
+        <!-- TAB 3: Exam Selection -->
+        <div id="tab-3" class="tab">
+          <div class="history-bar" id="history-tab-3"></div>
+          <h2 class="tab-title">Select the Exams to Track</h2>
+          <p style="text-align: center; margin-bottom: 20px; color: var(--text-muted);">Based on your branch, here are the applicable exams.</p>
+          
+          <div class="exam-list" id="exam-selection-list">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+        <!-- TAB 4: Final Catalogue -->
+        <div id="tab-4" class="tab">
+          <div class="history-bar" id="history-tab-4"></div>
+          <h2 class="tab-title">Your Exam Catalogue</h2>
+          <p style="text-align: center; margin-bottom: 20px; color: var(--text-muted);">Here are the targeted exams and their expected notification dates. Add them to your calendar!</p>
+          
+          <div class="exam-list" id="final-catalogue-list">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="footer-nav">
+        <button id="btn-back" class="nav-btn btn-back" style="visibility: hidden;">Go Back</button>
+        <button id="btn-next" class="nav-btn btn-next" disabled>Next</button>
+      </div>
+
+    </main>
+
+    <!-- Sidebar Area -->
+    <aside class="sidebar">
+      
+      <!-- Info Widget -->
+      <div class="info-widget glass-panel">
+        <h2>💡 Know Your Exams</h2>
+        <div class="info-list">
+          <div class="info-card">
+            <h3>GATE</h3>
+            <p>Stipend of ₹12,400/month for M.Tech/PhD. Required for PSU Jobs.</p>
+          </div>
+          <div class="info-card">
+            <h3>CSIR NET</h3>
+            <p>Eligibility for Lectureship & JRF. Can pursue Masters as well as PhD.</p>
+          </div>
+          <div class="info-card">
+            <h3>SSC CGL</h3>
+            <p>Gateway to prestigious Group B and Group C government posts.</p>
+          </div>
+          <div class="info-card">
+            <h3>DBT BET</h3>
+            <p>Fellowship program specifically for Biotechnology students for PhD.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggest Widget -->
+        <div class="suggest-widget info-card" style="text-align: center;">
+          <h3>Help Us Improve!</h3>
+          <p style="margin-bottom: 15px;">Know an exam that isn't listed here? Educate us and we'll add it.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZjXzo3hSkQu5MMhrFKj7YuyG-pWOsL6mkr4iGehnTIsXZJw/viewform?usp=dialog" target="_blank" style="text-decoration: none;">
+            <button type="button" class="suggest-btn">Suggest an Exam</button>
+          </a>
+        </div>
+
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

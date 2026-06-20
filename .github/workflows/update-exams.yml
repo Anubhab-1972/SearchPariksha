@@ -1,0 +1,41 @@
+# GitHub Actions Workflow: Auto-Update Exam Dates
+# This runs every Monday at 2:00 AM IST (8:30 PM UTC Sunday)
+# and uses Gemini AI to search the internet for the latest exam dates.
+
+name: Update Exam Dates
+
+on:
+  schedule:
+    # Runs every Monday at 8:30 PM UTC (= 2:00 AM IST Tuesday)
+    - cron: '30 20 * * 0'
+  
+  # Also allows manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  update-exams:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-genai
+
+      - name: Run exam updater script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python update_exams.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "Exam Bot"
+          git add exams.json
+          git diff --cached --quiet || (git commit -m "🤖 Auto-update exam dates [$(date +'%Y-%m-%d')]" && git push)
