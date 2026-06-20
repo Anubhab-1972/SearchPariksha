@@ -456,22 +456,18 @@ function renderTab4Catalogue() {
       item.style.alignItems = 'flex-start';
       item.style.gap = '10px';
 
-      // Generate calendar link or a disabled placeholder
-      let calBtnHtml = '';
-      if (exam.hasExactDate) {
-        const calLink = getGoogleCalendarLink(exam);
-        calBtnHtml = `
-          <a href="${calLink}" target="_blank" class="calendar-btn">
-            📅 Add Notification Reminder to Google Calendar
-          </a>
-        `;
-      } else {
-        calBtnHtml = `
-          <button class="calendar-btn" style="background: var(--btn-disabled); cursor: not-allowed; color: var(--text-main); opacity: 0.7;" disabled title="Link will be available when official dates are announced">
-            📅 Calendar Link (Waiting for Notification)
-          </button>
-        `;
+      // Generate calendar link for every exam
+      const calLink = getGoogleCalendarLink(exam);
+      let btnText = "📅 Add Notification Reminder to Google Calendar";
+      if (!exam.hasExactDate && exam.calDate) {
+        btnText = "📅 Set Reminder to Check Notification Status";
       }
+      
+      const calBtnHtml = `
+        <a href="${calLink}" target="_blank" class="calendar-btn">
+          ${btnText}
+        </a>
+      `;
 
       item.innerHTML = `
         <div style="width: 100%;">
@@ -505,7 +501,14 @@ function getGoogleCalendarLink(exam) {
   
   const dateStrUrl = `${year}${month}${day}/${year}${month}${day}`;
   
-  const text = encodeURIComponent(`Reminder: ${exam.name} Exam/Notification`);
+  let eventTitle = `Reminder: ${exam.name} Notification`;
+  if (!exam.hasExactDate) {
+      eventTitle = `Check ${exam.name} Registration Status`;
+  } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("last date")) {
+      eventTitle = `URGENT: Apply for ${exam.name} (Deadline Approaching)`;
+  }
+  
+  const text = encodeURIComponent(eventTitle);
   const details = encodeURIComponent(`${exam.dateStr}. Check the official website.\n\nGenerated via SearchPariksha.`);
   
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dateStrUrl}&details=${details}`;

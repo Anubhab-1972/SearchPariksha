@@ -58,17 +58,12 @@ def query_gemini_for_exam(exam_name, exam_desc):
     prompt = f"""Today is {today}. I need the latest official status for the Indian competitive exam: "{exam_name}" ({exam_desc}).
 
 Search the internet and tell me:
-1. Is registration currently OPEN? If yes, what is the last date to apply?
-2. If registration is CLOSED, when did it close?
-3. When is/was the exam date for the current cycle?
-4. Is the current cycle completed? If so, when is the next cycle's notification expected?
+1. Is registration currently OPEN? If yes, what is the EXACT LAST DATE (deadline) to apply?
+2. If registration is CLOSED, when is the NEXT cycle's notification expected?
 
-IMPORTANT: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. Examples of good responses:
-- "Registration Open! Last Date: Sep 15, 2026"
-- "Completed for 2026. Next Notification Expected: August 2027"
-- "Registration ends June 19, 2026. Next Cycle Expected: Nov/Dec"
-- "Next Notification Expected: April 2027"
-- "Exam on Feb 1-2, 2027. Registration closes Oct 15"
+IMPORTANT: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. 
+- If open, prioritize the deadline: "Registration Open! Last Date: Sep 28, 2026"
+- If closed, prioritize the next expected month: "Expected: August 2027"
 
 Do NOT include any explanation. Just the status string."""
 
@@ -99,26 +94,14 @@ Do NOT include any explanation. Just the status string."""
         return None
 
 def has_exact_date(date_str):
-    """
-    Check if the date string contains a specific calendar date
-    that can be added to Google Calendar.
-    """
-    # Look for patterns like "June 19, 2026" or "Sep 15" or specific dates
     import re
-    # Match patterns with month + day + year
-    date_patterns = [
-        r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2},?\s+\d{4}',
-        r'\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{4}',
-    ]
-    for pattern in date_patterns:
-        match = re.search(pattern, date_str, re.IGNORECASE)
-        if match:
-            return True
-    return False
+    # Consider it exact if it has a Day number along with the Month
+    return bool(re.search(r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2}', date_str, re.IGNORECASE))
 
 def extract_cal_date(date_str):
-    """Try to extract a YYYY-MM-DD calendar date from the string."""
+    """Try to extract a calendar date, fallback to 15th of the month if only month is found."""
     import re
+    from datetime import datetime
     
     month_map = {
         'jan': '01', 'feb': '02', 'mar': '03', 'apr': '04',
@@ -126,16 +109,29 @@ def extract_cal_date(date_str):
         'sep': '09', 'oct': '10', 'nov': '11', 'dec': '12'
     }
     
-    # Try "Month Day, Year" format
+    current_year = datetime.now().year
+    
+    # Try exact date first: "Month Day, Year" or "Month Day"
     match = re.search(
-        r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+(\d{1,2}),?\s+(\d{4})',
+        r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+(\d{1,2})(?:,?\s+(\d{4}))?',
         date_str, re.IGNORECASE
     )
     if match:
         month = month_map[match.group(1)[:3].lower()]
         day = match.group(2).zfill(2)
-        year = match.group(3)
+        year = match.group(3) if match.group(3) else str(current_year)
         return f"{year}-{month}-{day}"
+        
+    # Fallback: Just a month "Month Year" or "Month"
+    match = re.search(
+        r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*(?:\s+(\d{4}))?',
+        date_str, re.IGNORECASE
+    )
+    if match:
+        month = month_map[match.group(1)[:3].lower()]
+        year = match.group(2) if match.group(2) else str(current_year)
+        # Default to the 15th of the expected month
+        return f"{year}-{month}-15"
     
     return None
 
@@ -160,12 +156,9 @@ def update_all_exams():
         for exam in gate_exams:
             exam["dateStr"] = gate_result
             exam["hasExactDate"] = has_exact_date(gate_result)
-            if exam["hasExactDate"]:
-                cal = extract_cal_date(gate_result)
-                if cal:
-                    exam["calDate"] = cal
-            elif "calDate" in exam:
-                del exam["calDate"]
+            cal = extract_cal_date(gate_result)
+            if cal:
+                exam["calDate"] = cal
         updated_count += len(gate_exams)
     else:
         print("  [GATE] No update - keeping existing data")
@@ -182,12 +175,9 @@ def update_all_exams():
             print(f"  [{exam['id']}] AI says: {result}")
             exam["dateStr"] = result
             exam["hasExactDate"] = has_exact_date(result)
-            if exam["hasExactDate"]:
-                cal = extract_cal_date(result)
-                if cal:
-                    exam["calDate"] = cal
-            elif "calDate" in exam:
-                del exam["calDate"]
+            cal = extract_cal_date(result)
+            if cal:
+                exam["calDate"] = cal
             updated_count += 1
         else:
             print(f"  [{exam['id']}] No update - keeping existing data")
