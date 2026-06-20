@@ -63,7 +63,7 @@ Search the internet and tell me:
 
 IMPORTANT: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. 
 - If open, prioritize the deadline: "Registration Open! Last Date: Sep 28, 2026"
-- If closed, prioritize the next expected month: "Expected: August 2027"
+- If closed, prioritize the next expected month. Make sure to use the correct year for the *notification* (e.g., "Expected: August 2026" for a 2027 exam).
 
 Do NOT include any explanation. Just the status string."""
 

@@ -3,7 +3,7 @@
     "id": "gate_bt",
     "name": "GATE Biotechnology (BT)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech / PhD in Biotech & PSU Jobs",
     "goals": [
@@ -16,7 +16,7 @@
     "id": "gate_xl",
     "name": "GATE Life Sciences (XL)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech / PhD in Life Sciences",
     "goals": [
@@ -29,7 +29,7 @@
     "id": "gate_ey",
     "name": "GATE Ecology & Evolution (EY)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "PhD/Research in Ecology",
     "goals": [
@@ -41,7 +41,7 @@
     "id": "gate_cs",
     "name": "GATE Computer Science (CS)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech / PhD in CS & PSU Jobs",
     "goals": [
@@ -54,7 +54,7 @@
     "id": "gate_da",
     "name": "GATE Data Science & AI (DA)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech / PhD in Data Science",
     "goals": [
@@ -67,7 +67,7 @@
     "id": "gate_me",
     "name": "GATE Mechanical (ME)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech & PSU Jobs (BHEL, NTPC)",
     "goals": [
@@ -80,7 +80,7 @@
     "id": "gate_pi",
     "name": "GATE Production & Industrial (PI)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech & Specialized PSU Roles",
     "goals": [
@@ -93,7 +93,7 @@
     "id": "gate_xe",
     "name": "GATE Engineering Sciences (XE)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "Interdisciplinary M.Tech / PhD",
     "goals": [
@@ -105,7 +105,7 @@
     "id": "gate_ce",
     "name": "GATE Civil Engineering (CE)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech & PSU Jobs (NHAI, ONGC)",
     "goals": [
@@ -118,7 +118,7 @@
     "id": "gate_es",
     "name": "GATE Environmental Science (ES)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech in Environment & Sustainability",
     "goals": [
@@ -131,7 +131,7 @@
     "id": "gate_ee",
     "name": "GATE Electrical Engineering (EE)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech & PSU Jobs (PowerGrid, NTPC)",
     "goals": [
@@ -144,7 +144,7 @@
     "id": "gate_ec",
     "name": "GATE Electronics & Comm. (EC)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech & PSU Jobs",
     "goals": [
@@ -157,7 +157,7 @@
     "id": "gate_in",
     "name": "GATE Instrumentation (IN)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech & Specialized PSU Roles",
     "goals": [
@@ -170,7 +170,7 @@
     "id": "gate_general",
     "name": "GATE (Engineering)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech / PhD & PSU Jobs",
     "goals": [
@@ -184,7 +184,7 @@
     "id": "gate_st",
     "name": "GATE Statistics (ST)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "M.Tech Data/Stats & PhD",
     "goals": [
@@ -197,7 +197,7 @@
     "id": "gate_ma",
     "name": "GATE Mathematics (MA)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "PhD in Math / Applied Math",
     "goals": [
@@ -209,7 +209,7 @@
     "id": "gate_ph",
     "name": "GATE Physics (PH)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "PhD in Physics / BARC",
     "goals": [
@@ -222,7 +222,7 @@
     "id": "gate_cy",
     "name": "GATE Chemistry (CY)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2027",
+    "dateStr": "Expected: August 2026",
     "hasExactDate": true,
     "desc": "PhD in Chemistry / PSU Jobs",
     "goals": [
