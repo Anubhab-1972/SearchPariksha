@@ -235,9 +235,9 @@
     "id": "csir",
     "name": "CSIR UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ends June 19, 2026. Next Cycle Expected: Nov/Dec",
+    "dateStr": "Registration Closed. Next notification expected: October 2026.",
     "hasExactDate": true,
-    "calDate": "2026-06-19",
+    "calDate": "2026-10-20",
     "desc": "JRF, Asst Professor (Merging with DBT BET next year)",
     "goals": [
       "Higher Studies",
@@ -249,47 +249,47 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration Closed. Next Cycle Expected: March/April",
-    "hasExactDate": false,
+    "dateStr": "Registration Closed. Next notification expected: September 2026.",
+    "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
       "Higher Studies",
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-03-15"
+    "calDate": "2026-09-20"
   },
   {
     "id": "vitmee",
     "name": "VITMEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Completed for 2026. Registration ends: March - April",
-    "hasExactDate": false,
+    "dateStr": "Registration Closed. Expected: November 2026.",
+    "hasExactDate": true,
     "desc": "VIT Masters Entrance Examination",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-03-15"
+    "calDate": "2026-11-20"
   },
   {
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Next Notification Expected: September",
-    "hasExactDate": false,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-15"
+    "calDate": "2026-09-20"
   },
   {
     "id": "dbt",
     "name": "DBT BET",
     "category": "Core Science & Engineering",
-    "dateStr": "Completed for 2026 (Merging with CSIR, Expected: Nov/Dec)",
+    "dateStr": "Registration Closed. Expected: Late 2026 (for merged exam).",
     "hasExactDate": false,
     "desc": "Biotech Fellowship",
     "goals": [
@@ -302,39 +302,39 @@
     "id": "tifr",
     "name": "TIFR GS / JGEEBILS",
     "category": "Core Science & Engineering",
-    "dateStr": "Next Notification Expected: October",
-    "hasExactDate": false,
+    "dateStr": "Registration Closed. Expected: September 2026.",
+    "hasExactDate": true,
     "desc": "PhD at TIFR / Biology Research PhD",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-10-15"
+    "calDate": "2026-09-20"
   },
   {
     "id": "gatb",
     "name": "GAT-B",
     "category": "Core Science & Engineering",
-    "dateStr": "Completed for 2026. Next Notification Expected: March",
-    "hasExactDate": false,
+    "dateStr": "Registration Closed. Expected: February 2027",
+    "hasExactDate": true,
     "desc": "Biotech M.Sc/M.Tech",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-03-15"
+    "calDate": "2026-02-20"
   },
   {
     "id": "gpat",
     "name": "GPAT",
     "category": "Core Science & Engineering",
-    "dateStr": "Next Notification Expected: December",
-    "hasExactDate": false,
+    "dateStr": "Registration Closed. Expected: December 2026.",
+    "hasExactDate": true,
     "desc": "Gateway for M.Pharm and NIPER JEE eligibility",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-12-15"
+    "calDate": "2026-12-20"
   },
   {
     "id": "niper",
@@ -377,14 +377,14 @@
     "id": "sbi_po",
     "name": "SBI PO",
     "category": "Government & Banking",
-    "dateStr": "Next Notification Expected: August/September",
-    "hasExactDate": false,
+    "dateStr": "Registration Open! Last Date: July 8, 2026",
+    "hasExactDate": true,
     "desc": "Probationary Officer in State Bank of India",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-15"
+    "calDate": "2026-07-08"
   },
   {
     "id": "ibps_po",
