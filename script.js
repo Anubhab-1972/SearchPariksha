@@ -536,10 +536,10 @@ function showTab(index) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   
-  // Show sidebar ONLY on tabs 3 and 4
-  const sidebar = document.querySelector('.sidebar');
-  if (sidebar) {
-    sidebar.style.display = (index === 3 || index === 4) ? 'flex' : 'none';
+  // Show the "Know Your Exams" widget ONLY on tabs 3 and 4
+  const infoWidget = document.querySelector('.info-widget');
+  if (infoWidget) {
+    infoWidget.style.display = (index === 3 || index === 4) ? 'block' : 'none';
   }
   
   updateHistoryBars();
