@@ -401,10 +401,13 @@ function renderTab3Exams() {
         <span class="exam-date" style="color:#d9534f; font-weight:bold;">🔒 ${eligibility.message}</span>
       `;
     } else {
+      const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
+      const liveBadge = isOpen ? `<span class="live-indicator" title="Registration Live!"></span>` : '';
+
       item.innerHTML = `
         <label>
           <input type="checkbox" value="${exam.id}">
-          <span>${exam.name}</span>
+          <span>${exam.name}${liveBadge}</span>
         </label>
         <span class="exam-date">${exam.dateStr}</span>
       `;
@@ -469,10 +472,13 @@ function renderTab4Catalogue() {
         </a>
       `;
 
+      const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
+      const liveBadge = isOpen ? `<span class="live-indicator" title="Registration Live!"></span>` : '';
+
       item.innerHTML = `
         <div style="width: 100%;">
           <div style="font-size: 1.1em; font-weight: 600; color: var(--text-main); margin-bottom: 5px;">
-            ${exam.name}
+            ${exam.name}${liveBadge}
           </div>
           <div style="color: var(--text-muted); font-size: 0.9em; margin-bottom: 5px;">
             ${exam.desc}
