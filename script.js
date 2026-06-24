@@ -554,9 +554,10 @@ function goHome() {
   state.selectedExams = [];
   
   // Reset UI elements
-  document.querySelectorAll('.course-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
   document.querySelectorAll('.year-card').forEach(c => c.classList.remove('selected'));
-  document.getElementById('branch-select').value = "";
+  const branchInput = document.getElementById('branch-input');
+  if (branchInput) branchInput.value = "";
   
   showTab(1);
 }
