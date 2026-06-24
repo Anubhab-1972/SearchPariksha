@@ -430,6 +430,7 @@ body {
 .suggest-widget {
   background: var(--card-bg);
   border: 1px dashed var(--primary-color);
+  margin-top: auto;
 }
 
 .suggest-widget h3 {
