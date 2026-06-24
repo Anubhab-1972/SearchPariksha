@@ -519,9 +519,32 @@ function showTab(index) {
   document.getElementById(`tab-${index}`).classList.add('active');
   
   btnBack.style.visibility = index === 1 ? 'hidden' : 'visible';
+  
+  const homeBtn = document.getElementById('home-btn');
+  if (homeBtn) {
+    homeBtn.style.display = index === 1 ? 'none' : 'flex';
+  }
+  
   updateHistoryBars();
   validateTab();
 }
+
+function goHome() {
+  state.currentTab = 1;
+  state.selectedCourse = null;
+  state.selectedYear = null;
+  state.selectedBranch = null;
+  state.selectedExams = [];
+  
+  // Reset UI elements
+  document.querySelectorAll('.course-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.year-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('branch-select').value = "";
+  
+  showTab(1);
+}
+
+document.getElementById('home-btn').addEventListener('click', goHome);
 
 function goNext() {
   if (state.currentTab === 2) {
