@@ -402,14 +402,14 @@ function renderTab3Exams() {
       `;
     } else {
       const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
-      const liveBadge = isOpen ? `<span class="live-indicator" title="Registration Live!"></span>` : '';
+      const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
       item.innerHTML = `
         <label>
           <input type="checkbox" value="${exam.id}">
-          <span>${exam.name}${liveBadge}</span>
+          <span>${exam.name}</span>
         </label>
-        <span class="exam-date">${exam.dateStr}</span>
+        <span class="exam-date">${liveBadge}${exam.dateStr}</span>
       `;
 
       const checkbox = item.querySelector('input');
@@ -473,18 +473,18 @@ function renderTab4Catalogue() {
       `;
 
       const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
-      const liveBadge = isOpen ? `<span class="live-indicator" title="Registration Live!"></span>` : '';
+      const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
       item.innerHTML = `
         <div style="width: 100%;">
           <div style="font-size: 1.1em; font-weight: 600; color: var(--text-main); margin-bottom: 5px;">
-            ${exam.name}${liveBadge}
+            ${exam.name}
           </div>
           <div style="color: var(--text-muted); font-size: 0.9em; margin-bottom: 5px;">
             ${exam.desc}
           </div>
           <div style="color: var(--text-main); font-weight: bold; font-size: 0.95em; margin-bottom: 15px;">
-            🕒 ${exam.dateStr}
+            ${liveBadge}${exam.dateStr}
           </div>
           ${calBtnHtml}
         </div>
