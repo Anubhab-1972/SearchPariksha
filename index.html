@@ -102,6 +102,17 @@
             <!-- Dynamically populated via JS -->
           </div>
         </div>
+
+        <!-- TAB 5: Exam Directory -->
+        <div id="tab-5" class="tab">
+          <h2 class="tab-title">📖 Exam Directory</h2>
+          <div style="margin-bottom: 20px;">
+            <input type="text" id="exam-search" placeholder="Search for an exam (e.g., GATE, CSIR)..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-main); font-size: 1rem;">
+          </div>
+          <div class="exam-list" id="directory-list">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
       </div>
 
       <!-- Footer Navigation -->
@@ -118,23 +129,8 @@
       <!-- Info Widget -->
       <div class="info-widget glass-panel">
         <h2>💡 Know Your Exams</h2>
-        <div class="info-list">
-          <div class="info-card">
-            <h3>GATE</h3>
-            <p>Stipend of ₹12,400/month for M.Tech/PhD. Required for PSU Jobs.</p>
-          </div>
-          <div class="info-card">
-            <h3>CSIR NET</h3>
-            <p>Eligibility for Lectureship & JRF. Can pursue Masters as well as PhD.</p>
-          </div>
-          <div class="info-card">
-            <h3>SSC CGL</h3>
-            <p>Gateway to prestigious Group B and Group C government posts.</p>
-          </div>
-          <div class="info-card">
-            <h3>DBT BET</h3>
-            <p>Fellowship program specifically for Biotechnology students for PhD.</p>
-          </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <button id="browse-directory-btn" class="suggest-btn" style="width: 100%; padding: 15px; font-size: 1.1em; background: #007bff;">📖 Browse All Exams Directory</button>
         </div>
       </div>
 

@@ -407,7 +407,7 @@ function renderTab3Exams() {
       item.innerHTML = `
         <label>
           <input type="checkbox" value="${exam.id}">
-          <span>${exam.name}</span>
+          <span>${exam.name} <a href="#" onclick="openExamDirectory('${exam.name}'); return false;" style="color: #007bff; text-decoration: underline; font-size: 0.8em; margin-left: 8px;">Know about your exam</a></span>
         </label>
         <span class="exam-date">${liveBadge}${exam.dateStr}</span>
       `;
@@ -478,7 +478,7 @@ function renderTab4Catalogue() {
       item.innerHTML = `
         <div style="width: 100%;">
           <div style="font-size: 1.1em; font-weight: 600; color: var(--text-main); margin-bottom: 5px;">
-            ${exam.name}
+            ${exam.name} <a href="#" onclick="openExamDirectory('${exam.name}'); return false;" style="color: #007bff; text-decoration: underline; font-size: 0.8em; margin-left: 8px;">Know about your exam</a>
           </div>
           <div style="color: var(--text-muted); font-size: 0.9em; margin-bottom: 5px;">
             ${exam.desc}
@@ -571,8 +571,90 @@ function goNext() {
 }
 
 function goBack() {
+  // If we are in Tab 5, returning takes us back to our previous tab
+  if (document.getElementById('tab-5').classList.contains('active')) {
+    document.getElementById('tab-5').classList.remove('active');
+    showTab(state.currentTab);
+    return;
+  }
+  
   if (state.currentTab > 1) {
     state.currentTab--;
     showTab(state.currentTab);
   }
+}
+
+// --- Exam Directory (Tab 5) Logic ---
+const directoryList = document.getElementById('directory-list');
+const examSearchInput = document.getElementById('exam-search');
+const browseDirectoryBtn = document.getElementById('browse-directory-btn');
+
+function renderExamDirectory(searchTerm = "") {
+  if (!directoryList) return;
+  directoryList.innerHTML = '';
+  const term = searchTerm.toLowerCase();
+  
+  const filteredExams = masterExamsDatabase.filter(exam => 
+    exam.name.toLowerCase().includes(term) || 
+    exam.desc.toLowerCase().includes(term) ||
+    exam.category.toLowerCase().includes(term)
+  );
+
+  if (filteredExams.length === 0) {
+    directoryList.innerHTML = '<p style="text-align:center; color: var(--text-muted);">No exams found matching your search.</p>';
+    return;
+  }
+
+  filteredExams.forEach(exam => {
+    const item = document.createElement('div');
+    item.className = 'exam-item';
+    item.style.flexDirection = 'column';
+    item.style.alignItems = 'flex-start';
+    item.style.gap = '8px';
+
+    const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
+    const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
+
+    item.innerHTML = `
+      <div style="font-size: 1.1em; font-weight: 600; color: var(--text-main);">
+        ${exam.name}
+      </div>
+      <div style="color: var(--text-muted); font-size: 0.9em;">
+        ${exam.desc}
+      </div>
+      <div style="color: var(--text-main); font-weight: bold; font-size: 0.95em;">
+        ${liveBadge}${exam.dateStr}
+      </div>
+    `;
+    directoryList.appendChild(item);
+  });
+}
+
+function openExamDirectory(searchTerm = "") {
+  // Hide current tab
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  // Show Tab 5
+  document.getElementById('tab-5').classList.add('active');
+  
+  // Set back button so they can return
+  btnBack.style.visibility = 'visible';
+  
+  // Setup search
+  if (examSearchInput) {
+    examSearchInput.value = searchTerm;
+  }
+  renderExamDirectory(searchTerm);
+}
+
+// Event Listeners for Directory
+if (examSearchInput) {
+  examSearchInput.addEventListener('input', (e) => {
+    renderExamDirectory(e.target.value);
+  });
+}
+
+if (browseDirectoryBtn) {
+  browseDirectoryBtn.addEventListener('click', () => {
+    openExamDirectory("");
+  });
 }
