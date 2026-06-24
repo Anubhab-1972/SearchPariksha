@@ -525,6 +525,11 @@ function showTab(index) {
     homeBtn.style.display = index === 1 ? 'none' : 'flex';
   }
   
+  // Auto-scroll to top ONLY for mobile screens
+  if (window.innerWidth <= 768) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
   updateHistoryBars();
   validateTab();
 }
