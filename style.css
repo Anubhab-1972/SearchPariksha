@@ -384,8 +384,7 @@ body {
 }
 
 .info-widget {
-  flex: 1;
-  overflow-y: auto;
+  height: auto;
 }
 
 .info-widget h2 {

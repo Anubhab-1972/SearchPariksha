@@ -536,6 +536,12 @@ function showTab(index) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   
+  // Hide the "Know Your Exams" widget on Tabs 1 and 2
+  const infoWidget = document.querySelector('.info-widget');
+  if (infoWidget) {
+    infoWidget.style.display = (index === 1 || index === 2) ? 'none' : 'block';
+  }
+  
   updateHistoryBars();
   validateTab();
 }
