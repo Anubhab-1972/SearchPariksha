@@ -18,8 +18,8 @@ const courseDurations = {
 // Course Specializations
 const courseSpecializations = {
   'B.Com': ['Accounting & Finance', 'Banking & Insurance', 'Taxation', 'Business Analytics', 'Human Resource Management', 'General Commerce'],
-  'B.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Other / General Engineering'],
-  'M.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Other / General Engineering'],
+  'B.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
+  'M.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
   'B.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'General Science'],
   'M.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'General Science'],
   'B.A': ['Economics', 'History', 'Political Science', 'Psychology', 'Sociology', 'English', 'General Arts'],
@@ -266,6 +266,10 @@ function getRelevantExams() {
   // Chemical Engineering
   else if (branch === 'Chemical Engineering') {
     validIds = ['gate_cy', 'ies', 'vitmee', 'barc', ...govtExams];
+  }
+  // Polymer Science
+  else if (branch === 'Polymer Science') {
+    validIds = ['gate_xe', 'gate_ch', 'barc', 'aai_atc', ...govtExams];
   }
   // Statistics
   else if (branch === 'Statistics') {

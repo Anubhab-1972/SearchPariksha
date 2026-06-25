@@ -1,5 +1,18 @@
 [
   {
+    "id": "gate_ch",
+    "name": "GATE Chemical Engineering (CH)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected: August 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Chemical/Polymer Engineering & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-20"
+  },
+  {
     "id": "aai_atc",
     "name": "AAI ATC JE",
     "category": "Core Science & Engineering",
