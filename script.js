@@ -20,8 +20,8 @@ const courseSpecializations = {
   'B.Com': ['Accounting & Finance', 'Banking & Insurance', 'Taxation', 'Business Analytics', 'Human Resource Management', 'General Commerce'],
   'B.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
   'M.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
-  'B.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'General Science'],
-  'M.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'General Science'],
+  'B.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'Geology / Earth Sciences', 'General Science'],
+  'M.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'Geology / Earth Sciences', 'General Science'],
   'B.A': ['Economics', 'History', 'Political Science', 'Psychology', 'Sociology', 'English', 'General Arts'],
   'M.A': ['Economics', 'History', 'Political Science', 'Psychology', 'Sociology', 'English', 'General Arts'],
   'M.Des': ['Product Design', 'Visual Communication', 'Interaction Design', 'Animation', 'General Design'],
@@ -241,7 +241,11 @@ function getRelevantExams() {
   }
   // Biotech & Life Sciences
   else if (branch === 'Biotechnology' || branch === 'Botany' || branch === 'Zoology' || branch === 'Biotechnology / Life Sciences') {
-    validIds = ['gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'dbt', 'gpat', 'niper', ...govtExams];
+    validIds = ['gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'dbt', 'gpat', 'niper', 'barc', ...govtExams];
+  }
+  // Geology / Earth Sciences
+  else if (branch === 'Geology / Earth Sciences') {
+    validIds = ['csir', 'barc', ...govtExams];
   }
   // Computer Science & IT
   else if (branch === 'Computer Science / IT') {
