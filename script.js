@@ -319,6 +319,12 @@ function getRelevantExams() {
   // Remove duplicates just in case
   validIds = [...new Set(validIds)];
 
+  // Add AAI ATC JE for eligible candidates
+  // Eligibility: Any B.E/B.Tech OR B.Sc with Physics/Maths
+  if (isEngineering || (isScience && ['Physics', 'Mathematics', 'Statistics', 'Computer Science / IT'].includes(branch))) {
+    validIds.push('aai_atc');
+  }
+
   return masterExamsDatabase.filter(exam => validIds.includes(exam.id));
 }
 

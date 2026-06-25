@@ -1,5 +1,17 @@
 [
   {
+    "id": "aai_atc",
+    "name": "AAI ATC JE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Registration Open! Last Date: TBD",
+    "hasExactDate": false,
+    "desc": "Airports Authority of India - Junior Executive (Air Traffic Control)",
+    "goals": [
+      "Job"
+    ],
+    "calDate": ""
+  },
+  {
     "id": "gate_bt",
     "name": "GATE Biotechnology (BT)",
     "category": "Core Science & Engineering",
