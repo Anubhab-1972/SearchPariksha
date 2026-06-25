@@ -241,7 +241,7 @@ function getRelevantExams() {
   }
   // Biotech & Life Sciences
   else if (branch === 'Biotechnology' || branch === 'Botany' || branch === 'Zoology' || branch === 'Biotechnology / Life Sciences') {
-    validIds = ['gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'dbt', 'gpat', 'niper', 'barc', ...govtExams];
+    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'dbt', 'gpat', 'niper', 'barc', ...govtExams];
   }
   // Geology / Earth Sciences
   else if (branch === 'Geology / Earth Sciences') {

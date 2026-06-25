@@ -1,5 +1,17 @@
 [
   {
+    "id": "iit_jam_bt",
+    "name": "IIT JAM Biotechnology (BT)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected: September 2025",
+    "hasExactDate": false,
+    "desc": "M.Sc / Joint M.Sc-PhD at IITs & IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": ""
+  },
+  {
     "id": "gate_ch",
     "name": "GATE Chemical Engineering (CH)",
     "category": "Core Science & Engineering",
