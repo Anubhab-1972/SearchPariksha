@@ -3,13 +3,13 @@
     "id": "iit_jam_bt",
     "name": "IIT JAM Biotechnology (BT)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration Open! Last Date: July 2, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Sc / Joint M.Sc-PhD at IITs & IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-07-02"
+    "calDate": ""
   },
   {
     "id": "gate_ch",
