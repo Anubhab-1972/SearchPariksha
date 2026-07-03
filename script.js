@@ -241,7 +241,7 @@ function getRelevantExams() {
   }
   // Biotech & Life Sciences
   else if (branch === 'Biotechnology' || branch === 'Botany' || branch === 'Zoology' || branch === 'Biotechnology / Life Sciences') {
-    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'dbt', 'gpat', 'niper', 'barc', ...govtExams];
+    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'gpat', 'niper', 'barc', ...govtExams];
   }
   // Geology / Earth Sciences
   else if (branch === 'Geology / Earth Sciences') {
@@ -365,7 +365,7 @@ function evaluateEligibility(examId) {
   }
   
   // Final Year / Awaiting Result
-  const finalYearExams = ['vitmee', 'ies', 'dbt', 'tifr', 'gatb', 'upsc_cse', 'sbi_po', 'ssc', 'rrb_ntpc_grad', 'niper', 'gpat', 'barc', 'ctet'];
+  const finalYearExams = ['vitmee', 'ies', 'tifr', 'gatb', 'upsc_cse', 'sbi_po', 'ssc', 'rrb_ntpc_grad', 'niper', 'gpat', 'barc', 'ctet'];
   if (finalYearExams.includes(examId)) {
     if (isFinalYear || (isPG && yearNum === duration)) return { eligible: true };
     return { eligible: false, message: 'Eligible in Final Year' };

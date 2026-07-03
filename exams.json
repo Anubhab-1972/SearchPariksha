@@ -275,7 +275,7 @@
     "dateStr": "Registration ended! Exam Date: July 17, 2026",
     "hasExactDate": true,
     "calDate": "2026-07-17",
-    "desc": "JRF, Asst Professor (Merging with DBT BET next year)",
+    "desc": "JRF, Asst Professor",
     "goals": [
       "Higher Studies",
       "Job",
@@ -322,19 +322,7 @@
     ],
     "calDate": "2026-09-20"
   },
-  {
-    "id": "dbt",
-    "name": "DBT BET",
-    "category": "Core Science & Engineering",
-    "dateStr": "Expected: August 2026",
-    "hasExactDate": true,
-    "desc": "Biotech Fellowship",
-    "goals": [
-      "Higher Studies",
-      "Not Sure"
-    ],
-    "calDate": "2026-08-20"
-  },
+
   {
     "id": "tifr",
     "name": "TIFR GS / JGEEBILS",
