@@ -415,14 +415,14 @@
     "id": "ibps_po",
     "name": "IBPS PO",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: August 22, 2026",
+    "dateStr": "Registration Open! Last Date: July 21, 2026",
     "hasExactDate": true,
     "desc": "Probationary Officer in Public Sector Banks",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-22"
+    "calDate": "2026-07-21"
   },
   {
     "id": "rrb_ntpc_grad",
