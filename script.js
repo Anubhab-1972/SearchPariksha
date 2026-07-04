@@ -397,8 +397,12 @@ function renderTab3Exams() {
     return;
   }
 
+  const liveExams = [];
+  const otherExams = [];
+
   relevantExams.forEach(exam => {
     const eligibility = evaluateEligibility(exam.id);
+    const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
     
     const item = document.createElement('div');
     item.className = 'exam-item';
@@ -414,8 +418,8 @@ function renderTab3Exams() {
         </label>
         <span class="exam-date" style="color:#d9534f; font-weight:bold;">🔒 ${eligibility.message}</span>
       `;
+      otherExams.push(item);
     } else {
-      const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
       item.innerHTML = `
@@ -435,10 +439,32 @@ function renderTab3Exams() {
         }
         validateTab();
       });
-    }
 
-    examSelectionList.appendChild(item);
+      if (isOpen) {
+        liveExams.push(item);
+      } else {
+        otherExams.push(item);
+      }
+    }
   });
+
+  if (liveExams.length > 0) {
+    const liveHeader = document.createElement('h3');
+    liveHeader.className = 'group-title';
+    liveHeader.style.color = '#d9534f';
+    liveHeader.style.marginTop = '0';
+    liveHeader.textContent = '🔥 Registrations Currently Open';
+    examSelectionList.appendChild(liveHeader);
+    liveExams.forEach(item => examSelectionList.appendChild(item));
+  }
+
+  if (otherExams.length > 0) {
+    const otherHeader = document.createElement('h3');
+    otherHeader.className = 'group-title';
+    otherHeader.textContent = liveExams.length > 0 ? '📅 Upcoming & Closed Exams' : '📅 Available Exams';
+    examSelectionList.appendChild(otherHeader);
+    otherExams.forEach(item => examSelectionList.appendChild(item));
+  }
 }
 
 function renderTab4Catalogue() {
