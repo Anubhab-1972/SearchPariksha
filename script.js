@@ -453,7 +453,7 @@ function renderTab3Exams() {
     liveHeader.className = 'group-title';
     liveHeader.style.color = '#d9534f';
     liveHeader.style.marginTop = '0';
-    liveHeader.textContent = '🔥 Registrations Currently Open';
+    liveHeader.textContent = '🔥 Live Exams';
     examSelectionList.appendChild(liveHeader);
     liveExams.forEach(item => examSelectionList.appendChild(item));
   }
