@@ -15,8 +15,8 @@
     "id": "gate_ch",
     "name": "GATE Chemical Engineering (CH)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech / PhD in Chemical/Polymer Engineering & PSU Jobs",
     "goals": [
       "Job",
@@ -40,8 +40,8 @@
     "id": "gate_bt",
     "name": "GATE Biotechnology (BT)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech / PhD in Biotech & PSU Jobs",
     "goals": [
       "Job",
@@ -53,8 +53,8 @@
     "id": "gate_xl",
     "name": "GATE Life Sciences (XL)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech / PhD in Life Sciences",
     "goals": [
       "Job",
@@ -66,8 +66,8 @@
     "id": "gate_ey",
     "name": "GATE Ecology & Evolution (EY)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "PhD/Research in Ecology",
     "goals": [
       "Higher Studies"
@@ -78,8 +78,8 @@
     "id": "gate_cs",
     "name": "GATE Computer Science (CS)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech / PhD in CS & PSU Jobs",
     "goals": [
       "Job",
@@ -91,8 +91,8 @@
     "id": "gate_da",
     "name": "GATE Data Science & AI (DA)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech / PhD in Data Science",
     "goals": [
       "Job",
@@ -104,8 +104,8 @@
     "id": "gate_me",
     "name": "GATE Mechanical (ME)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech & PSU Jobs (BHEL, NTPC)",
     "goals": [
       "Job",
@@ -117,8 +117,8 @@
     "id": "gate_pi",
     "name": "GATE Production & Industrial (PI)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech & Specialized PSU Roles",
     "goals": [
       "Job",
@@ -130,8 +130,8 @@
     "id": "gate_xe",
     "name": "GATE Engineering Sciences (XE)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "Interdisciplinary M.Tech / PhD",
     "goals": [
       "Higher Studies"
@@ -142,8 +142,8 @@
     "id": "gate_ce",
     "name": "GATE Civil Engineering (CE)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech & PSU Jobs (NHAI, ONGC)",
     "goals": [
       "Job",
@@ -155,8 +155,8 @@
     "id": "gate_es",
     "name": "GATE Environmental Science (ES)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech in Environment & Sustainability",
     "goals": [
       "Job",
@@ -168,8 +168,8 @@
     "id": "gate_ee",
     "name": "GATE Electrical Engineering (EE)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech & PSU Jobs (PowerGrid, NTPC)",
     "goals": [
       "Job",
@@ -181,8 +181,8 @@
     "id": "gate_ec",
     "name": "GATE Electronics & Comm. (EC)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech & PSU Jobs",
     "goals": [
       "Job",
@@ -194,8 +194,8 @@
     "id": "gate_in",
     "name": "GATE Instrumentation (IN)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech & Specialized PSU Roles",
     "goals": [
       "Job",
@@ -207,8 +207,8 @@
     "id": "gate_general",
     "name": "GATE (Engineering)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech / PhD & PSU Jobs",
     "goals": [
       "Job",
@@ -221,8 +221,8 @@
     "id": "gate_st",
     "name": "GATE Statistics (ST)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "M.Tech Data/Stats & PhD",
     "goals": [
       "Job",
@@ -234,8 +234,8 @@
     "id": "gate_ma",
     "name": "GATE Mathematics (MA)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "PhD in Math / Applied Math",
     "goals": [
       "Higher Studies"
@@ -246,8 +246,8 @@
     "id": "gate_ph",
     "name": "GATE Physics (PH)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "PhD in Physics / BARC",
     "goals": [
       "Job",
@@ -259,8 +259,8 @@
     "id": "gate_cy",
     "name": "GATE Chemistry (CY)",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: February 6, 2027",
-    "hasExactDate": true,
+    "dateStr": "Expected: September 2026",
+    "hasExactDate": false,
     "desc": "PhD in Chemistry / PSU Jobs",
     "goals": [
       "Job",

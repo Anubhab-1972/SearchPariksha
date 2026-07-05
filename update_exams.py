@@ -60,11 +60,13 @@ def query_gemini_for_exam(exam_name, exam_desc):
 Search the internet and tell me:
 1. Is registration (the initial application to SIT for the exam) currently OPEN? Carefully compare today's date ({today}) against the official start and end dates for online applications. If today's date falls on or between those dates, registration is OPEN. If yes, what is the EXACT LAST DATE (deadline) to apply?
    (NOTE: Ignore post-exam processes like counselling, seat allotment, or admission forms. We only care about applying to TAKE the exam.)
-2. If registration to take the exam is CLOSED but the exam hasn't happened yet, what is the EXACT EXAM DATE?
-3. If the exam is completely over for this cycle, when is the NEXT cycle's exam notification expected?
+2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
+3. If registration to take the exam is CLOSED but the exam hasn't happened yet, what is the EXACT EXAM DATE?
+4. If the exam is completely over for this cycle, when is the NEXT cycle's exam notification expected?
 
 IMPORTANT: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. 
 - If open, prioritize the deadline: "Registration Open! Last Date: Sep 28, 2026"
+- If registration hasn't started yet, prioritize when it starts: "Expected: September 2026"
 - If registration ended but exam is upcoming, prioritize the exam date: "Registration ended! Exam Date: July 15, 2026"
 - If exam is completely over, prioritize next expected month: "Expected: August 2027"
 
