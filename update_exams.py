@@ -62,15 +62,15 @@ Search the internet and tell me:
    (NOTE: Ignore post-exam processes like counselling, seat allotment, or admission forms. We only care about applying to TAKE the exam.)
 2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
 3. If registration to take the exam is CLOSED but the exam hasn't happened yet, what is the EXACT EXAM DATE?
-4. If the exam is completely over for this cycle, when is the NEXT cycle's exam notification expected?
+4. If the exam is completely over for this cycle, search for when the registration opened THIS year, and add one year to predict when registration will open NEXT year.
 
-IMPORTANT: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. 
+CRITICAL: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. DO NOT write full sentences (e.g. never write "The exam cycle is over..."). Just output the status string matching one of these exact formats:
 - If open, prioritize the deadline: "Registration Open! Last Date: Sep 28, 2026"
-- If registration hasn't started yet, prioritize when it starts: "Expected: September 2026"
+- If registration hasn't started yet, prioritize when it starts: "Expected Registration: September 2026"
 - If registration ended but exam is upcoming, prioritize the exam date: "Registration ended! Exam Date: July 15, 2026"
-- If exam is completely over, prioritize next expected month: "Expected: August 2027"
+- If exam is completely over, predict next year's registration: "Expected Registration: August 2027"
 
-Do NOT include any explanation. Just the status string."""
+Do NOT include any explanation or extra text. Just the status string."""
 
     try:
         response = client.models.generate_content(
