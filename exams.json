@@ -28,13 +28,13 @@
     "id": "aai_atc",
     "name": "AAI ATC JE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: July 2026",
+    "dateStr": "Expected Registration: September 2026",
     "hasExactDate": true,
     "desc": "Airports Authority of India - Junior Executive (Air Traffic Control)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-07-20"
+    "calDate": "2026-09-20"
   },
   {
     "id": "gate_bt",
@@ -286,7 +286,7 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Expected Registration: October 2026",
     "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
@@ -294,20 +294,20 @@
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-20"
+    "calDate": "2026-10-20"
   },
   {
     "id": "vitmee",
     "name": "VITMEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: November 2026",
     "hasExactDate": true,
     "desc": "VIT Masters Entrance Examination",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-11-20"
   },
   {
     "id": "ies",
@@ -401,7 +401,7 @@
     "id": "sbi_po",
     "name": "SBI PO",
     "category": "Government & Banking",
-    "dateStr": "Registration Open! Last Date: July 8, 2026",
+    "dateStr": "Registration Open! Last Date: July 08, 2026",
     "hasExactDate": true,
     "desc": "Probationary Officer in State Bank of India",
     "goals": [
@@ -414,7 +414,7 @@
     "id": "ibps_po",
     "name": "IBPS PO",
     "category": "Government & Banking",
-    "dateStr": "Registration Open! Last Date: July 21, 2026",
+    "dateStr": "Registration Open! Last Date: Jul 21, 2026",
     "hasExactDate": true,
     "desc": "Probationary Officer in Public Sector Banks",
     "goals": [
@@ -440,7 +440,7 @@
     "id": "rrb_ntpc_ug",
     "name": "RRB NTPC (Undergraduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Sep 17, 2026",
+    "dateStr": "Registration ended! Exam Date: September 17, 2026",
     "hasExactDate": true,
     "desc": "Clerk, Typist, Time Keeper (12th Pass)",
     "goals": [
@@ -466,20 +466,20 @@
     "id": "ibacio",
     "name": "IB ACIO",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: July 19, 2026",
+    "dateStr": "Expected Registration: October 2026",
     "hasExactDate": true,
     "desc": "Intelligence Bureau Officer",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-07-19"
+    "calDate": "2026-10-20"
   },
   {
     "id": "ssc",
     "name": "SSC CGL",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug-Sep 2026",
+    "dateStr": "Registration ended! Exam Date: August-September 2026",
     "hasExactDate": true,
     "calDate": "2026-09-20",
     "desc": "Group B & C Government Posts",
