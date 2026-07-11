@@ -3,13 +3,13 @@
     "id": "iit_jam_bt",
     "name": "IIT JAM Biotechnology (BT)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2026",
+    "dateStr": "Expected Registration: September 2026",
     "hasExactDate": true,
     "desc": "M.Sc / Joint M.Sc-PhD at IITs & IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-09-20"
   },
   {
     "id": "gate_ch",
@@ -286,7 +286,7 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: October 2026",
+    "dateStr": "Expected Registration: September 2026",
     "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
@@ -294,7 +294,7 @@
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-10-20"
+    "calDate": "2026-09-20"
   },
   {
     "id": "vitmee",
@@ -313,14 +313,14 @@
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "The UPSC IES / ESE 2026 exam cycle is completely over. Registration for the 2026 exam opened on September 26, 2025. Ther",
     "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-20"
+    "calDate": "2025-09-26"
   },
   {
     "id": "tifr",
@@ -427,7 +427,7 @@
     "id": "rrb_ntpc_grad",
     "name": "RRB NTPC (Graduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: July 10, 2026",
+    "dateStr": "The RRB NTPC (Graduate Posts) CBT 2 exam was conducted on July 10, 2026. As today's date is July 11, 2026, the exam for ",
     "hasExactDate": true,
     "desc": "Station Master, Goods Guard, etc.",
     "goals": [
@@ -440,7 +440,7 @@
     "id": "rrb_ntpc_ug",
     "name": "RRB NTPC (Undergraduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: September 17, 2026.",
+    "dateStr": "Registration ended! Exam Date: September 17, 2026",
     "hasExactDate": true,
     "desc": "Clerk, Typist, Time Keeper (12th Pass)",
     "goals": [
@@ -479,9 +479,9 @@
     "id": "ssc",
     "name": "SSC CGL",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: August 1, 2026",
+    "dateStr": "Registration ended! Exam Date: August 2026",
     "hasExactDate": true,
-    "calDate": "2026-08-01",
+    "calDate": "2026-08-20",
     "desc": "Group B & C Government Posts",
     "goals": [
       "Job",
