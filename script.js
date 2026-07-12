@@ -402,7 +402,7 @@ function renderTab3Exams() {
 
   relevantExams.forEach(exam => {
     const eligibility = evaluateEligibility(exam.id);
-    const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
+    const isOpen = exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released"));
     
     const item = document.createElement('div');
     item.className = 'exam-item';

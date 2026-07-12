@@ -61,13 +61,15 @@ Search the internet and tell me:
 1. Is registration (the initial application to SIT for the exam) currently OPEN? Carefully compare today's date ({today}) against the official start and end dates for online applications. If today's date falls on or between those dates, registration is OPEN. If yes, what is the EXACT LAST DATE (deadline) to apply?
    (NOTE: Ignore post-exam processes like counselling, seat allotment, or admission forms. We only care about applying to TAKE the exam.)
 2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
-3. If registration for this cycle is CLOSED, check the exact EXAM DATE. 
+3. If registration for this cycle is CLOSED, check if the official ADMIT CARD (or hall ticket) has been released for the upcoming exam.
+4. If registration for this cycle is CLOSED and the admit card is NOT released yet, check the exact EXAM DATE.
    - If the exam date is in the FUTURE (upcoming), tell me the exact exam date.
    - If the exam date is in the PAST (completely over), search for when registration opened THIS year, and add one year to predict when it will open NEXT year.
 
 CRITICAL: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. DO NOT write full sentences. Just output the status string matching one of these exact formats:
-- If open, prioritize the deadline: "Registration Open! Last Date: Sep 28, 2026"
+- If open: "Registration Open! Last Date: Sep 28, 2026"
 - If registration hasn't started yet: "Expected Registration: September 2026"
+- If admit card is released: "Admit Card Released! Exam Date: Aug 15, 2026"
 - If registration closed but exam is UPCOMING: "Registration ended! Exam Date: Aug 15, 2026"
 - If registration closed and exam is OVER: "Expected Registration: August 2027"
 
