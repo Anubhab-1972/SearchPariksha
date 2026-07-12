@@ -272,8 +272,8 @@
     "id": "csir",
     "name": "CSIR UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: 2027",
-    "hasExactDate": false,
+    "dateStr": "Registration ended! Exam Date: July 17, 2026",
+    "hasExactDate": true,
     "calDate": "2026-07-17",
     "desc": "JRF, Asst Professor",
     "goals": [
@@ -440,8 +440,8 @@
     "id": "rrb_ntpc_ug",
     "name": "RRB NTPC (Undergraduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: 2027",
-    "hasExactDate": false,
+    "dateStr": "Registration ended! Exam Date: September 17, 2026",
+    "hasExactDate": true,
     "desc": "Clerk, Typist, Time Keeper (12th Pass)",
     "goals": [
       "Job",
@@ -492,8 +492,8 @@
     "id": "ctet",
     "name": "CTET",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: 2027",
-    "hasExactDate": false,
+    "dateStr": "Registration ended! Exam Date: September 6, 2026",
+    "hasExactDate": true,
     "desc": "Eligibility for Central Government Teaching Jobs",
     "goals": [
       "Job"
