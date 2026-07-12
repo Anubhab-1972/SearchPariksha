@@ -77,8 +77,9 @@ Do NOT include any explanation or extra text. Just the status string."""
             model="gemini-2.5-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
+                system_instruction="You are a strict data extraction bot. NEVER output full sentences. ONLY output the exact short status string formats requested.",
                 tools=[types.Tool(google_search=types.GoogleSearch())],
-                temperature=0.1,  # Low temperature for factual accuracy
+                temperature=0.0,  # Zero temperature for strictest factual accuracy
             ),
         )
         
