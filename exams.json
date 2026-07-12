@@ -272,8 +272,8 @@
     "id": "csir",
     "name": "CSIR UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration ended! Exam Date: July 17, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: 2027",
+    "hasExactDate": false,
     "calDate": "2026-07-17",
     "desc": "JRF, Asst Professor",
     "goals": [
@@ -427,8 +427,8 @@
     "id": "rrb_ntpc_grad",
     "name": "RRB NTPC (Graduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: July 10, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: 2027",
+    "hasExactDate": false,
     "desc": "Station Master, Goods Guard, etc.",
     "goals": [
       "Job",
@@ -440,8 +440,8 @@
     "id": "rrb_ntpc_ug",
     "name": "RRB NTPC (Undergraduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: September 17, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: 2027",
+    "hasExactDate": false,
     "desc": "Clerk, Typist, Time Keeper (12th Pass)",
     "goals": [
       "Job",
@@ -492,8 +492,8 @@
     "id": "ctet",
     "name": "CTET",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: September 6, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: 2027",
+    "hasExactDate": false,
     "desc": "Eligibility for Central Government Teaching Jobs",
     "goals": [
       "Job"
