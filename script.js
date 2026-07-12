@@ -422,12 +422,17 @@ function renderTab3Exams() {
     } else {
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
+      let displayDate = exam.dateStr;
+      if (exam.dateStr && exam.dateStr.toLowerCase().includes("admit card released")) {
+        displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
+      }
+
       item.innerHTML = `
         <label>
           <input type="checkbox" value="${exam.id}">
           <span>${exam.name} <a href="#" onclick="openExamDirectory('${exam.name}'); return false;" style="color: #007bff; text-decoration: underline; font-size: 0.8em; margin-left: 8px;">Know about your exam</a></span>
         </label>
-        <span class="exam-date">${liveBadge}${exam.dateStr}</span>
+        <span class="exam-date">${liveBadge}${displayDate}</span>
       `;
 
       const checkbox = item.querySelector('input');
