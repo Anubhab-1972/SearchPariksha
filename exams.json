@@ -28,13 +28,13 @@
     "id": "aai_atc",
     "name": "AAI ATC JE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Expected Registration: August 2026",
     "hasExactDate": true,
     "desc": "Airports Authority of India - Junior Executive (Air Traffic Control)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-09-20"
+    "calDate": "2026-08-20"
   },
   {
     "id": "gate_bt",
@@ -286,7 +286,7 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: October 2026",
+    "dateStr": "Expected Registration: April 2027",
     "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
@@ -294,7 +294,7 @@
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-10-20"
+    "calDate": "2026-04-20"
   },
   {
     "id": "vitmee",
@@ -313,7 +313,7 @@
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Expected Registration: September 2027",
     "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
@@ -364,38 +364,38 @@
     "id": "niper",
     "name": "NIPER JEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: April 2027",
     "hasExactDate": true,
     "desc": "M.S./M.Pharm & PhD at NIPERs (Requires GPAT/GATE/NET)",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-04-20"
   },
   {
     "id": "barc",
     "name": "BARC OCES/DGFS",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: December 2026",
+    "dateStr": "Expected Registration: August 2027",
     "hasExactDate": true,
     "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-12-20"
+    "calDate": "2026-08-20"
   },
   {
     "id": "upsc_cse",
     "name": "UPSC Civil Services (CSE)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 21, 2026",
+    "dateStr": "Expected Registration: January 2027",
     "hasExactDate": true,
     "desc": "IAS, IPS, IFS Officers (Any Degree)",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-21"
+    "calDate": "2026-01-20"
   },
   {
     "id": "sbi_po",
@@ -427,7 +427,7 @@
     "id": "rrb_ntpc_grad",
     "name": "RRB NTPC (Graduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: August 2026",
     "hasExactDate": true,
     "desc": "Station Master, Goods Guard, etc.",
     "goals": [
@@ -466,22 +466,22 @@
     "id": "ibacio",
     "name": "IB ACIO",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: July 2026",
+    "dateStr": "Expected Registration: October 2026",
     "hasExactDate": true,
     "desc": "Intelligence Bureau Officer",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-07-20"
+    "calDate": "2026-10-20"
   },
   {
     "id": "ssc",
     "name": "SSC CGL",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 15, 2026",
+    "dateStr": "Registration ended! Exam Date: August-September 2026",
     "hasExactDate": true,
-    "calDate": "2026-08-15",
+    "calDate": "2026-09-20",
     "desc": "Group B & C Government Posts",
     "goals": [
       "Job",
@@ -492,7 +492,7 @@
     "id": "ctet",
     "name": "CTET",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Sep 6, 2026",
+    "dateStr": "Registration ended! Exam Date: Sep 06, 2026",
     "hasExactDate": true,
     "desc": "Eligibility for Central Government Teaching Jobs",
     "goals": [
