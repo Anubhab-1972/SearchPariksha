@@ -28,13 +28,13 @@
     "id": "aai_atc",
     "name": "AAI ATC JE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2026",
+    "dateStr": "Expected Registration: July 2026",
     "hasExactDate": true,
     "desc": "Airports Authority of India - Junior Executive (Air Traffic Control)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-07-20"
   },
   {
     "id": "gate_bt",
@@ -286,7 +286,7 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: April 2027",
+    "dateStr": "Expected Registration: September 2026",
     "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
@@ -294,26 +294,26 @@
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-04-20"
+    "calDate": "2026-09-20"
   },
   {
     "id": "vitmee",
     "name": "VITMEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: November 2026",
     "hasExactDate": true,
     "desc": "VIT Masters Entrance Examination",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-11-20"
   },
   {
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2027",
+    "dateStr": "Expected Registration: September 2026",
     "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
@@ -376,39 +376,39 @@
     "id": "barc",
     "name": "BARC OCES/DGFS",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: December 2026",
     "hasExactDate": true,
     "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-12-20"
   },
   {
     "id": "upsc_cse",
     "name": "UPSC Civil Services (CSE)",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: January 2027",
+    "dateStr": "Registration ended! Exam Date: Aug 21, 2026",
     "hasExactDate": true,
     "desc": "IAS, IPS, IFS Officers (Any Degree)",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-01-20"
+    "calDate": "2026-08-21"
   },
   {
     "id": "sbi_po",
     "name": "SBI PO",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 1, 2026",
+    "dateStr": "Registration ended! Exam Date: Aug 15, 2026",
     "hasExactDate": true,
     "desc": "Probationary Officer in State Bank of India",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-01"
+    "calDate": "2026-08-15"
   },
   {
     "id": "ibps_po",
@@ -427,14 +427,14 @@
     "id": "rrb_ntpc_grad",
     "name": "RRB NTPC (Graduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: August 2026",
+    "dateStr": "Expected Registration: October 2026",
     "hasExactDate": true,
     "desc": "Station Master, Goods Guard, etc.",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-10-20"
   },
   {
     "id": "rrb_ntpc_ug",
@@ -479,9 +479,9 @@
     "id": "ssc",
     "name": "SSC CGL",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: August-September 2026",
+    "dateStr": "Registration ended! Exam Date: Aug 15, 2026",
     "hasExactDate": true,
-    "calDate": "2026-09-20",
+    "calDate": "2026-08-15",
     "desc": "Group B & C Government Posts",
     "goals": [
       "Job",
@@ -492,7 +492,7 @@
     "id": "ctet",
     "name": "CTET",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Sep 06, 2026",
+    "dateStr": "Registration ended! Exam Date: Sep 6, 2026",
     "hasExactDate": true,
     "desc": "Eligibility for Central Government Teaching Jobs",
     "goals": [
