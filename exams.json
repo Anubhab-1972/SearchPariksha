@@ -272,9 +272,9 @@
     "id": "csir",
     "name": "CSIR UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Admit Card Released! Exam Date: July 17, 2026",
+    "dateStr": "Admit Card Released! Exam Date: July 18, 2026",
     "hasExactDate": true,
-    "calDate": "2026-07-17",
+    "calDate": "2026-07-18",
     "desc": "JRF, Asst Professor",
     "goals": [
       "Higher Studies",
@@ -300,27 +300,27 @@
     "id": "vitmee",
     "name": "VITMEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Admit Card Released! Exam Date: April 28, 2026",
+    "dateStr": "Expected Registration: December 2026",
     "hasExactDate": true,
     "desc": "VIT Masters Entrance Examination",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-04-28"
+    "calDate": "2026-12-20"
   },
   {
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Expected Registration: August 2027",
     "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-20"
+    "calDate": "2026-08-20"
   },
   {
     "id": "tifr",
@@ -376,13 +376,13 @@
     "id": "barc",
     "name": "BARC OCES/DGFS",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: December 2026",
     "hasExactDate": true,
     "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-12-20"
   },
   {
     "id": "upsc_cse",
@@ -401,14 +401,14 @@
     "id": "sbi_po",
     "name": "SBI PO",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 01, 2026",
+    "dateStr": "Registration ended! Exam Date: Aug 7, 2026",
     "hasExactDate": true,
     "desc": "Probationary Officer in State Bank of India",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-01"
+    "calDate": "2026-08-07"
   },
   {
     "id": "ibps_po",
@@ -440,14 +440,14 @@
     "id": "rrb_ntpc_ug",
     "name": "RRB NTPC (Undergraduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Sep 17, 2026",
+    "dateStr": "Expected Registration: October 2026",
     "hasExactDate": true,
     "desc": "Clerk, Typist, Time Keeper (12th Pass)",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-17"
+    "calDate": "2026-10-20"
   },
   {
     "id": "ssc_chsl",
