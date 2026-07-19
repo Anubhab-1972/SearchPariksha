@@ -28,13 +28,13 @@
     "id": "aai_atc",
     "name": "AAI ATC JE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Expected Registration: July 2027",
     "hasExactDate": true,
     "desc": "Airports Authority of India - Junior Executive (Air Traffic Control)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-09-20"
+    "calDate": "2026-07-20"
   },
   {
     "id": "gate_bt",
@@ -272,9 +272,9 @@
     "id": "csir",
     "name": "CSIR UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Admit Card Released! Exam Date: July 18, 2026",
+    "dateStr": "Expected Registration: May 2027",
     "hasExactDate": true,
-    "calDate": "2026-07-18",
+    "calDate": "2026-05-20",
     "desc": "JRF, Asst Professor",
     "goals": [
       "Higher Studies",
@@ -286,7 +286,7 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Expected Registration: November 2026",
     "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
@@ -294,33 +294,33 @@
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-20"
+    "calDate": "2026-11-20"
   },
   {
     "id": "vitmee",
     "name": "VITMEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: December 2026",
+    "dateStr": "Expected Registration: November 2026",
     "hasExactDate": true,
     "desc": "VIT Masters Entrance Examination",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-12-20"
+    "calDate": "2026-11-20"
   },
   {
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Expected Registration: September 2026",
     "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-09-20"
   },
   {
     "id": "tifr",
@@ -364,25 +364,25 @@
     "id": "niper",
     "name": "NIPER JEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: April 2027",
+    "dateStr": "Expected Registration: August 2027",
     "hasExactDate": true,
     "desc": "M.S./M.Pharm & PhD at NIPERs (Requires GPAT/GATE/NET)",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-04-20"
+    "calDate": "2026-08-20"
   },
   {
     "id": "barc",
     "name": "BARC OCES/DGFS",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: December 2026",
+    "dateStr": "Expected Registration: August 2027",
     "hasExactDate": true,
     "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-12-20"
+    "calDate": "2026-08-20"
   },
   {
     "id": "upsc_cse",
@@ -401,14 +401,14 @@
     "id": "sbi_po",
     "name": "SBI PO",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 7, 2026",
+    "dateStr": "Registration ended! Exam Date: Aug 01, 2026",
     "hasExactDate": true,
     "desc": "Probationary Officer in State Bank of India",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-07"
+    "calDate": "2026-08-01"
   },
   {
     "id": "ibps_po",
@@ -427,27 +427,27 @@
     "id": "rrb_ntpc_grad",
     "name": "RRB NTPC (Graduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: August 2026",
+    "dateStr": "Expected Registration: October 2026",
     "hasExactDate": true,
     "desc": "Station Master, Goods Guard, etc.",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-20"
+    "calDate": "2026-10-20"
   },
   {
     "id": "rrb_ntpc_ug",
     "name": "RRB NTPC (Undergraduate Posts)",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: October 2026",
+    "dateStr": "Registration ended! Exam Date: Sep 17, 2026",
     "hasExactDate": true,
     "desc": "Clerk, Typist, Time Keeper (12th Pass)",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-10-20"
+    "calDate": "2026-09-17"
   },
   {
     "id": "ssc_chsl",
@@ -466,14 +466,14 @@
     "id": "ibacio",
     "name": "IB ACIO",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: October 2026",
+    "dateStr": "Registration Open! Last Date: Aug 10, 2026",
     "hasExactDate": true,
     "desc": "Intelligence Bureau Officer",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-10-20"
+    "calDate": "2026-08-10"
   },
   {
     "id": "ssc",
