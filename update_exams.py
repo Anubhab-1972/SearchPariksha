@@ -58,7 +58,10 @@ def query_gemini_for_exam(exam_name, exam_desc):
     prompt = f"""Today is {today}. I need the latest official status for the Indian competitive exam: "{exam_name}" ({exam_desc}).
 
 Search the internet and tell me:
-1. Is registration (the initial application to SIT for the exam) currently OPEN? Carefully compare today's date ({today}) against the official start and end dates for online applications. If today's date falls on or between those dates, registration is OPEN. If yes, what is the EXACT LAST DATE (deadline) to apply?
+1. Is registration (the initial application to SIT for the exam) currently OPEN? 
+   - ONLY say yes if the OFFICIAL notification has been released by the conducting body and the application window is confirmed to be currently active.
+   - Ignore unofficial, tentative, or "expected" dates from clickbait websites.
+   - Carefully compare today's date ({today}) against the official start and end dates for online applications. If today's date falls on or between those dates, registration is OPEN. If yes, what is the EXACT LAST DATE (deadline) to apply?
    (NOTE: Ignore post-exam processes like counselling, seat allotment, or admission forms. We only care about applying to TAKE the exam.)
 2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
 3. If registration for this cycle is CLOSED, check if the official ADMIT CARD (or hall ticket) has been released for the upcoming exam.

@@ -466,8 +466,8 @@
     "id": "ibacio",
     "name": "IB ACIO",
     "category": "Government & Banking",
-    "dateStr": "Registration Open! Last Date: Aug 10, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: November 2026",
+    "hasExactDate": false,
     "desc": "Intelligence Bureau Officer",
     "goals": [
       "Job",
