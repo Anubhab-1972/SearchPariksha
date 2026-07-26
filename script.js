@@ -402,7 +402,7 @@ function renderTab3Exams() {
 
   relevantExams.forEach(exam => {
     const eligibility = evaluateEligibility(exam.id);
-    const isOpen = exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released"));
+    const isOpen = exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced"));
     
     const item = document.createElement('div');
     item.className = 'exam-item';
@@ -425,6 +425,8 @@ function renderTab3Exams() {
       let displayDate = exam.dateStr;
       if (exam.dateStr && exam.dateStr.toLowerCase().includes("admit card released")) {
         displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
+      } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced")) {
+        displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
       }
 
       item.innerHTML = `

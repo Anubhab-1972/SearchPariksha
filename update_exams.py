@@ -66,7 +66,7 @@ Search the internet and tell me:
 2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
 3. If registration for this cycle is CLOSED, check if the official ADMIT CARD (or hall ticket) has been released for the upcoming exam.
 4. If registration for this cycle is CLOSED and the admit card is NOT released yet, check the exact EXAM DATE.
-   - If the exam date is strictly BEFORE today ({today}), the exam is in the PAST (completely over). Search for when registration opened THIS year, and add one year to predict when it will open NEXT year.
+   - If the exam date is strictly BEFORE today ({today}), the exam is in the PAST (completely over). First, check if the OFFICIAL RESULTS have been announced for this past exam. If yes, tell me. If no, search for when registration opened THIS year, and add one year to predict when it will open NEXT year.
    - If the exam date is AFTER today ({today}), the exam is in the FUTURE (upcoming). Tell me the exact exam date.
 
 CRITICAL: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. DO NOT write full sentences. Just output the status string matching one of these exact formats:
@@ -74,7 +74,8 @@ CRITICAL: Respond with ONLY a single short status string (max 80 characters) tha
 - If registration hasn't started yet: "Expected Registration: September 2026"
 - If admit card is released: "Admit Card Released! Exam Date: Aug 15, 2026"
 - If registration closed but exam is UPCOMING: "Registration ended! Exam Date: Aug 15, 2026"
-- If registration closed and exam is OVER: "Expected Registration: August 2027"
+- If registration closed and exam is OVER and results are announced: "Results Announced! Check Official Website"
+- If registration closed and exam is OVER and results are NOT announced: "Expected Registration: August 2027"
 
 Do NOT include any explanation or extra text. Just the status string."""
 
