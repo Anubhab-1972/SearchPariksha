@@ -69,7 +69,7 @@ Search the internet and tell me:
    - If the exam date is strictly BEFORE today ({today}), the exam is in the PAST (completely over). First, check if the OFFICIAL RESULTS have been announced for this past exam. If yes, tell me. If no, search for when registration opened THIS year, and add one year to predict when it will open NEXT year.
    - If the exam date is AFTER today ({today}), the exam is in the FUTURE (upcoming). Tell me the exact exam date.
 
-CRITICAL: Respond with ONLY a single short status string (max 80 characters) that a student would find useful. DO NOT write full sentences. Just output the status string matching one of these exact formats:
+CRITICAL: You must output a JSON object with a single key 'status_string'. The value must be ONLY a single short status string (max 80 characters). DO NOT write full sentences. Just output the status string matching one of these exact formats:
 - If open: "Registration Open! Last Date: Sep 28, 2026"
 - If registration hasn't started yet: "Expected Registration: September 2026"
 - If admit card is released: "Admit Card Released! Exam Date: Aug 15, 2026"
@@ -86,11 +86,23 @@ Do NOT include any explanation or extra text. Just the status string."""
             config=types.GenerateContentConfig(
                 system_instruction="You are a strict data extraction bot. NEVER output full sentences. ONLY output the exact short status string formats requested.",
                 tools=[types.Tool(google_search=types.GoogleSearch())],
-                temperature=0.0,  # Zero temperature for strictest factual accuracy
+                temperature=0.0,
+                response_mime_type="application/json",
+                response_schema=types.Schema(
+                    type=types.Type.OBJECT,
+                    properties={
+                        "status_string": types.Schema(
+                            type=types.Type.STRING,
+                            description="The exact short status string matching one of the requested formats."
+                        )
+                    },
+                    required=["status_string"]
+                ),
             ),
         )
         
-        result = response.text.strip()
+        result_json = json.loads(response.text.strip())
+        result = result_json.get("status_string", "").strip()
         # Clean up the response - remove quotes if Gemini wraps them
         result = result.strip('"').strip("'").strip("`")
         
