@@ -103,9 +103,11 @@ function setupOptionCards(containerId, stateKey) {
         state.year = null;
         renderYearSelection();
         renderSpecializations();
+        validateTab();
+        setTimeout(goNext, 150);
+      } else {
+        validateTab();
       }
-      
-      validateTab();
     });
   });
 }
@@ -572,6 +574,7 @@ function showTab(index) {
   document.getElementById(`tab-${index}`).classList.add('active');
   
   btnBack.style.visibility = index === 1 ? 'hidden' : 'visible';
+  btnNext.style.display = index === 1 ? 'none' : '';
   
   const homeBtn = document.getElementById('home-btn');
   if (homeBtn) {
