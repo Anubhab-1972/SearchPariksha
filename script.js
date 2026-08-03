@@ -335,8 +335,16 @@ function getRelevantExams() {
     validIds.push('aai_atc');
   }
 
-  return masterExamsDatabase.filter(exam => validIds.includes(exam.id));
-}
+  const filteredExams = masterExamsDatabase.filter(exam => validIds.includes(exam.id));
+  
+  // Sort chronologically by calDate (earliest dates first)
+  filteredExams.sort((a, b) => {
+    const dateA = a.calDate ? new Date(a.calDate) : new Date('2099-12-31');
+    const dateB = b.calDate ? new Date(b.calDate) : new Date('2099-12-31');
+    return dateA - dateB;
+  });
+
+  return filteredExams;
 
 function evaluateEligibility(examId) {
   const yearText = state.year;
