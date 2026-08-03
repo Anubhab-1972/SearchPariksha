@@ -401,8 +401,8 @@
     "id": "sbi_po",
     "name": "SBI PO",
     "category": "Government & Banking",
-    "dateStr": "Admit Card Released! Exam Date: Aug 1, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": false,
     "desc": "Probationary Officer in State Bank of India",
     "goals": [
       "Job",

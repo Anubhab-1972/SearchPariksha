@@ -66,10 +66,9 @@ Search the internet and tell me:
    - If today's date falls on or between the start and end dates, registration is OPEN. If yes, what is the EXACT LAST DATE (deadline) to apply?
    (NOTE: Ignore post-exam processes like counselling, seat allotment, or admission forms. We only care about applying to TAKE the exam.)
 2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
-3. If registration for this cycle is CLOSED, check if the official ADMIT CARD (or hall ticket) has been released for the upcoming exam.
-4. If registration for this cycle is CLOSED and the admit card is NOT released yet, check the exact EXAM DATE.
+3. If registration for this cycle is CLOSED, check the exact EXAM DATE first.
    - If the exam date is strictly BEFORE today ({today}), the exam is in the PAST (completely over). First, check if the OFFICIAL RESULTS have been announced for this past exam. If yes, tell me. If no, search for when registration opened THIS year, and add one year to predict when it will open NEXT year.
-   - If the exam date is AFTER today ({today}), the exam is in the FUTURE (upcoming). Tell me the exact exam date.
+   - If the exam date is AFTER today ({today}), the exam is in the FUTURE (upcoming). THEN check if the official ADMIT CARD (or hall ticket) has been released for this upcoming exam. If it has been released, tell me. If not, just tell me the exact exam date.
 
 CRITICAL: You must output a JSON object with a single key 'status_string'. The value must be ONLY a single short status string (max 80 characters). DO NOT write full sentences. Just output the status string matching one of these exact formats:
 - If open: "Registration Open! Last Date: Sep 28, 2026"
