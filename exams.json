@@ -512,5 +512,17 @@
                       "Job"
                   ],
         "calDate":  "2026-09-06"
+    },
+    {
+        "id":  "atma",
+        "name":  "ATMA (AIMS Test for Management Admissions)",
+        "category":  "Management \u0026 MBA",
+        "dateStr":  "Checking dates...",
+        "hasExactDate":  false,
+        "desc":  "National level MBA/PGDM entrance exam",
+        "goals":  [
+                      "Higher Studies"
+                  ],
+        "status_code":  "UPCOMING"
     }
 ]
