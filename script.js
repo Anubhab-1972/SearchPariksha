@@ -337,10 +337,22 @@ function getRelevantExams() {
 
   const filteredExams = masterExamsDatabase.filter(exam => validIds.includes(exam.id));
   
-  // Sort chronologically by calDate (earliest dates first)
+  // Sort chronologically: Upcoming exams first, Past exams sent to the bottom
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   filteredExams.sort((a, b) => {
     const dateA = a.calDate ? new Date(a.calDate) : new Date('2099-12-31');
     const dateB = b.calDate ? new Date(b.calDate) : new Date('2099-12-31');
+    
+    const isPastA = dateA < today;
+    const isPastB = dateB < today;
+
+    // If one is in the past and the other is in the future, future wins
+    if (isPastA && !isPastB) return 1;
+    if (!isPastA && isPastB) return -1;
+
+    // Otherwise (both future or both past), sort chronologically
     return dateA - dateB;
   });
 
