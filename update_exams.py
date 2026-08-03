@@ -134,6 +134,43 @@ def extract_cal_date(date_str):
     
     return None
 
+def should_check_exam(exam):
+    """
+    Smart caching logic to determine if we actually need to query the API.
+    """
+    status = exam.get("status_code", "UPCOMING")
+    cal_date_str = exam.get("calDate")
+    last_checked_str = exam.get("last_checked_date")
+    
+    today = datetime.now()
+    
+    def parse_date(d_str):
+        if not d_str: return None
+        try:
+            return datetime.strptime(d_str.split('T')[0], "%Y-%m-%d")
+        except ValueError:
+            return None
+
+    cal_date = parse_date(cal_date_str)
+    last_checked = parse_date(last_checked_str)
+
+    # 1. LIVE exams with a future deadline -> SKIP
+    if status.startswith("LIVE_") and cal_date:
+        if cal_date.date() > today.date():
+            return False, f"Deadline ({cal_date_str}) is in the future"
+            
+    # 2. PAST exams -> CHECK WEEKLY (every 7 days)
+    if status == "PAST":
+        if last_checked and (today.date() - last_checked.date()).days < 7:
+            days_left = 7 - (today.date() - last_checked.date()).days
+            return False, f"PAST exam. Checking again in {days_left} days"
+            
+    # 3. UPCOMING / OTHERS -> CHECK DAILY (if not already checked today)
+    if last_checked and (today.date() - last_checked.date()).days < 1:
+        return False, "Already checked today"
+        
+    return True, "Needs update"
+
 def update_all_exams():
     """Main function: update all exams using Gemini AI."""
     exams = load_exams()
@@ -145,45 +182,55 @@ def update_all_exams():
     updated_count = 0
     
     # --- Update GATE exams (one query for all) ---
-    print("\n[GATE] Querying for GATE exam dates...")
-    gate_result = query_exam_status(
-        "GATE (Graduate Aptitude Test in Engineering)",
-        "Common notification for all GATE papers - registration and exam dates"
-    )
-    if gate_result and "display_text" in gate_result:
-        print(f"  [GATE] AI says: {gate_result['display_text']} ({gate_result.get('status_code')})")
-        for exam in gate_exams:
-            exam["dateStr"] = gate_result["display_text"]
-            exam["status_code"] = gate_result.get("status_code", "UPCOMING")
-            exam["hasExactDate"] = has_exact_date(gate_result["display_text"])
-            cal = extract_cal_date(gate_result["display_text"])
-            if cal:
-                exam["calDate"] = cal
-        updated_count += len(gate_exams)
-    else:
-        print("  [GATE] No update - keeping existing data")
-    
-    time.sleep(2)  # Rate limiting
+    if gate_exams:
+        needs_check, reason = should_check_exam(gate_exams[0])
+        if needs_check:
+            print("\n[GATE] Querying for GATE exam dates...")
+            gate_result = query_exam_status(
+                "GATE (Graduate Aptitude Test in Engineering)",
+                "Common notification for all GATE papers - registration and exam dates"
+            )
+            if gate_result and "display_text" in gate_result:
+                print(f"  [GATE] AI says: {gate_result['display_text']} ({gate_result.get('status_code')})")
+                for exam in gate_exams:
+                    exam["dateStr"] = gate_result["display_text"]
+                    exam["status_code"] = gate_result.get("status_code", "UPCOMING")
+                    exam["hasExactDate"] = has_exact_date(gate_result["display_text"])
+                    exam["last_checked_date"] = datetime.now().strftime("%Y-%m-%d")
+                    cal = extract_cal_date(gate_result["display_text"])
+                    if cal:
+                        exam["calDate"] = cal
+                updated_count += len(gate_exams)
+            else:
+                print("  [GATE] No update - keeping existing data")
+            time.sleep(2)  # Rate limiting
+        else:
+            print(f"\n[GATE] Skipping check: {reason}")
     
     # --- Update non-GATE exams individually ---
     for exam in non_gate_exams:
-        print(f"\n[{exam['id']}] Querying for {exam['name']}...")
-        
-        result = query_exam_status(exam["name"], exam["desc"])
-        
-        if result and "display_text" in result:
-            print(f"  [{exam['id']}] AI says: {result['display_text']} ({result.get('status_code')})")
-            exam["dateStr"] = result["display_text"]
-            exam["status_code"] = result.get("status_code", "UPCOMING")
-            exam["hasExactDate"] = has_exact_date(result["display_text"])
-            cal = extract_cal_date(result["display_text"])
-            if cal:
-                exam["calDate"] = cal
-            updated_count += 1
+        needs_check, reason = should_check_exam(exam)
+        if needs_check:
+            print(f"\n[{exam['id']}] Querying for {exam['name']}...")
+            
+            result = query_exam_status(exam["name"], exam["desc"])
+            
+            if result and "display_text" in result:
+                print(f"  [{exam['id']}] AI says: {result['display_text']} ({result.get('status_code')})")
+                exam["dateStr"] = result["display_text"]
+                exam["status_code"] = result.get("status_code", "UPCOMING")
+                exam["hasExactDate"] = has_exact_date(result["display_text"])
+                exam["last_checked_date"] = datetime.now().strftime("%Y-%m-%d")
+                cal = extract_cal_date(result["display_text"])
+                if cal:
+                    exam["calDate"] = cal
+                updated_count += 1
+            else:
+                print(f"  [{exam['id']}] No update - keeping existing data")
+            
+            time.sleep(2)  # Rate limiting - be nice to Google's API
         else:
-            print(f"  [{exam['id']}] No update - keeping existing data")
-        
-        time.sleep(2)  # Rate limiting - be nice to Google's API
+            print(f"\n[{exam['id']}] Skipping check: {reason}")
     
     # Save the updated data
     save_exams(exams)
