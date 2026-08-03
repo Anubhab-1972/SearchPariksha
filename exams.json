@@ -28,7 +28,7 @@
         "id":  "gate_ch",
         "name":  "GATE Chemical Engineering (CH)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Chemical/Polymer Engineering \u0026 PSU Jobs",
         "goals":  [
@@ -53,7 +53,7 @@
         "id":  "gate_bt",
         "name":  "GATE Biotechnology (BT)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Biotech \u0026 PSU Jobs",
         "goals":  [
@@ -66,7 +66,7 @@
         "id":  "gate_xl",
         "name":  "GATE Life Sciences (XL)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Life Sciences",
         "goals":  [
@@ -79,7 +79,7 @@
         "id":  "gate_ey",
         "name":  "GATE Ecology \u0026 Evolution (EY)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "PhD/Research in Ecology",
         "goals":  [
@@ -91,7 +91,7 @@
         "id":  "gate_cs",
         "name":  "GATE Computer Science (CS)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech / PhD in CS \u0026 PSU Jobs",
         "goals":  [
@@ -104,7 +104,7 @@
         "id":  "gate_da",
         "name":  "GATE Data Science \u0026 AI (DA)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Data Science",
         "goals":  [
@@ -117,7 +117,7 @@
         "id":  "gate_me",
         "name":  "GATE Mechanical (ME)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs (BHEL, NTPC)",
         "goals":  [
@@ -130,7 +130,7 @@
         "id":  "gate_pi",
         "name":  "GATE Production \u0026 Industrial (PI)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech \u0026 Specialized PSU Roles",
         "goals":  [
@@ -143,7 +143,7 @@
         "id":  "gate_xe",
         "name":  "GATE Engineering Sciences (XE)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "Interdisciplinary M.Tech / PhD",
         "goals":  [
@@ -155,7 +155,7 @@
         "id":  "gate_ce",
         "name":  "GATE Civil Engineering (CE)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs (NHAI, ONGC)",
         "goals":  [
@@ -168,7 +168,7 @@
         "id":  "gate_es",
         "name":  "GATE Environmental Science (ES)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech in Environment \u0026 Sustainability",
         "goals":  [
@@ -181,7 +181,7 @@
         "id":  "gate_ee",
         "name":  "GATE Electrical Engineering (EE)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs (PowerGrid, NTPC)",
         "goals":  [
@@ -194,7 +194,7 @@
         "id":  "gate_ec",
         "name":  "GATE Electronics \u0026 Comm. (EC)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs",
         "goals":  [
@@ -207,7 +207,7 @@
         "id":  "gate_in",
         "name":  "GATE Instrumentation (IN)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech \u0026 Specialized PSU Roles",
         "goals":  [
@@ -220,7 +220,7 @@
         "id":  "gate_general",
         "name":  "GATE (Engineering)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech / PhD \u0026 PSU Jobs",
         "goals":  [
@@ -234,7 +234,7 @@
         "id":  "gate_st",
         "name":  "GATE Statistics (ST)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "M.Tech Data/Stats \u0026 PhD",
         "goals":  [
@@ -247,7 +247,7 @@
         "id":  "gate_ma",
         "name":  "GATE Mathematics (MA)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "PhD in Math / Applied Math",
         "goals":  [
@@ -259,7 +259,7 @@
         "id":  "gate_ph",
         "name":  "GATE Physics (PH)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "PhD in Physics / BARC",
         "goals":  [
@@ -272,7 +272,7 @@
         "id":  "gate_cy",
         "name":  "GATE Chemistry (CY)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14",
+        "dateStr":  "Expected Registration: August 14, 2026",
         "hasExactDate":  true,
         "desc":  "PhD in Chemistry / PSU Jobs",
         "goals":  [
