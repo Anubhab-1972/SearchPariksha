@@ -1,13 +1,13 @@
 # GitHub Actions Workflow: Auto-Update Exam Dates
-# This runs every day at 2:00 AM IST (8:30 PM UTC)
+# This runs on Mon, Wed, Fri, Sun at 2:00 AM IST (8:30 PM UTC previous day)
 # and uses Gemini AI to search the internet for the latest exam dates.
 
 name: Update Exam Dates
 
 on:
   schedule:
-    # Runs at 8:30 PM UTC every day
-    - cron: '30 20 * * *'
+    # Runs at 8:30 PM UTC on Sun, Tue, Thu, Sat (which is Mon, Wed, Fri, Sun 2:00 AM IST)
+    - cron: '30 20 * * 0,2,4,6'
   
   # Also allows manual trigger from GitHub UI
   workflow_dispatch:
