@@ -17,14 +17,6 @@ import os
 import sys
 import time
 from datetime import datetime
-
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-    from openai import OpenAI
-except ImportError:
-    pass
-
 try:
     from google import genai
     from google.genai import types
@@ -35,7 +27,6 @@ except ImportError:
 # --- Configuration ---
 EXAMS_JSON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "exams.json")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MESH_API_KEY = os.environ.get("MESH_API_KEY", "")
 
 if not GEMINI_API_KEY:
     print("ERROR: GEMINI_API_KEY environment variable not set.")
@@ -44,15 +35,6 @@ if not GEMINI_API_KEY:
 
 # Initialize the Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
-
-# Initialize the Mesh API client (OpenAI compatible)
-try:
-    mesh_client = OpenAI(
-        api_key=MESH_API_KEY,
-        base_url="https://api.meshapi.ai/v1" if MESH_API_KEY else None
-    )
-except Exception:
-    mesh_client = None
 
 def load_exams():
     """Load the current exams database from JSON file."""
@@ -67,7 +49,7 @@ def save_exams(exams):
 
 def query_exam_status(exam_name, exam_desc):
     """
-    Ask Gemini AI and Mesh API for consensus on the latest dates and status code.
+    Ask Gemini AI for the latest dates and status code.
     """
     today = datetime.now().strftime("%B %d, %Y")
     
@@ -86,7 +68,6 @@ CRITICAL: You must output a JSON object with two keys:
 
 Do NOT include any explanation or extra text."""
 
-    gemini_result = None
     try:
         response = client.models.generate_content(
             model="gemini-2.5-flash",
@@ -106,37 +87,10 @@ Do NOT include any explanation or extra text."""
                 ),
             ),
         )
-        gemini_result = json.loads(response.text.strip())
+        return json.loads(response.text.strip())
     except Exception as e:
         print(f"  [ERROR] Gemini API error: {e}")
-
-    # Consensus Check with Mesh API
-    mesh_result = None
-    if mesh_client and MESH_API_KEY:
-        try:
-            mesh_res = mesh_client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": "You are a strict data extraction bot. Return JSON with status_code and display_text."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.0,
-                response_format={ "type": "json_object" }
-            )
-            mesh_result = json.loads(mesh_res.choices[0].message.content.strip())
-        except Exception as e:
-            print(f"  [WARNING] Mesh API consensus failed: {e}")
-
-    # Consensus Logic
-    if gemini_result and mesh_result:
-        if gemini_result.get("status_code") == mesh_result.get("status_code"):
-            return gemini_result
-        else:
-            print(f"  [CONSENSUS MISMATCH] Gemini: {gemini_result.get('status_code')} vs Mesh: {mesh_result.get('status_code')}")
-            # Fallback to UPCOMING for safety if they disagree
-            return {"status_code": "UPCOMING", "display_text": gemini_result.get("display_text")}
-    
-    return gemini_result
+        return None
 
 def has_exact_date(date_str):
     import re
