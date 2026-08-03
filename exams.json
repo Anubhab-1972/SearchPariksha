@@ -1,5 +1,18 @@
 [
   {
+    "id": "icmr_bret",
+    "name": "DHR ICMR BRET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": false,
+    "desc": "Biomedical Research Eligibility Test for DHR-ICMR JRF",
+    "goals": [
+      "Higher Studies",
+      "Research"
+    ],
+    "calDate": "2026-10-01"
+  },
+  {
     "id": "iit_jam_bt",
     "name": "IIT JAM Biotechnology (BT)",
     "category": "Core Science & Engineering",

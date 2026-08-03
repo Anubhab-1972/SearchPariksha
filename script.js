@@ -239,11 +239,11 @@ function getRelevantExams() {
 
   // Pharmacy
   if (state.course === 'B.Pharm' || state.course === 'M.Pharm') {
-    validIds = ['gpat', 'niper', 'gate_bt', ...govtExams];
+    validIds = ['gpat', 'niper', 'gate_bt', 'icmr_bret', ...govtExams];
   }
   // Biotech & Life Sciences
   else if (branch === 'Biotechnology' || branch === 'Botany' || branch === 'Zoology' || branch === 'Biotechnology / Life Sciences') {
-    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'gpat', 'niper', 'barc', ...govtExams];
+    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'gpat', 'niper', 'barc', 'icmr_bret', ...govtExams];
   }
   // Geology / Earth Sciences
   else if (branch === 'Geology / Earth Sciences') {
