@@ -19,6 +19,13 @@ import time
 from datetime import datetime
 
 try:
+    from dotenv import load_dotenv
+    load_dotenv()
+    from openai import OpenAI
+except ImportError:
+    pass
+
+try:
     from google import genai
     from google.genai import types
 except ImportError:
@@ -28,6 +35,7 @@ except ImportError:
 # --- Configuration ---
 EXAMS_JSON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "exams.json")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+MESH_API_KEY = os.environ.get("MESH_API_KEY", "")
 
 if not GEMINI_API_KEY:
     print("ERROR: GEMINI_API_KEY environment variable not set.")
@@ -36,6 +44,15 @@ if not GEMINI_API_KEY:
 
 # Initialize the Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
+
+# Initialize the Mesh API client (OpenAI compatible)
+try:
+    mesh_client = OpenAI(
+        api_key=MESH_API_KEY,
+        base_url="https://api.meshapi.ai/v1" if MESH_API_KEY else None
+    )
+except Exception:
+    mesh_client = None
 
 def load_exams():
     """Load the current exams database from JSON file."""
@@ -48,76 +65,78 @@ def save_exams(exams):
         json.dump(exams, f, indent=2, ensure_ascii=False)
     print(f"[OK] Saved {len(exams)} exams to {EXAMS_JSON_PATH}")
 
-def query_gemini_for_exam(exam_name, exam_desc):
+def query_exam_status(exam_name, exam_desc):
     """
-    Ask Gemini AI (with Google Search grounding) for the latest
-    notification/registration dates for a specific exam.
+    Ask Gemini AI and Mesh API for consensus on the latest dates and status code.
     """
     today = datetime.now().strftime("%B %d, %Y")
     
     prompt = f"""Today is {today}. I need the latest official status for the Indian competitive exam: "{exam_name}" ({exam_desc}).
 
 Search the internet and tell me:
-1. Is registration (the initial application to SIT for the exam) currently OPEN? 
-   - ONLY say yes if the OFFICIAL notification has been released by the conducting body and the application window is confirmed to be currently active.
-   - Ignore unofficial, tentative, or "expected" dates from clickbait websites.
-   - Carefully compare today's date ({today}) against the official start and end dates for online applications. 
-   - If today's date ({today}) is strictly AFTER the official last date (deadline) to apply, then registration is CLOSED. Do NOT say registration is open!
-   - If today's date falls on or between the start and end dates, registration is OPEN. If yes, what is the EXACT LAST DATE (deadline) to apply?
-   (NOTE: Ignore post-exam processes like counselling, seat allotment, or admission forms. We only care about applying to TAKE the exam.)
-2. If registration hasn't started yet for the upcoming exam, when is the registration expected to open?
-3. If registration for this cycle is CLOSED, check the exact EXAM DATE first.
-   - If the exam date is strictly BEFORE today ({today}), the exam is in the PAST (completely over). First, check if the OFFICIAL RESULTS have been announced for this past exam. If yes, tell me. If no, search for when registration opened THIS year, and add one year to predict when it will open NEXT year.
-   - If the exam date is AFTER today ({today}), the exam is in the FUTURE (upcoming). THEN check if the official ADMIT CARD (or hall ticket) has been released for this upcoming exam. If it has been released, tell me. If not, just tell me the exact exam date.
+1. Is registration currently OPEN?
+2. If hasn't started yet, when is it expected?
+3. If registration is CLOSED, check the exact EXAM DATE first.
+   - If exam is in the PAST, check for RESULTS.
+   - If exam is in the FUTURE, check for ADMIT CARD.
 
-CRITICAL: You must output a JSON object with a single key 'status_string'. The value must be ONLY a single short status string (max 80 characters). DO NOT write full sentences. Just output the status string matching one of these exact formats:
-- If open: "Registration Open! Last Date: Sep 28, 2026"
-- If registration hasn't started yet: "Expected Registration: September 2026"
-- If admit card is released: "Admit Card Released! Exam Date: Aug 15, 2026"
-- If registration closed but exam is UPCOMING: "Registration ended! Exam Date: Aug 15, 2026"
-- If registration closed and exam is OVER and results are announced: "Results Announced! Check Official Website"
-- If registration closed and exam is OVER and results are NOT announced: "Expected Registration: August 2027"
+CRITICAL: You must output a JSON object with two keys:
+1. 'status_code': Must be exactly one of: LIVE_REGISTRATION_OPEN, LIVE_ADMIT_CARD, LIVE_RESULTS, UPCOMING, PAST.
+2. 'display_text': A short display string (max 80 chars) like "Apply by: Oct 5, 2026" or "Expected Registration: Sep 2027" or "Admit Card Released! Exam Date: Aug 15".
 
-Do NOT include any explanation or extra text. Just the status string."""
+Do NOT include any explanation or extra text."""
 
+    gemini_result = None
     try:
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
-                system_instruction="You are a strict data extraction bot. NEVER output full sentences. ONLY output the exact short status string formats requested.",
+                system_instruction="You are a strict data extraction bot. ONLY output JSON.",
                 tools=[types.Tool(google_search=types.GoogleSearch())],
                 temperature=0.0,
                 response_mime_type="application/json",
                 response_schema=types.Schema(
                     type=types.Type.OBJECT,
                     properties={
-                        "status_string": types.Schema(
-                            type=types.Type.STRING,
-                            description="The exact short status string matching one of the requested formats."
-                        )
+                        "status_code": types.Schema(type=types.Type.STRING),
+                        "display_text": types.Schema(type=types.Type.STRING)
                     },
-                    required=["status_string"]
+                    required=["status_code", "display_text"]
                 ),
             ),
         )
-        
-        result_json = json.loads(response.text.strip())
-        result = result_json.get("status_string", "").strip()
-        # Clean up the response - remove quotes if Gemini wraps them
-        result = result.strip('"').strip("'").strip("`")
-        
-        # Basic sanity check: response should not be too long or empty
-        if len(result) > 120:
-            result = result[:120]
-        if len(result) < 5:
-            return None
-            
-        return result
-        
+        gemini_result = json.loads(response.text.strip())
     except Exception as e:
-        print(f"  [ERROR] Gemini API error for {exam_name}: {e}")
-        return None
+        print(f"  [ERROR] Gemini API error: {e}")
+
+    # Consensus Check with Mesh API
+    mesh_result = None
+    if mesh_client and MESH_API_KEY:
+        try:
+            mesh_res = mesh_client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "You are a strict data extraction bot. Return JSON with status_code and display_text."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.0,
+                response_format={ "type": "json_object" }
+            )
+            mesh_result = json.loads(mesh_res.choices[0].message.content.strip())
+        except Exception as e:
+            print(f"  [WARNING] Mesh API consensus failed: {e}")
+
+    # Consensus Logic
+    if gemini_result and mesh_result:
+        if gemini_result.get("status_code") == mesh_result.get("status_code"):
+            return gemini_result
+        else:
+            print(f"  [CONSENSUS MISMATCH] Gemini: {gemini_result.get('status_code')} vs Mesh: {mesh_result.get('status_code')}")
+            # Fallback to UPCOMING for safety if they disagree
+            return {"status_code": "UPCOMING", "display_text": gemini_result.get("display_text")}
+    
+    return gemini_result
 
 def has_exact_date(date_str):
     import re
@@ -172,17 +191,18 @@ def update_all_exams():
     updated_count = 0
     
     # --- Update GATE exams (one query for all) ---
-    print("\n[GATE] Querying Gemini for GATE exam dates...")
-    gate_result = query_gemini_for_exam(
+    print("\n[GATE] Querying for GATE exam dates...")
+    gate_result = query_exam_status(
         "GATE (Graduate Aptitude Test in Engineering)",
         "Common notification for all GATE papers - registration and exam dates"
     )
-    if gate_result:
-        print(f"  [GATE] AI says: {gate_result}")
+    if gate_result and "display_text" in gate_result:
+        print(f"  [GATE] AI says: {gate_result['display_text']} ({gate_result.get('status_code')})")
         for exam in gate_exams:
-            exam["dateStr"] = gate_result
-            exam["hasExactDate"] = has_exact_date(gate_result)
-            cal = extract_cal_date(gate_result)
+            exam["dateStr"] = gate_result["display_text"]
+            exam["status_code"] = gate_result.get("status_code", "UPCOMING")
+            exam["hasExactDate"] = has_exact_date(gate_result["display_text"])
+            cal = extract_cal_date(gate_result["display_text"])
             if cal:
                 exam["calDate"] = cal
         updated_count += len(gate_exams)
@@ -193,15 +213,16 @@ def update_all_exams():
     
     # --- Update non-GATE exams individually ---
     for exam in non_gate_exams:
-        print(f"\n[{exam['id']}] Querying Gemini for {exam['name']}...")
+        print(f"\n[{exam['id']}] Querying for {exam['name']}...")
         
-        result = query_gemini_for_exam(exam["name"], exam["desc"])
+        result = query_exam_status(exam["name"], exam["desc"])
         
-        if result:
-            print(f"  [{exam['id']}] AI says: {result}")
-            exam["dateStr"] = result
-            exam["hasExactDate"] = has_exact_date(result)
-            cal = extract_cal_date(result)
+        if result and "display_text" in result:
+            print(f"  [{exam['id']}] AI says: {result['display_text']} ({result.get('status_code')})")
+            exam["dateStr"] = result["display_text"]
+            exam["status_code"] = result.get("status_code", "UPCOMING")
+            exam["hasExactDate"] = has_exact_date(result["display_text"])
+            cal = extract_cal_date(result["display_text"])
             if cal:
                 exam["calDate"] = cal
             updated_count += 1

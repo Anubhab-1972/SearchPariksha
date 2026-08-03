@@ -28,11 +28,12 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install google-genai
+        run: pip install google-genai openai python-dotenv
 
       - name: Run exam updater script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MESH_API_KEY: ${{ secrets.MESH_API_KEY }}
         run: python update_exams.py
 
       - name: Commit and push changes

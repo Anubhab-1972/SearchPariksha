@@ -404,7 +404,9 @@ function renderTab3Exams() {
 
   relevantExams.forEach(exam => {
     const eligibility = evaluateEligibility(exam.id);
-    const isOpen = exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced"));
+    const isOpen = exam.status_code 
+      ? exam.status_code.startsWith('LIVE_') 
+      : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
     
     const item = document.createElement('div');
     item.className = 'exam-item';
@@ -424,11 +426,21 @@ function renderTab3Exams() {
     } else {
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
-      let displayDate = exam.dateStr;
-      if (exam.dateStr && exam.dateStr.toLowerCase().includes("admit card released")) {
-        displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
-      } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced")) {
-        displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
+      let displayDate = exam.display_text || exam.dateStr || '';
+      
+      if (exam.status_code) {
+        if (exam.status_code === 'LIVE_ADMIT_CARD') {
+          displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
+        } else if (exam.status_code === 'LIVE_RESULTS') {
+          displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
+        }
+      } else {
+        // Backward compatibility
+        if (exam.dateStr && exam.dateStr.toLowerCase().includes("admit card released")) {
+          displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
+        } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced")) {
+          displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
+        }
       }
 
       item.innerHTML = `
