@@ -345,6 +345,7 @@ function getRelevantExams() {
   });
 
   return filteredExams;
+}
 
 function evaluateEligibility(examId) {
   const yearText = state.year;
