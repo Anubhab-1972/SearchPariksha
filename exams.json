@@ -1,528 +1,528 @@
 [
-    {
-        "id":  "icmr_bret",
-        "name":  "DHR ICMR BRET",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: October 2026",
-        "hasExactDate":  false,
-        "desc":  "Biomedical Research Eligibility Test for DHR-ICMR JRF",
-        "goals":  [
-                      "Higher Studies",
-                      "Research"
-                  ],
-        "calDate":  "2026-10-01"
-    },
-    {
-        "id":  "iit_jam_bt",
-        "name":  "IIT JAM Biotechnology (BT)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Sc / Joint M.Sc-PhD at IITs \u0026 IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-09-20"
-    },
-    {
-        "id":  "gate_ch",
-        "name":  "GATE Chemical Engineering (CH)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Chemical/Polymer Engineering \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "aai_atc",
-        "name":  "AAI ATC JE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 2026",
-        "hasExactDate":  true,
-        "desc":  "Airports Authority of India - Junior Executive (Air Traffic Control)",
-        "goals":  [
-                      "Job"
-                  ],
-        "calDate":  "2026-08-20"
-    },
-    {
-        "id":  "gate_bt",
-        "name":  "GATE Biotechnology (BT)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Biotech \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_xl",
-        "name":  "GATE Life Sciences (XL)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Life Sciences",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_ey",
-        "name":  "GATE Ecology \u0026 Evolution (EY)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD/Research in Ecology",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_cs",
-        "name":  "GATE Computer Science (CS)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in CS \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_da",
-        "name":  "GATE Data Science \u0026 AI (DA)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Data Science",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_me",
-        "name":  "GATE Mechanical (ME)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs (BHEL, NTPC)",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_pi",
-        "name":  "GATE Production \u0026 Industrial (PI)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 Specialized PSU Roles",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_xe",
-        "name":  "GATE Engineering Sciences (XE)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "Interdisciplinary M.Tech / PhD",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_ce",
-        "name":  "GATE Civil Engineering (CE)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs (NHAI, ONGC)",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_es",
-        "name":  "GATE Environmental Science (ES)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech in Environment \u0026 Sustainability",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_ee",
-        "name":  "GATE Electrical Engineering (EE)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs (PowerGrid, NTPC)",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_ec",
-        "name":  "GATE Electronics \u0026 Comm. (EC)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_in",
-        "name":  "GATE Instrumentation (IN)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 Specialized PSU Roles",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_general",
-        "name":  "GATE (Engineering)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_st",
-        "name":  "GATE Statistics (ST)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech Data/Stats \u0026 PhD",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_ma",
-        "name":  "GATE Mathematics (MA)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD in Math / Applied Math",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_ph",
-        "name":  "GATE Physics (PH)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD in Physics / BARC",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_cy",
-        "name":  "GATE Chemistry (CY)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD in Chemistry / PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "csir",
-        "name":  "CSIR UGC NET",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 2027",
-        "hasExactDate":  true,
-        "calDate":  "2026-08-20",
-        "desc":  "JRF, Asst Professor",
-        "goals":  [
-                      "Higher Studies",
-                      "Job",
-                      "Not Sure"
-                  ]
-    },
-    {
-        "id":  "ugc",
-        "name":  "UGC NET",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "JRF, Assistant Professor (General)",
-        "goals":  [
-                      "Higher Studies",
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-20"
-    },
-    {
-        "id":  "vitmee",
-        "name":  "VITMEE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: November 2026",
-        "hasExactDate":  true,
-        "desc":  "VIT Masters Entrance Examination",
-        "goals":  [
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-11-20"
-    },
-    {
-        "id":  "ies",
-        "name":  "UPSC IES / ESE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "Engineering Services Examination",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-20"
-    },
-    {
-        "id":  "tifr",
-        "name":  "TIFR GS / JGEEBILS",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD at TIFR / Biology Research PhD",
-        "goals":  [
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-20"
-    },
-    {
-        "id":  "gatb",
-        "name":  "GAT-B",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: March 2027",
-        "hasExactDate":  true,
-        "desc":  "Biotech M.Sc/M.Tech",
-        "goals":  [
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-03-20"
-    },
-    {
-        "id":  "gpat",
-        "name":  "GPAT",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: December 2026",
-        "hasExactDate":  true,
-        "desc":  "Gateway for M.Pharm and NIPER JEE eligibility",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-12-20"
-    },
-    {
-        "id":  "niper",
-        "name":  "NIPER JEE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: April 2027",
-        "hasExactDate":  true,
-        "desc":  "M.S./M.Pharm \u0026 PhD at NIPERs (Requires GPAT/GATE/NET)",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-04-20"
-    },
-    {
-        "id":  "barc",
-        "name":  "BARC OCES/DGFS",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: December 2026",
-        "hasExactDate":  true,
-        "desc":  "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
-        "goals":  [
-                      "Job"
-                  ],
-        "calDate":  "2026-12-20"
-    },
-    {
-        "id":  "upsc_cse",
-        "name":  "UPSC Civil Services (CSE)",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Aug 21, 2026",
-        "hasExactDate":  true,
-        "desc":  "IAS, IPS, IFS Officers (Any Degree)",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-08-21"
-    },
-    {
-        "id":  "sbi_po",
-        "name":  "SBI PO",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  false,
-        "desc":  "Probationary Officer in State Bank of India",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-08-01"
-    },
-    {
-        "id":  "ibps_po",
-        "name":  "IBPS PO",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: October 2026",
-        "hasExactDate":  false,
-        "desc":  "Probationary Officer in Public Sector Banks",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-07-26"
-    },
-    {
-        "id":  "rrb_ntpc_grad",
-        "name":  "RRB NTPC (Graduate Posts)",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: October 2026",
-        "hasExactDate":  true,
-        "desc":  "Station Master, Goods Guard, etc.",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-10-20"
-    },
-    {
-        "id":  "rrb_ntpc_ug",
-        "name":  "RRB NTPC (Undergraduate Posts)",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Sep 17, 2026",
-        "hasExactDate":  true,
-        "desc":  "Clerk, Typist, Time Keeper (12th Pass)",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-17"
-    },
-    {
-        "id":  "ssc_chsl",
-        "name":  "SSC CHSL",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: July 2026",
-        "hasExactDate":  true,
-        "desc":  "Lower Division Clerk, Data Entry Operator",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-07-20"
-    },
-    {
-        "id":  "ibacio",
-        "name":  "IB ACIO",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: October 2026",
-        "hasExactDate":  true,
-        "desc":  "Intelligence Bureau Officer",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-10-20"
-    },
-    {
-        "id":  "ssc",
-        "name":  "SSC CGL",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Aug 2026",
-        "hasExactDate":  true,
-        "calDate":  "2026-08-20",
-        "desc":  "Group B \u0026 C Government Posts",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ]
-    },
-    {
-        "id":  "ctet",
-        "name":  "CTET",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Sep 6, 2026",
-        "hasExactDate":  true,
-        "desc":  "Eligibility for Central Government Teaching Jobs",
-        "goals":  [
-                      "Job"
-                  ],
-        "calDate":  "2026-09-06"
-    },
-    {
-        "id":  "atma",
-        "name":  "ATMA (AIMS Test for Management Admissions)",
-        "category":  "Management \u0026 MBA",
-        "dateStr":  "Checking dates...",
-        "hasExactDate":  false,
-        "desc":  "National level MBA/PGDM entrance exam",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "status_code":  "UPCOMING"
-    }
+  {
+    "id": "icmr_bret",
+    "name": "DHR ICMR BRET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": false,
+    "desc": "Biomedical Research Eligibility Test for DHR-ICMR JRF",
+    "goals": [
+      "Higher Studies",
+      "Research"
+    ],
+    "calDate": "2026-10-01"
+  },
+  {
+    "id": "iit_jam_bt",
+    "name": "IIT JAM Biotechnology (BT)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "M.Sc / Joint M.Sc-PhD at IITs & IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-09-20"
+  },
+  {
+    "id": "gate_ch",
+    "name": "GATE Chemical Engineering (CH)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Chemical/Polymer Engineering & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "aai_atc",
+    "name": "AAI ATC JE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 2026",
+    "hasExactDate": true,
+    "desc": "Airports Authority of India - Junior Executive (Air Traffic Control)",
+    "goals": [
+      "Job"
+    ],
+    "calDate": "2026-08-20"
+  },
+  {
+    "id": "gate_bt",
+    "name": "GATE Biotechnology (BT)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Biotech & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_xl",
+    "name": "GATE Life Sciences (XL)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Life Sciences",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_ey",
+    "name": "GATE Ecology & Evolution (EY)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD/Research in Ecology",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_cs",
+    "name": "GATE Computer Science (CS)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in CS & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_da",
+    "name": "GATE Data Science & AI (DA)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Data Science",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_me",
+    "name": "GATE Mechanical (ME)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs (BHEL, NTPC)",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_pi",
+    "name": "GATE Production & Industrial (PI)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & Specialized PSU Roles",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_xe",
+    "name": "GATE Engineering Sciences (XE)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "Interdisciplinary M.Tech / PhD",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_ce",
+    "name": "GATE Civil Engineering (CE)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs (NHAI, ONGC)",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_es",
+    "name": "GATE Environmental Science (ES)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech in Environment & Sustainability",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_ee",
+    "name": "GATE Electrical Engineering (EE)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs (PowerGrid, NTPC)",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_ec",
+    "name": "GATE Electronics & Comm. (EC)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_in",
+    "name": "GATE Instrumentation (IN)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & Specialized PSU Roles",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_general",
+    "name": "GATE (Engineering)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_st",
+    "name": "GATE Statistics (ST)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech Data/Stats & PhD",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_ma",
+    "name": "GATE Mathematics (MA)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD in Math / Applied Math",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_ph",
+    "name": "GATE Physics (PH)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD in Physics / BARC",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_cy",
+    "name": "GATE Chemistry (CY)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD in Chemistry / PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "csir",
+    "name": "CSIR UGC NET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 2027",
+    "hasExactDate": true,
+    "calDate": "2026-08-20",
+    "desc": "JRF, Asst Professor",
+    "goals": [
+      "Higher Studies",
+      "Job",
+      "Not Sure"
+    ]
+  },
+  {
+    "id": "ugc",
+    "name": "UGC NET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "JRF, Assistant Professor (General)",
+    "goals": [
+      "Higher Studies",
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-20"
+  },
+  {
+    "id": "vitmee",
+    "name": "VITMEE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: November 2026",
+    "hasExactDate": true,
+    "desc": "VIT Masters Entrance Examination",
+    "goals": [
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-11-20"
+  },
+  {
+    "id": "ies",
+    "name": "UPSC IES / ESE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "Engineering Services Examination",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-20"
+  },
+  {
+    "id": "tifr",
+    "name": "TIFR GS / JGEEBILS",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "PhD at TIFR / Biology Research PhD",
+    "goals": [
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-20"
+  },
+  {
+    "id": "gatb",
+    "name": "GAT-B",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: March 2027",
+    "hasExactDate": true,
+    "desc": "Biotech M.Sc/M.Tech",
+    "goals": [
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-03-20"
+  },
+  {
+    "id": "gpat",
+    "name": "GPAT",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: December 2026",
+    "hasExactDate": true,
+    "desc": "Gateway for M.Pharm and NIPER JEE eligibility",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-12-20"
+  },
+  {
+    "id": "niper",
+    "name": "NIPER JEE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: April 2027",
+    "hasExactDate": true,
+    "desc": "M.S./M.Pharm & PhD at NIPERs (Requires GPAT/GATE/NET)",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-04-20"
+  },
+  {
+    "id": "barc",
+    "name": "BARC OCES/DGFS",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: December 2026",
+    "hasExactDate": true,
+    "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
+    "goals": [
+      "Job"
+    ],
+    "calDate": "2026-12-20"
+  },
+  {
+    "id": "upsc_cse",
+    "name": "UPSC Civil Services (CSE)",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Aug 21, 2026",
+    "hasExactDate": true,
+    "desc": "IAS, IPS, IFS Officers (Any Degree)",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-08-21"
+  },
+  {
+    "id": "sbi_po",
+    "name": "SBI PO",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": false,
+    "desc": "Probationary Officer in State Bank of India",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-08-01"
+  },
+  {
+    "id": "ibps_po",
+    "name": "IBPS PO",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: October 2026",
+    "hasExactDate": false,
+    "desc": "Probationary Officer in Public Sector Banks",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-07-26"
+  },
+  {
+    "id": "rrb_ntpc_grad",
+    "name": "RRB NTPC (Graduate Posts)",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": true,
+    "desc": "Station Master, Goods Guard, etc.",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-10-20"
+  },
+  {
+    "id": "rrb_ntpc_ug",
+    "name": "RRB NTPC (Undergraduate Posts)",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Sep 17, 2026",
+    "hasExactDate": true,
+    "desc": "Clerk, Typist, Time Keeper (12th Pass)",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-17"
+  },
+  {
+    "id": "ssc_chsl",
+    "name": "SSC CHSL",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: July 2026",
+    "hasExactDate": true,
+    "desc": "Lower Division Clerk, Data Entry Operator",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-07-20"
+  },
+  {
+    "id": "ibacio",
+    "name": "IB ACIO",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": true,
+    "desc": "Intelligence Bureau Officer",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-10-20"
+  },
+  {
+    "id": "ssc",
+    "name": "SSC CGL",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Aug 2026",
+    "hasExactDate": true,
+    "calDate": "2026-08-20",
+    "desc": "Group B & C Government Posts",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ]
+  },
+  {
+    "id": "ctet",
+    "name": "CTET",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Sep 6, 2026",
+    "hasExactDate": true,
+    "desc": "Eligibility for Central Government Teaching Jobs",
+    "goals": [
+      "Job"
+    ],
+    "calDate": "2026-09-06"
+  },
+  {
+    "id": "atma",
+    "name": "ATMA (AIMS Test for Management Admissions)",
+    "category": "Management & MBA",
+    "dateStr": "Checking dates...",
+    "hasExactDate": false,
+    "desc": "National level MBA/PGDM entrance exam",
+    "goals": [
+      "Higher Studies"
+    ],
+    "status_code": "UPCOMING"
+  }
 ]
