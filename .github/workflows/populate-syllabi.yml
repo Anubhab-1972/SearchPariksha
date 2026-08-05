@@ -1,6 +1,9 @@
 name: Populate Exam Syllabi
 
 on:
+  push:
+    paths:
+      - '.github/workflows/populate-syllabi.yml'
   workflow_dispatch:
 
 jobs:
