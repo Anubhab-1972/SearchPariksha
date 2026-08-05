@@ -275,7 +275,7 @@ function getRelevantExams() {
   }
   // Polymer Science
   else if (branch === 'Polymer Science') {
-    validIds = ['gate_xe', 'gate_ch', 'barc', 'aai_atc', ...govtExams];
+    validIds = ['gate_xe', 'gate_ch', 'barc', 'aai_je', ...govtExams];
   }
   // Statistics
   else if (branch === 'Statistics') {
@@ -329,10 +329,14 @@ function getRelevantExams() {
   // Remove duplicates just in case
   validIds = [...new Set(validIds)];
 
-  // Add AAI ATC JE for eligible candidates
-  // Eligibility: Any B.E/B.Tech OR B.Sc with Physics/Maths
-  if (isEngineering || (isScience && ['Physics', 'Mathematics', 'Statistics', 'Computer Science / IT'].includes(branch))) {
-    validIds.push('aai_atc');
+  // Add AAI Junior Executive for eligible candidates
+  // Eligibility: Any B.E/B.Tech, MBA, Law, OR B.Sc with Physics/Maths
+  if (isEngineering || 
+      state.course === 'MBA' || 
+      state.course === 'LLB' || 
+      state.course === 'LL.M' || 
+      (isScience && ['Physics', 'Mathematics', 'Statistics', 'Computer Science / IT'].includes(branch))) {
+    validIds.push('aai_je');
   }
 
   const filteredExams = masterExamsDatabase.filter(exam => validIds.includes(exam.id));
