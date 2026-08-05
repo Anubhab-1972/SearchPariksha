@@ -1,0 +1,34 @@
+name: Populate Exam Syllabi
+
+on:
+  workflow_dispatch:
+
+jobs:
+  populate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-genai
+
+      - name: Run syllabus populator script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python populate_syllabi.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "Syllabus Bot"
+          git add exams.json
+          git diff --cached --quiet || (git commit -m "📚 Auto-populate missing exam syllabi" && git push)

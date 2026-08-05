@@ -572,7 +572,11 @@ function renderTab4Catalogue() {
           <div style="color: var(--text-main); font-weight: bold; font-size: 0.95em; margin-bottom: 15px;">
             ${liveBadge}${exam.dateStr}
           </div>
-          ${calBtnHtml}
+          ${exam.syllabus_summary ? `<div style="font-size: 0.85em; background: rgba(0,0,0,0.03); padding: 8px; border-radius: 4px; margin-bottom: 10px; width: 100%;"><strong>Syllabus Highlights:</strong><br>${exam.syllabus_summary.replace(/\n/g, '<br>')}</div>` : ''}
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            ${calBtnHtml}
+            ${exam.syllabus_link ? `<a href="${exam.syllabus_link}" target="_blank" style="display: inline-block; font-size: 0.85em; color: white; background: #28a745; padding: 8px 12px; border-radius: 4px; text-decoration: none; font-weight: bold;">📄 View Official Syllabus (PDF)</a>` : ''}
+          </div>
         </div>
       `;
       finalCatalogueList.appendChild(item);
@@ -719,6 +723,8 @@ function renderExamDirectory(searchTerm = "") {
       <div style="color: var(--text-main); font-weight: bold; font-size: 0.95em;">
         ${liveBadge}${exam.dateStr}
       </div>
+      ${exam.syllabus_summary ? `<div style="margin-top: 10px; font-size: 0.85em; background: rgba(0,0,0,0.03); padding: 8px; border-radius: 4px; width: 100%;"><strong>Syllabus Highlights:</strong><br>${exam.syllabus_summary.replace(/\n/g, '<br>')}</div>` : ''}
+      ${exam.syllabus_link ? `<a href="${exam.syllabus_link}" target="_blank" style="margin-top: 5px; display: inline-block; font-size: 0.85em; color: white; background: #28a745; padding: 4px 10px; border-radius: 4px; text-decoration: none; font-weight: bold;">📄 View Official Syllabus (PDF)</a>` : ''}
     `;
     directoryList.appendChild(item);
   });
