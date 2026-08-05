@@ -42,7 +42,14 @@ def fetch_syllabus(exam_name, exam_desc):
                 response_mime_type="application/json"
             )
         )
-        return json.loads(response.text.strip())
+        text = response.text.strip()
+        if text.startswith("```json"):
+            text = text[7:]
+        elif text.startswith("```"):
+            text = text[3:]
+        if text.endswith("```"):
+            text = text[:-3]
+        return json.loads(text.strip())
     except Exception as e:
         print(f"Error fetching {exam_name}: {e}")
         return None
