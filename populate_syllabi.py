@@ -38,7 +38,7 @@ def fetch_syllabus(exam_name, exam_desc):
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.1,
-                tools=[{"google_search": {}}],
+                tools=[types.Tool(google_search=types.GoogleSearch())],
                 response_mime_type="application/json"
             )
         )
