@@ -37,8 +37,7 @@ def fetch_syllabus(exam_name, exam_desc):
             model='gemini-1.5-flash',
             contents=prompt,
             config=types.GenerateContentConfig(
-                temperature=0.1,
-                tools=[{"google_search": {}}]
+                temperature=0.1
             )
         )
         text = response.text.strip()
