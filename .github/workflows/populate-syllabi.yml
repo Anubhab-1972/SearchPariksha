@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/populate-syllabi.yml'
+      - 'populate_syllabi.py'
   workflow_dispatch:
 
 jobs:
