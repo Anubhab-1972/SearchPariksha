@@ -11,7 +11,7 @@
                       "Research"
                   ],
         "calDate":  "2026-10-01",
-        "syllabus_link":  "https://main.icmr.nic.in",
+        "syllabus_link":  "https://aiimsexams.ac.in/landingpage/courses/advertisement/6905044c36116d6a6676a872",
         "syllabus_summary":  "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C)."
     },
     {
@@ -25,8 +25,8 @@
                       "Higher Studies"
                   ],
         "calDate":  "2026-09-20",
-        "syllabus_link":  "https://jam.iitd.ac.in",
-        "syllabus_summary":  "Covers undergraduate level Biology (Biochemistry, Microbiology, Cell Biology, Molecular Biology, Genetics), Chemistry (Physical, Organic, Inorganic), Mathematics, and Physics."
+        "syllabus_link":  "",
+        "syllabus_summary":  "Official website to be announced."
     },
     {
         "id":  "gate_ch",
@@ -514,7 +514,7 @@
                       "Not Sure"
                   ],
         "calDate":  "2026-10-20",
-        "syllabus_link":  "https://rrbcdg.gov.in",
+        "syllabus_link":  "https://www.rrbapply.gov.in/#/auth/landing",
         "syllabus_summary":  "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for graduate-level railway posts."
     },
     {
@@ -529,7 +529,7 @@
                       "Not Sure"
                   ],
         "calDate":  "2026-09-17",
-        "syllabus_link":  "https://rrbcdg.gov.in",
+        "syllabus_link":  "https://www.rrbapply.gov.in/#/auth/landing",
         "syllabus_summary":  "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for undergraduate-level railway posts."
     },
     {
@@ -544,7 +544,7 @@
                       "Not Sure"
                   ],
         "calDate":  "2026-07-20",
-        "syllabus_link":  "https://ssc.nic.in",
+        "syllabus_link":  "https://ssc.gov.in/",
         "syllabus_summary":  "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts."
     },
     {
@@ -574,7 +574,7 @@
                       "Job",
                       "Not Sure"
                   ],
-        "syllabus_link":  "https://ssc.nic.in",
+        "syllabus_link":  "https://ssc.gov.in/",
         "syllabus_summary":  "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts."
     },
     {
@@ -606,5 +606,3 @@
         "syllabus_summary":  "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections."
     }
 ]
-
-
