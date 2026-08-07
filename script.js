@@ -558,7 +558,9 @@ function renderTab4Catalogue() {
         </a>
       `;
 
-      const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
+      const isOpen = exam.status_code
+        ? exam.status_code.startsWith('LIVE_')
+        : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
       item.innerHTML = `
@@ -710,7 +712,9 @@ function renderExamDirectory(searchTerm = "") {
     item.style.alignItems = 'flex-start';
     item.style.gap = '8px';
 
-    const isOpen = exam.dateStr && exam.dateStr.toLowerCase().includes("registration open");
+    const isOpen = exam.status_code
+      ? exam.status_code.startsWith('LIVE_')
+      : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
     const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
     item.innerHTML = `
