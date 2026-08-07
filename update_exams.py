@@ -73,21 +73,17 @@ Do NOT include any explanation or extra text."""
             model="gemini-1.5-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
-                system_instruction="You are a strict data extraction bot. ONLY output JSON.",
-                tools=[types.Tool(google_search=types.GoogleSearch())],
-                temperature=0.0,
-                response_mime_type="application/json",
-                response_schema=types.Schema(
-                    type=types.Type.OBJECT,
-                    properties={
-                        "status_code": types.Schema(type=types.Type.STRING),
-                        "display_text": types.Schema(type=types.Type.STRING)
-                    },
-                    required=["status_code", "display_text"]
-                ),
+                system_instruction="You are a strict data extraction bot. ONLY output a valid JSON object.",
+                tools=[{"google_search": {}}],
+                temperature=0.0
             ),
         )
-        return json.loads(response.text.strip())
+        text = response.text.strip()
+        start = text.find('{')
+        end = text.rfind('}')
+        if start != -1 and end != -1:
+            return json.loads(text[start:end+1])
+        return None
     except Exception as e:
         print(f"  [ERROR] Gemini API error: {e}")
         return None
