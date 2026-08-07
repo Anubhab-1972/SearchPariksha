@@ -107,7 +107,10 @@
         <div id="tab-5" class="tab">
           <h2 class="tab-title">📖 Exam Directory</h2>
           <div style="margin-bottom: 20px;">
-            <input type="text" id="exam-search" placeholder="Search for an exam (e.g., GATE, CSIR)..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-main); font-size: 1rem;">
+          <div style="position: relative; max-width: 600px; margin: 0 auto 20px auto;">
+            <span style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.2rem;">🔍</span>
+            <input type="text" id="exam-search" placeholder="Search for an exam (e.g., GATE, CSIR)..." style="width: 100%; padding: 12px 12px 12px 45px; border-radius: 25px; border: 2px solid var(--primary-color); background: var(--glass-bg); color: var(--text-main); font-size: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); outline: none; transition: box-shadow 0.3s ease;">
+          </div>
           </div>
           <div class="exam-list" id="directory-list">
             <!-- Dynamically populated via JS -->

@@ -39,18 +39,16 @@ def fetch_syllabus(exam_name, exam_desc):
             config=types.GenerateContentConfig(
                 temperature=0.1,
                 tools=[types.Tool(google_search=types.GoogleSearch())],
-                response_mime_type="application/json",
-                response_schema=types.Schema(
-                    type=types.Type.OBJECT,
-                    properties={
-                        "syllabus_summary": types.Schema(type=types.Type.STRING),
-                        "syllabus_link": types.Schema(type=types.Type.STRING)
-                    },
-                    required=["syllabus_summary", "syllabus_link"]
-                )
+                response_mime_type="application/json"
             )
         )
-        return json.loads(response.text.strip())
+        text = response.text.strip()
+        start = text.find('{')
+        end = text.rfind('}')
+        if start != -1 and end != -1:
+            json_text = text[start:end+1]
+            return json.loads(json_text)
+        return None
     except Exception as e:
         print(f"Error fetching {exam_name}: {e}")
         return None
