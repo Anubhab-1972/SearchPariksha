@@ -70,11 +70,11 @@ Do NOT include any explanation or extra text."""
 
     try:
         response = client.models.generate_content(
-            model="gemini-1.5-flash",
+            model="gemini-2.0-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
                 system_instruction="You are a strict data extraction bot. ONLY output a valid JSON object.",
-                tools=[{"google_search": {}}],
+                tools=[types.Tool(google_search=types.GoogleSearch())],
                 temperature=0.0
             ),
         )
