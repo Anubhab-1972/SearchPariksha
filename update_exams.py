@@ -16,12 +16,22 @@ import json
 import os
 import sys
 import time
+import traceback
 from datetime import datetime
+
+print(f"Python version: {sys.version}")
+try:
+    import google.genai as genai_check
+    print(f"google-genai version: {genai_check.__version__}")
+except Exception as e:
+    print(f"Could not get version: {e}")
+
 try:
     from google import genai
     from google.genai import types
-except ImportError:
-    print("ERROR: google-genai package not installed. Run: pip install google-genai")
+    print("google-genai imported OK")
+except ImportError as e:
+    print(f"ERROR: google-genai package not installed: {e}")
     sys.exit(1)
 
 # --- Configuration ---
@@ -86,6 +96,7 @@ Do NOT include any explanation or extra text."""
         return None
     except Exception as e:
         print(f"  [ERROR] Gemini API error: {e}")
+        traceback.print_exc()
         return None
 
 def has_exact_date(date_str):

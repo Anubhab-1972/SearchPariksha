@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: pip install google-genai
 
+      - name: Debug - Show installed package versions
+        run: pip show google-genai
+
       - name: Run exam updater script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
