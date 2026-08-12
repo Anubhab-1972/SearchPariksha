@@ -48,12 +48,12 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 def load_exams():
     """Load the current exams database from JSON file."""
-    with open(EXAMS_JSON_PATH, "r", encoding="utf-8") as f:
+    with open(EXAMS_JSON_PATH, "r", encoding="utf-8-sig") as f:  # utf-8-sig strips BOM if present
         return json.load(f)
 
 def save_exams(exams):
     """Save the updated exams database to JSON file."""
-    with open(EXAMS_JSON_PATH, "w", encoding="utf-8") as f:
+    with open(EXAMS_JSON_PATH, "w", encoding="utf-8") as f:  # utf-8 without BOM
         json.dump(exams, f, indent=2, ensure_ascii=False)
     print(f"[OK] Saved {len(exams)} exams to {EXAMS_JSON_PATH}")
 
