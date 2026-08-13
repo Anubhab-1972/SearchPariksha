@@ -1,609 +1,609 @@
 [
-    {
-        "id":  "icmr_bret",
-        "name":  "DHR ICMR BRET",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: October 2026",
-        "hasExactDate":  false,
-        "desc":  "Biomedical Research Eligibility Test for DHR-ICMR JRF",
-        "goals":  [
-                      "Higher Studies",
-                      "Research"
-                  ],
-        "calDate":  "2026-10-01",
-        "syllabus_link":  "https://aiimsexams.ac.in/landingpage/courses/advertisement/6905044c36116d6a6676a872",
-        "syllabus_summary":  "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C)."
-    },
-    {
-        "id":  "iit_jam_bt",
-        "name":  "IIT JAM Biotechnology (BT)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Sc / Joint M.Sc-PhD at IITs \u0026 IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-09-20",
-        "syllabus_link":  "",
-        "syllabus_summary":  "Official website to be announced."
-    },
-    {
-        "id":  "gate_ch",
-        "name":  "GATE Chemical Engineering (CH)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Chemical/Polymer Engineering \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Process Calculations, Thermodynamics, Fluid Mechanics, Heat Transfer, Mass Transfer, Chemical Reaction Engineering, Process Control, Plant Design, and Chemical Technology."
-    },
-    {
-        "id":  "aai_je",
-        "name":  "AAI Junior Executive",
-        "category":  "Core Science \u0026 Engineering",
-        "hasExactDate":  true,
-        "desc":  "Airports Authority of India - Junior Executive (ATC, IT, Architecture, Engineering, etc). Eligibility: B.E/B.Tech, MBA, or B.Sc (Physics/Math)",
-        "goals":  [
-                      "Job"
-                  ],
-        "syllabus_link":  "https://aai.aero",
-        "syllabus_summary":  "Covers General Intelligence, Reasoning, Numerical Ability, General Awareness, English Language, and discipline-specific technical domain subjects such as Physics and Mathematics for ATC.",
-        "status_code":  "LIVE_REGISTRATION_OPEN",
-        "dateStr":  "Registration Open! Apply by Sep 7, 2026",
-        "calDate":  "2026-09-07"
-    },
-    {
-        "id":  "gate_bt",
-        "name":  "GATE Biotechnology (BT)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Biotech \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, General Biology, Genetics, Cell and Molecular Biology, Fundamentals of Biological Engineering, Bioprocess Engineering, Recombinant DNA Technology, and Bioinformatics."
-    },
-    {
-        "id":  "gate_xl",
-        "name":  "GATE Life Sciences (XL)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Life Sciences",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Chemistry (Compulsory) along with elective sections in Biochemistry, Botany, Microbiology, Zoology, and Food Technology."
-    },
-    {
-        "id":  "gate_ey",
-        "name":  "GATE Ecology \u0026 Evolution (EY)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD/Research in Ecology",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Ecology, Evolution, Behavioural Ecology, Applied Ecology, Quantitative Ecology, and Evolutionary Genetics."
-    },
-    {
-        "id":  "gate_cs",
-        "name":  "GATE Computer Science (CS)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in CS \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Discrete Mathematics, Engineering Mathematics, Digital Logic, Computer Organization, Programming and Data Structures, Algorithms, Theory of Computation, Compiler Design, Operating Systems, Databases, and Computer Networks."
-    },
-    {
-        "id":  "gate_da",
-        "name":  "GATE Data Science \u0026 AI (DA)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD in Data Science",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Probability and Statistics, Linear Algebra, Calculus and Optimization, Programming, Data Structures and Algorithms, Database Management and Warehousing, Machine Learning, and Artificial Intelligence."
-    },
-    {
-        "id":  "gate_me",
-        "name":  "GATE Mechanical (ME)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs (BHEL, NTPC)",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Applied Mechanics and Design, Fluid Mechanics and Thermal Sciences, and Materials, Manufacturing and Industrial Engineering."
-    },
-    {
-        "id":  "gate_pi",
-        "name":  "GATE Production \u0026 Industrial (PI)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 Specialized PSU Roles",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, General Engineering, Manufacturing Processes, Quality and Reliability, Operations Research, and Industrial Engineering."
-    },
-    {
-        "id":  "gate_xe",
-        "name":  "GATE Engineering Sciences (XE)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "Interdisciplinary M.Tech / PhD",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics (Compulsory) and choice of two subjects among Fluid Mechanics, Materials Science, Solid Mechanics, Thermodynamics, Polymer Science, Food Technology, and Atmospheric Sciences."
-    },
-    {
-        "id":  "gate_ce",
-        "name":  "GATE Civil Engineering (CE)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs (NHAI, ONGC)",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Structural Engineering, Geotechnical Engineering, Water Resources Engineering, Environmental Engineering, Transportation Engineering, and Geomatics Engineering."
-    },
-    {
-        "id":  "gate_es",
-        "name":  "GATE Environmental Science (ES)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech in Environment \u0026 Sustainability",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Mathematics Foundation, Environmental Chemistry, Environmental Microbiology, Water and Wastewater Engineering, Air Pollution and Control, Solid and Hazardous Waste Management, and Environmental Management."
-    },
-    {
-        "id":  "gate_ee",
-        "name":  "GATE Electrical Engineering (EE)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs (PowerGrid, NTPC)",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Electric Circuits, Electromagnetic Fields, Signals and Systems, Electrical Machines, Power Systems, Control Systems, Electrical Measurements, Analog and Digital Electronics, and Power Electronics."
-    },
-    {
-        "id":  "gate_ec",
-        "name":  "GATE Electronics \u0026 Comm. (EC)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Networks, Signals and Systems, Electronic Devices, Analog Circuits, Digital Circuits, Control Systems, Communications, and Electromagnetics."
-    },
-    {
-        "id":  "gate_in",
-        "name":  "GATE Instrumentation (IN)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech \u0026 Specialized PSU Roles",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Electricity and Magnetism, Signals and Systems, Transducers and Optical Instrumentation, Analog and Digital Electronics, Control Systems, Measurements, and Process Control."
-    },
-    {
-        "id":  "gate_general",
-        "name":  "GATE (Engineering)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech / PhD \u0026 PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-08-14"
-    },
-    {
-        "id":  "gate_st",
-        "name":  "GATE Statistics (ST)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "M.Tech Data/Stats \u0026 PhD",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Calculus, Matrix Theory, Probability, Standard Distributions, Stochastic Processes, Estimation, Testing of Hypotheses, Non-parametric Tests, Multivariate Analysis, and Regression Analysis."
-    },
-    {
-        "id":  "gate_ma",
-        "name":  "GATE Mathematics (MA)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD in Math / Applied Math",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Calculus, Linear Algebra, Real Analysis, Complex Analysis, Ordinary and Partial Differential Equations, Algebra, Functional Analysis, Numerical Analysis, Topology, and Linear Programming."
-    },
-    {
-        "id":  "gate_ph",
-        "name":  "GATE Physics (PH)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD in Physics / BARC",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Mathematical Physics, Classical Mechanics, Electromagnetic Theory, Quantum Mechanics, Thermodynamics and Statistical Physics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, and Electronics."
-    },
-    {
-        "id":  "gate_cy",
-        "name":  "GATE Chemistry (CY)",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD in Chemistry / PSU Jobs",
-        "goals":  [
-                      "Job",
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-08-14",
-        "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Physical Chemistry (Structure, Equilibrium, Kinetics), Inorganic Chemistry (Main group, Transition Metals, Organometallics), and Organic Chemistry (Stereochemistry, Reaction Mechanisms, Synthesis, Biomolecules)."
-    },
-    {
-        "id":  "csir",
-        "name":  "CSIR UGC NET",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 2027",
-        "hasExactDate":  true,
-        "calDate":  "2026-08-20",
-        "desc":  "JRF, Asst Professor",
-        "goals":  [
-                      "Higher Studies",
-                      "Job",
-                      "Not Sure"
-                  ],
-        "syllabus_link":  "https://csirhrdg.res.in",
-        "syllabus_summary":  "Covers General Aptitude (Part A) and advanced domain knowledge (Part B and C) across Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences, and Physical Sciences."
-    },
-    {
-        "id":  "ugc",
-        "name":  "UGC NET",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "JRF, Assistant Professor (General)",
-        "goals":  [
-                      "Higher Studies",
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-20",
-        "syllabus_link":  "https://ugcnet.nta.ac.in",
-        "syllabus_summary":  "Covers Paper 1 (General Paper on Teaching and Research Aptitude, Reasoning, ICT, Higher Education System) and Paper 2 (Elective subject-specific postgraduate discipline)."
-    },
-    {
-        "id":  "vitmee",
-        "name":  "VITMEE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: November 2026",
-        "hasExactDate":  true,
-        "desc":  "VIT Masters Entrance Examination",
-        "goals":  [
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-11-20",
-        "syllabus_link":  "https://vit.ac.in",
-        "syllabus_summary":  "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills."
-    },
-    {
-        "id":  "ies",
-        "name":  "UPSC IES / ESE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "Engineering Services Examination",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-20",
-        "syllabus_link":  "https://upsc.gov.in",
-        "syllabus_summary":  "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains."
-    },
-    {
-        "id":  "tifr",
-        "name":  "TIFR GS / JGEEBILS",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  true,
-        "desc":  "PhD at TIFR / Biology Research PhD",
-        "goals":  [
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-20",
-        "syllabus_link":  "https://www.tifr.res.in",
-        "syllabus_summary":  "Evaluates basic scientific knowledge across General Science (Physics, Chemistry, Math), Biology (Cell/Molecular Biology, Genetics, Biochemistry), and scientific reasoning."
-    },
-    {
-        "id":  "gatb",
-        "name":  "GAT-B",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: March 2027",
-        "hasExactDate":  true,
-        "desc":  "Biotech M.Sc/M.Tech",
-        "goals":  [
-                      "Higher Studies",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-03-20",
-        "syllabus_link":  "https://dbt.nic.in",
-        "syllabus_summary":  "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor\u0027s level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B)."
-    },
-    {
-        "id":  "gpat",
-        "name":  "GPAT",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: December 2026",
-        "hasExactDate":  true,
-        "desc":  "Gateway for M.Pharm and NIPER JEE eligibility",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-12-20",
-        "syllabus_link":  "https://natboard.edu.in",
-        "syllabus_summary":  "Covers core B.Pharm subjects including Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy, Pharmacology, and allied pharmaceutical science disciplines."
-    },
-    {
-        "id":  "niper",
-        "name":  "NIPER JEE",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: April 2027",
-        "hasExactDate":  true,
-        "desc":  "M.S./M.Pharm \u0026 PhD at NIPERs (Requires GPAT/GATE/NET)",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "calDate":  "2026-04-20",
-        "syllabus_link":  "https://niperraipur.ac.in",
-        "syllabus_summary":  "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude."
-    },
-    {
-        "id":  "barc",
-        "name":  "BARC OCES/DGFS",
-        "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: December 2026",
-        "hasExactDate":  true,
-        "desc":  "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
-        "goals":  [
-                      "Job"
-                  ],
-        "calDate":  "2026-12-20",
-        "syllabus_link":  "https://www.barc.gov.in",
-        "syllabus_summary":  "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate\u0027s specific discipline."
-    },
-    {
-        "id":  "upsc_cse",
-        "name":  "UPSC Civil Services (CSE)",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Aug 21, 2026",
-        "hasExactDate":  true,
-        "desc":  "IAS, IPS, IFS Officers (Any Degree)",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-08-21",
-        "syllabus_link":  "https://upsc.gov.in",
-        "syllabus_summary":  "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers."
-    },
-    {
-        "id":  "sbi_po",
-        "name":  "SBI PO",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: September 2026",
-        "hasExactDate":  false,
-        "desc":  "Probationary Officer in State Bank of India",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-08-01",
-        "syllabus_link":  "https://sbi.co.in/careers",
-        "syllabus_summary":  "Covers Reasoning Ability, Quantitative Aptitude, English Language, General/Economy/Banking Awareness, and Data Analysis and Interpretation across Prelims and Mains."
-    },
-    {
-        "id":  "ibps_po",
-        "name":  "IBPS PO",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: October 2026",
-        "hasExactDate":  false,
-        "desc":  "Probationary Officer in Public Sector Banks",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-07-26",
-        "syllabus_link":  "https://ibps.in",
-        "syllabus_summary":  "Covers Reasoning Ability and Computer Aptitude, Quantitative Aptitude and Data Interpretation, General/Economy/Banking Awareness, and English Language including Descriptive Writing."
-    },
-    {
-        "id":  "rrb_ntpc_grad",
-        "name":  "RRB NTPC (Graduate Posts)",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: October 2026",
-        "hasExactDate":  true,
-        "desc":  "Station Master, Goods Guard, etc.",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-10-20",
-        "syllabus_link":  "https://www.rrbapply.gov.in/#/auth/landing",
-        "syllabus_summary":  "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for graduate-level railway posts."
-    },
-    {
-        "id":  "rrb_ntpc_ug",
-        "name":  "RRB NTPC (Undergraduate Posts)",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Sep 17, 2026",
-        "hasExactDate":  true,
-        "desc":  "Clerk, Typist, Time Keeper (12th Pass)",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-09-17",
-        "syllabus_link":  "https://www.rrbapply.gov.in/#/auth/landing",
-        "syllabus_summary":  "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for undergraduate-level railway posts."
-    },
-    {
-        "id":  "ssc_chsl",
-        "name":  "SSC CHSL",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: July 2026",
-        "hasExactDate":  true,
-        "desc":  "Lower Division Clerk, Data Entry Operator",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-07-20",
-        "syllabus_link":  "https://ssc.gov.in/",
-        "syllabus_summary":  "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts."
-    },
-    {
-        "id":  "ibacio",
-        "name":  "IB ACIO",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: October 2026",
-        "hasExactDate":  true,
-        "desc":  "Intelligence Bureau Officer",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "calDate":  "2026-10-20",
-        "syllabus_link":  "https://mha.gov.in",
-        "syllabus_summary":  "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2."
-    },
-    {
-        "id":  "ssc",
-        "name":  "SSC CGL",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Aug 2026",
-        "hasExactDate":  true,
-        "calDate":  "2026-08-20",
-        "desc":  "Group B \u0026 C Government Posts",
-        "goals":  [
-                      "Job",
-                      "Not Sure"
-                  ],
-        "syllabus_link":  "https://ssc.gov.in/",
-        "syllabus_summary":  "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts."
-    },
-    {
-        "id":  "ctet",
-        "name":  "CTET",
-        "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: Sep 6, 2026",
-        "hasExactDate":  true,
-        "desc":  "Eligibility for Central Government Teaching Jobs",
-        "goals":  [
-                      "Job"
-                  ],
-        "calDate":  "2026-09-06",
-        "syllabus_link":  "https://ctet.nic.in",
-        "syllabus_summary":  "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II)."
-    },
-    {
-        "id":  "atma",
-        "name":  "ATMA (AIMS Test for Management Admissions)",
-        "category":  "Management \u0026 MBA",
-        "dateStr":  "Checking dates...",
-        "hasExactDate":  false,
-        "desc":  "National level MBA/PGDM entrance exam",
-        "goals":  [
-                      "Higher Studies"
-                  ],
-        "status_code":  "UPCOMING",
-        "syllabus_link":  "https://www.atmaaims.com",
-        "syllabus_summary":  "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections."
-    }
+  {
+    "id": "icmr_bret",
+    "name": "DHR ICMR BRET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": false,
+    "desc": "Biomedical Research Eligibility Test for DHR-ICMR JRF",
+    "goals": [
+      "Higher Studies",
+      "Research"
+    ],
+    "calDate": "2026-10-01",
+    "syllabus_link": "https://aiimsexams.ac.in/landingpage/courses/advertisement/6905044c36116d6a6676a872",
+    "syllabus_summary": "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C)."
+  },
+  {
+    "id": "iit_jam_bt",
+    "name": "IIT JAM Biotechnology (BT)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "M.Sc / Joint M.Sc-PhD at IITs & IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-09-20",
+    "syllabus_link": "",
+    "syllabus_summary": "Official website to be announced."
+  },
+  {
+    "id": "gate_ch",
+    "name": "GATE Chemical Engineering (CH)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Chemical/Polymer Engineering & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, Process Calculations, Thermodynamics, Fluid Mechanics, Heat Transfer, Mass Transfer, Chemical Reaction Engineering, Process Control, Plant Design, and Chemical Technology."
+  },
+  {
+    "id": "aai_je",
+    "name": "AAI Junior Executive",
+    "category": "Core Science & Engineering",
+    "hasExactDate": true,
+    "desc": "Airports Authority of India - Junior Executive (ATC, IT, Architecture, Engineering, etc). Eligibility: B.E/B.Tech, MBA, or B.Sc (Physics/Math)",
+    "goals": [
+      "Job"
+    ],
+    "syllabus_link": "https://aai.aero",
+    "syllabus_summary": "Covers General Intelligence, Reasoning, Numerical Ability, General Awareness, English Language, and discipline-specific technical domain subjects such as Physics and Mathematics for ATC.",
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "dateStr": "Registration Open! Apply by Sep 7, 2026",
+    "calDate": "2026-09-07"
+  },
+  {
+    "id": "gate_bt",
+    "name": "GATE Biotechnology (BT)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Biotech & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, General Biology, Genetics, Cell and Molecular Biology, Fundamentals of Biological Engineering, Bioprocess Engineering, Recombinant DNA Technology, and Bioinformatics."
+  },
+  {
+    "id": "gate_xl",
+    "name": "GATE Life Sciences (XL)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Life Sciences",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Chemistry (Compulsory) along with elective sections in Biochemistry, Botany, Microbiology, Zoology, and Food Technology."
+  },
+  {
+    "id": "gate_ey",
+    "name": "GATE Ecology & Evolution (EY)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD/Research in Ecology",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Ecology, Evolution, Behavioural Ecology, Applied Ecology, Quantitative Ecology, and Evolutionary Genetics."
+  },
+  {
+    "id": "gate_cs",
+    "name": "GATE Computer Science (CS)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in CS & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Discrete Mathematics, Engineering Mathematics, Digital Logic, Computer Organization, Programming and Data Structures, Algorithms, Theory of Computation, Compiler Design, Operating Systems, Databases, and Computer Networks."
+  },
+  {
+    "id": "gate_da",
+    "name": "GATE Data Science & AI (DA)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD in Data Science",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Probability and Statistics, Linear Algebra, Calculus and Optimization, Programming, Data Structures and Algorithms, Database Management and Warehousing, Machine Learning, and Artificial Intelligence."
+  },
+  {
+    "id": "gate_me",
+    "name": "GATE Mechanical (ME)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs (BHEL, NTPC)",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, Applied Mechanics and Design, Fluid Mechanics and Thermal Sciences, and Materials, Manufacturing and Industrial Engineering."
+  },
+  {
+    "id": "gate_pi",
+    "name": "GATE Production & Industrial (PI)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & Specialized PSU Roles",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, General Engineering, Manufacturing Processes, Quality and Reliability, Operations Research, and Industrial Engineering."
+  },
+  {
+    "id": "gate_xe",
+    "name": "GATE Engineering Sciences (XE)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "Interdisciplinary M.Tech / PhD",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics (Compulsory) and choice of two subjects among Fluid Mechanics, Materials Science, Solid Mechanics, Thermodynamics, Polymer Science, Food Technology, and Atmospheric Sciences."
+  },
+  {
+    "id": "gate_ce",
+    "name": "GATE Civil Engineering (CE)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs (NHAI, ONGC)",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, Structural Engineering, Geotechnical Engineering, Water Resources Engineering, Environmental Engineering, Transportation Engineering, and Geomatics Engineering."
+  },
+  {
+    "id": "gate_es",
+    "name": "GATE Environmental Science (ES)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech in Environment & Sustainability",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Mathematics Foundation, Environmental Chemistry, Environmental Microbiology, Water and Wastewater Engineering, Air Pollution and Control, Solid and Hazardous Waste Management, and Environmental Management."
+  },
+  {
+    "id": "gate_ee",
+    "name": "GATE Electrical Engineering (EE)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs (PowerGrid, NTPC)",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, Electric Circuits, Electromagnetic Fields, Signals and Systems, Electrical Machines, Power Systems, Control Systems, Electrical Measurements, Analog and Digital Electronics, and Power Electronics."
+  },
+  {
+    "id": "gate_ec",
+    "name": "GATE Electronics & Comm. (EC)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, Networks, Signals and Systems, Electronic Devices, Analog Circuits, Digital Circuits, Control Systems, Communications, and Electromagnetics."
+  },
+  {
+    "id": "gate_in",
+    "name": "GATE Instrumentation (IN)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech & Specialized PSU Roles",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Engineering Mathematics, Electricity and Magnetism, Signals and Systems, Transducers and Optical Instrumentation, Analog and Digital Electronics, Control Systems, Measurements, and Process Control."
+  },
+  {
+    "id": "gate_general",
+    "name": "GATE (Engineering)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech / PhD & PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-08-14"
+  },
+  {
+    "id": "gate_st",
+    "name": "GATE Statistics (ST)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "M.Tech Data/Stats & PhD",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Calculus, Matrix Theory, Probability, Standard Distributions, Stochastic Processes, Estimation, Testing of Hypotheses, Non-parametric Tests, Multivariate Analysis, and Regression Analysis."
+  },
+  {
+    "id": "gate_ma",
+    "name": "GATE Mathematics (MA)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD in Math / Applied Math",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Calculus, Linear Algebra, Real Analysis, Complex Analysis, Ordinary and Partial Differential Equations, Algebra, Functional Analysis, Numerical Analysis, Topology, and Linear Programming."
+  },
+  {
+    "id": "gate_ph",
+    "name": "GATE Physics (PH)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD in Physics / BARC",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Mathematical Physics, Classical Mechanics, Electromagnetic Theory, Quantum Mechanics, Thermodynamics and Statistical Physics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, and Electronics."
+  },
+  {
+    "id": "gate_cy",
+    "name": "GATE Chemistry (CY)",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 14, 2026",
+    "hasExactDate": true,
+    "desc": "PhD in Chemistry / PSU Jobs",
+    "goals": [
+      "Job",
+      "Higher Studies"
+    ],
+    "calDate": "2026-08-14",
+    "syllabus_link": "https://gate2027.iitm.ac.in/",
+    "syllabus_summary": "Covers Physical Chemistry (Structure, Equilibrium, Kinetics), Inorganic Chemistry (Main group, Transition Metals, Organometallics), and Organic Chemistry (Stereochemistry, Reaction Mechanisms, Synthesis, Biomolecules)."
+  },
+  {
+    "id": "csir",
+    "name": "CSIR UGC NET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: August 2027",
+    "hasExactDate": true,
+    "calDate": "2026-08-20",
+    "desc": "JRF, Asst Professor",
+    "goals": [
+      "Higher Studies",
+      "Job",
+      "Not Sure"
+    ],
+    "syllabus_link": "https://csirhrdg.res.in",
+    "syllabus_summary": "Covers General Aptitude (Part A) and advanced domain knowledge (Part B and C) across Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences, and Physical Sciences."
+  },
+  {
+    "id": "ugc",
+    "name": "UGC NET",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "JRF, Assistant Professor (General)",
+    "goals": [
+      "Higher Studies",
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-20",
+    "syllabus_link": "https://ugcnet.nta.ac.in",
+    "syllabus_summary": "Covers Paper 1 (General Paper on Teaching and Research Aptitude, Reasoning, ICT, Higher Education System) and Paper 2 (Elective subject-specific postgraduate discipline)."
+  },
+  {
+    "id": "vitmee",
+    "name": "VITMEE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: November 2026",
+    "hasExactDate": true,
+    "desc": "VIT Masters Entrance Examination",
+    "goals": [
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-11-20",
+    "syllabus_link": "https://vit.ac.in",
+    "syllabus_summary": "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills."
+  },
+  {
+    "id": "ies",
+    "name": "UPSC IES / ESE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "Engineering Services Examination",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-20",
+    "syllabus_link": "https://upsc.gov.in",
+    "syllabus_summary": "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains."
+  },
+  {
+    "id": "tifr",
+    "name": "TIFR GS / JGEEBILS",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": true,
+    "desc": "PhD at TIFR / Biology Research PhD",
+    "goals": [
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-20",
+    "syllabus_link": "https://www.tifr.res.in",
+    "syllabus_summary": "Evaluates basic scientific knowledge across General Science (Physics, Chemistry, Math), Biology (Cell/Molecular Biology, Genetics, Biochemistry), and scientific reasoning."
+  },
+  {
+    "id": "gatb",
+    "name": "GAT-B",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: March 2027",
+    "hasExactDate": true,
+    "desc": "Biotech M.Sc/M.Tech",
+    "goals": [
+      "Higher Studies",
+      "Not Sure"
+    ],
+    "calDate": "2026-03-20",
+    "syllabus_link": "https://dbt.nic.in",
+    "syllabus_summary": "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor's level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B)."
+  },
+  {
+    "id": "gpat",
+    "name": "GPAT",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: December 2026",
+    "hasExactDate": true,
+    "desc": "Gateway for M.Pharm and NIPER JEE eligibility",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-12-20",
+    "syllabus_link": "https://natboard.edu.in",
+    "syllabus_summary": "Covers core B.Pharm subjects including Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy, Pharmacology, and allied pharmaceutical science disciplines."
+  },
+  {
+    "id": "niper",
+    "name": "NIPER JEE",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: April 2027",
+    "hasExactDate": true,
+    "desc": "M.S./M.Pharm & PhD at NIPERs (Requires GPAT/GATE/NET)",
+    "goals": [
+      "Higher Studies"
+    ],
+    "calDate": "2026-04-20",
+    "syllabus_link": "https://niperraipur.ac.in",
+    "syllabus_summary": "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude."
+  },
+  {
+    "id": "barc",
+    "name": "BARC OCES/DGFS",
+    "category": "Core Science & Engineering",
+    "dateStr": "Expected Registration: December 2026",
+    "hasExactDate": true,
+    "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
+    "goals": [
+      "Job"
+    ],
+    "calDate": "2026-12-20",
+    "syllabus_link": "https://www.barc.gov.in",
+    "syllabus_summary": "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate's specific discipline."
+  },
+  {
+    "id": "upsc_cse",
+    "name": "UPSC Civil Services (CSE)",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Aug 21, 2026",
+    "hasExactDate": true,
+    "desc": "IAS, IPS, IFS Officers (Any Degree)",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-08-21",
+    "syllabus_link": "https://upsc.gov.in",
+    "syllabus_summary": "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers."
+  },
+  {
+    "id": "sbi_po",
+    "name": "SBI PO",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: September 2026",
+    "hasExactDate": false,
+    "desc": "Probationary Officer in State Bank of India",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-08-01",
+    "syllabus_link": "https://sbi.co.in/careers",
+    "syllabus_summary": "Covers Reasoning Ability, Quantitative Aptitude, English Language, General/Economy/Banking Awareness, and Data Analysis and Interpretation across Prelims and Mains."
+  },
+  {
+    "id": "ibps_po",
+    "name": "IBPS PO",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: October 2026",
+    "hasExactDate": false,
+    "desc": "Probationary Officer in Public Sector Banks",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-07-26",
+    "syllabus_link": "https://ibps.in",
+    "syllabus_summary": "Covers Reasoning Ability and Computer Aptitude, Quantitative Aptitude and Data Interpretation, General/Economy/Banking Awareness, and English Language including Descriptive Writing."
+  },
+  {
+    "id": "rrb_ntpc_grad",
+    "name": "RRB NTPC (Graduate Posts)",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": true,
+    "desc": "Station Master, Goods Guard, etc.",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-10-20",
+    "syllabus_link": "https://www.rrbapply.gov.in/#/auth/landing",
+    "syllabus_summary": "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for graduate-level railway posts."
+  },
+  {
+    "id": "rrb_ntpc_ug",
+    "name": "RRB NTPC (Undergraduate Posts)",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Sep 17, 2026",
+    "hasExactDate": true,
+    "desc": "Clerk, Typist, Time Keeper (12th Pass)",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-09-17",
+    "syllabus_link": "https://www.rrbapply.gov.in/#/auth/landing",
+    "syllabus_summary": "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for undergraduate-level railway posts."
+  },
+  {
+    "id": "ssc_chsl",
+    "name": "SSC CHSL",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: July 2026",
+    "hasExactDate": true,
+    "desc": "Lower Division Clerk, Data Entry Operator",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-07-20",
+    "syllabus_link": "https://ssc.gov.in/",
+    "syllabus_summary": "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts."
+  },
+  {
+    "id": "ibacio",
+    "name": "IB ACIO",
+    "category": "Government & Banking",
+    "dateStr": "Expected Registration: October 2026",
+    "hasExactDate": true,
+    "desc": "Intelligence Bureau Officer",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "calDate": "2026-10-20",
+    "syllabus_link": "https://mha.gov.in",
+    "syllabus_summary": "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2."
+  },
+  {
+    "id": "ssc",
+    "name": "SSC CGL",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Aug 2026",
+    "hasExactDate": true,
+    "calDate": "2026-08-20",
+    "desc": "Group B & C Government Posts",
+    "goals": [
+      "Job",
+      "Not Sure"
+    ],
+    "syllabus_link": "https://ssc.gov.in/",
+    "syllabus_summary": "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts."
+  },
+  {
+    "id": "ctet",
+    "name": "CTET",
+    "category": "Government & Banking",
+    "dateStr": "Registration ended! Exam Date: Sep 6, 2026",
+    "hasExactDate": true,
+    "desc": "Eligibility for Central Government Teaching Jobs",
+    "goals": [
+      "Job"
+    ],
+    "calDate": "2026-09-06",
+    "syllabus_link": "https://ctet.nic.in",
+    "syllabus_summary": "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II)."
+  },
+  {
+    "id": "atma",
+    "name": "ATMA (AIMS Test for Management Admissions)",
+    "category": "Management & MBA",
+    "dateStr": "Checking dates...",
+    "hasExactDate": false,
+    "desc": "National level MBA/PGDM entrance exam",
+    "goals": [
+      "Higher Studies"
+    ],
+    "status_code": "UPCOMING",
+    "syllabus_link": "https://www.atmaaims.com",
+    "syllabus_summary": "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections."
+  }
 ]
