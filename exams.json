@@ -32,16 +32,17 @@
         "id":  "gate_ch",
         "name":  "GATE Chemical Engineering (CH)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Chemical/Polymer Engineering \u0026 PSU Jobs",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Process Calculations, Thermodynamics, Fluid Mechanics, Heat Transfer, Mass Transfer, Chemical Reaction Engineering, Process Control, Plant Design, and Chemical Technology."
+        "syllabus_summary":  "Covers Engineering Mathematics, Process Calculations, Thermodynamics, Fluid Mechanics, Heat Transfer, Mass Transfer, Chemical Reaction Engineering, Process Control, Plant Design, and Chemical Technology.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "aai_je",
@@ -77,267 +78,285 @@
         "id":  "gate_bt",
         "name":  "GATE Biotechnology (BT)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Biotech \u0026 PSU Jobs",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, General Biology, Genetics, Cell and Molecular Biology, Fundamentals of Biological Engineering, Bioprocess Engineering, Recombinant DNA Technology, and Bioinformatics."
+        "syllabus_summary":  "Covers Engineering Mathematics, General Biology, Genetics, Cell and Molecular Biology, Fundamentals of Biological Engineering, Bioprocess Engineering, Recombinant DNA Technology, and Bioinformatics.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_xl",
         "name":  "GATE Life Sciences (XL)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Life Sciences",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Chemistry (Compulsory) along with elective sections in Biochemistry, Botany, Microbiology, Zoology, and Food Technology."
+        "syllabus_summary":  "Covers Chemistry (Compulsory) along with elective sections in Biochemistry, Botany, Microbiology, Zoology, and Food Technology.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_ey",
         "name":  "GATE Ecology \u0026 Evolution (EY)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "PhD/Research in Ecology",
         "goals":  [
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Ecology, Evolution, Behavioural Ecology, Applied Ecology, Quantitative Ecology, and Evolutionary Genetics."
+        "syllabus_summary":  "Covers Ecology, Evolution, Behavioural Ecology, Applied Ecology, Quantitative Ecology, and Evolutionary Genetics.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_cs",
         "name":  "GATE Computer Science (CS)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech / PhD in CS \u0026 PSU Jobs",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Discrete Mathematics, Engineering Mathematics, Digital Logic, Computer Organization, Programming and Data Structures, Algorithms, Theory of Computation, Compiler Design, Operating Systems, Databases, and Computer Networks."
+        "syllabus_summary":  "Covers Discrete Mathematics, Engineering Mathematics, Digital Logic, Computer Organization, Programming and Data Structures, Algorithms, Theory of Computation, Compiler Design, Operating Systems, Databases, and Computer Networks.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_da",
         "name":  "GATE Data Science \u0026 AI (DA)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech / PhD in Data Science",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Probability and Statistics, Linear Algebra, Calculus and Optimization, Programming, Data Structures and Algorithms, Database Management and Warehousing, Machine Learning, and Artificial Intelligence."
+        "syllabus_summary":  "Covers Probability and Statistics, Linear Algebra, Calculus and Optimization, Programming, Data Structures and Algorithms, Database Management and Warehousing, Machine Learning, and Artificial Intelligence.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_me",
         "name":  "GATE Mechanical (ME)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs (BHEL, NTPC)",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Applied Mechanics and Design, Fluid Mechanics and Thermal Sciences, and Materials, Manufacturing and Industrial Engineering."
+        "syllabus_summary":  "Covers Engineering Mathematics, Applied Mechanics and Design, Fluid Mechanics and Thermal Sciences, and Materials, Manufacturing and Industrial Engineering.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_pi",
         "name":  "GATE Production \u0026 Industrial (PI)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech \u0026 Specialized PSU Roles",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, General Engineering, Manufacturing Processes, Quality and Reliability, Operations Research, and Industrial Engineering."
+        "syllabus_summary":  "Covers Engineering Mathematics, General Engineering, Manufacturing Processes, Quality and Reliability, Operations Research, and Industrial Engineering.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_xe",
         "name":  "GATE Engineering Sciences (XE)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "Interdisciplinary M.Tech / PhD",
         "goals":  [
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics (Compulsory) and choice of two subjects among Fluid Mechanics, Materials Science, Solid Mechanics, Thermodynamics, Polymer Science, Food Technology, and Atmospheric Sciences."
+        "syllabus_summary":  "Covers Engineering Mathematics (Compulsory) and choice of two subjects among Fluid Mechanics, Materials Science, Solid Mechanics, Thermodynamics, Polymer Science, Food Technology, and Atmospheric Sciences.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_ce",
         "name":  "GATE Civil Engineering (CE)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs (NHAI, ONGC)",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Structural Engineering, Geotechnical Engineering, Water Resources Engineering, Environmental Engineering, Transportation Engineering, and Geomatics Engineering."
+        "syllabus_summary":  "Covers Engineering Mathematics, Structural Engineering, Geotechnical Engineering, Water Resources Engineering, Environmental Engineering, Transportation Engineering, and Geomatics Engineering.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_es",
         "name":  "GATE Environmental Science (ES)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech in Environment \u0026 Sustainability",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Mathematics Foundation, Environmental Chemistry, Environmental Microbiology, Water and Wastewater Engineering, Air Pollution and Control, Solid and Hazardous Waste Management, and Environmental Management."
+        "syllabus_summary":  "Covers Mathematics Foundation, Environmental Chemistry, Environmental Microbiology, Water and Wastewater Engineering, Air Pollution and Control, Solid and Hazardous Waste Management, and Environmental Management.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_ee",
         "name":  "GATE Electrical Engineering (EE)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs (PowerGrid, NTPC)",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Electric Circuits, Electromagnetic Fields, Signals and Systems, Electrical Machines, Power Systems, Control Systems, Electrical Measurements, Analog and Digital Electronics, and Power Electronics."
+        "syllabus_summary":  "Covers Engineering Mathematics, Electric Circuits, Electromagnetic Fields, Signals and Systems, Electrical Machines, Power Systems, Control Systems, Electrical Measurements, Analog and Digital Electronics, and Power Electronics.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_ec",
         "name":  "GATE Electronics \u0026 Comm. (EC)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech \u0026 PSU Jobs",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Networks, Signals and Systems, Electronic Devices, Analog Circuits, Digital Circuits, Control Systems, Communications, and Electromagnetics."
+        "syllabus_summary":  "Covers Engineering Mathematics, Networks, Signals and Systems, Electronic Devices, Analog Circuits, Digital Circuits, Control Systems, Communications, and Electromagnetics.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_in",
         "name":  "GATE Instrumentation (IN)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech \u0026 Specialized PSU Roles",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Engineering Mathematics, Electricity and Magnetism, Signals and Systems, Transducers and Optical Instrumentation, Analog and Digital Electronics, Control Systems, Measurements, and Process Control."
+        "syllabus_summary":  "Covers Engineering Mathematics, Electricity and Magnetism, Signals and Systems, Transducers and Optical Instrumentation, Analog and Digital Electronics, Control Systems, Measurements, and Process Control.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_general",
         "name":  "GATE (Engineering)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech / PhD \u0026 PSU Jobs",
         "goals":  [
                       "Job",
                       "Higher Studies",
                       "Not Sure"
                   ],
-        "calDate":  "2026-08-14"
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_st",
         "name":  "GATE Statistics (ST)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "M.Tech Data/Stats \u0026 PhD",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Calculus, Matrix Theory, Probability, Standard Distributions, Stochastic Processes, Estimation, Testing of Hypotheses, Non-parametric Tests, Multivariate Analysis, and Regression Analysis."
+        "syllabus_summary":  "Covers Calculus, Matrix Theory, Probability, Standard Distributions, Stochastic Processes, Estimation, Testing of Hypotheses, Non-parametric Tests, Multivariate Analysis, and Regression Analysis.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_ma",
         "name":  "GATE Mathematics (MA)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "PhD in Math / Applied Math",
         "goals":  [
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Calculus, Linear Algebra, Real Analysis, Complex Analysis, Ordinary and Partial Differential Equations, Algebra, Functional Analysis, Numerical Analysis, Topology, and Linear Programming."
+        "syllabus_summary":  "Covers Calculus, Linear Algebra, Real Analysis, Complex Analysis, Ordinary and Partial Differential Equations, Algebra, Functional Analysis, Numerical Analysis, Topology, and Linear Programming.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_ph",
         "name":  "GATE Physics (PH)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "PhD in Physics / BARC",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Mathematical Physics, Classical Mechanics, Electromagnetic Theory, Quantum Mechanics, Thermodynamics and Statistical Physics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, and Electronics."
+        "syllabus_summary":  "Covers Mathematical Physics, Classical Mechanics, Electromagnetic Theory, Quantum Mechanics, Thermodynamics and Statistical Physics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, and Electronics.",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "gate_cy",
         "name":  "GATE Chemistry (CY)",
         "category":  "Core Science \u0026 Engineering",
-        "dateStr":  "Expected Registration: August 14, 2026",
-        "hasExactDate":  true,
         "desc":  "PhD in Chemistry / PSU Jobs",
         "goals":  [
                       "Job",
                       "Higher Studies"
                   ],
-        "calDate":  "2026-08-14",
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
-        "syllabus_summary":  "Covers Physical Chemistry (Structure, Equilibrium, Kinetics), Inorganic Chemistry (Main group, Transition Metals, Organometallics), and Organic Chemistry (Stereochemistry, Reaction Mechanisms, Synthesis, Biomolecules)."
+        "syllabus_summary":  "Covers Physical Chemistry (Structure, Equilibrium, Kinetics), Inorganic Chemistry (Main group, Transition Metals, Organometallics), and Organic Chemistry (Stereochemistry, Reaction Mechanisms, Synthesis, Biomolecules).",
+        "dateStr":  "Registration starts August 27, 2026",
+        "status_code":  "UPCOMING",
+        "calDate":  "2026-08-27",
+        "hasExactDate":  true
     },
     {
         "id":  "csir",
