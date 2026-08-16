@@ -478,8 +478,8 @@ function renderTab3Exams() {
           </div>` : ''}
         </div>
       `;
-      // Put in upcoming section (group contains both live + upcoming)
-      otherExams.push(groupCard);
+      // Put in live section (JE is live, ATC is upcoming — shown together)
+      liveExams.push(groupCard);
       return;
     }
 
