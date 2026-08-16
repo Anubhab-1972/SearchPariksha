@@ -515,10 +515,10 @@ function renderTab3Exams() {
       const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
       const jeIsLive = aaiJe.status_code ? aaiJe.status_code.startsWith('LIVE_') : false;
       const atcIsLive = aaiAtc && aaiAtc.status_code ? aaiAtc.status_code.startsWith('LIVE_') : false;
-      const groupTitle = jeIsLive && atcIsLive ? '✈️ AAI JE / ATC'
-        : jeIsLive ? '✈️ AAI JE'
+      const groupTitle = jeIsLive && atcIsLive ? '👷✈️ AAI JE / ATC'
+        : jeIsLive ? '👷 AAI JE'
         : atcIsLive ? '✈️ AAI ATC'
-        : '✈️ AAI JE / ATC';
+        : '👷✈️ AAI JE / ATC';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       const atcSmartDate = (aaiAtc && aaiAtc.status_code === 'UPCOMING' && new Date() >= new Date('2026-09-01'))
         ? 'Expected Registration: September 2026'
@@ -537,7 +537,7 @@ function renderTab3Exams() {
         </div>
         <div class="exam-group-body">
           <div class="exam-sub-item">
-            <div class="exam-sub-name">${jeLiveBadge} AAI Junior Executive (JE)
+            <div class="exam-sub-name">${jeLiveBadge} 👷 AAI Junior Executive (JE)
               <a href="#" onclick="openExamDirectory('AAI Junior Executive'); return false;" style="color:#007bff; font-size:0.75em; font-weight:400; text-decoration:underline; margin-left:6px;">Know more</a>
             </div>
             <div class="exam-sub-date">${aaiJe.dateStr}</div>
@@ -858,10 +858,10 @@ function renderExamDirectory(searchTerm = "") {
 
       const jeIsLive = isExamLive(aaiJe);
       const atcIsLive = aaiAtc ? isExamLive(aaiAtc) : false;
-      const groupTitle = jeIsLive && atcIsLive ? '✈️ AAI JE / ATC'
-        : jeIsLive ? '✈️ AAI JE'
+      const groupTitle = jeIsLive && atcIsLive ? '👷✈️ AAI JE / ATC'
+        : jeIsLive ? '👷 AAI JE'
         : atcIsLive ? '✈️ AAI ATC'
-        : '✈️ AAI JE / ATC';
+        : '👷✈️ AAI JE / ATC';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       const atcDate = aaiAtc ? getSmartDate(aaiAtc) : 'Expected Registration: August 2026';
 
@@ -878,7 +878,7 @@ function renderExamDirectory(searchTerm = "") {
         <div class="exam-group-body">
           <div class="exam-sub-item">
             <div class="exam-sub-name">
-              ${jeLiveBadge} AAI Junior Executive (JE)
+              ${jeLiveBadge} 👷 AAI Junior Executive (JE)
             </div>
             <div class="exam-sub-date">${aaiJe.dateStr}</div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
