@@ -38,11 +38,30 @@ async function loadExamData() {
     if (!response.ok) throw new Error('Failed to load exams.json');
     masterExamsDatabase = await response.json();
     console.log(`[OK] Loaded ${masterExamsDatabase.length} exams from exams.json`);
+
+    // Auto-live: if an UPCOMING exam's calDate has arrived, mark it live for display.
+    // The weekly auto-updater will eventually confirm and persist this in the JSON.
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    masterExamsDatabase.forEach(exam => {
+      if (exam.status_code === 'UPCOMING' && exam.hasExactDate && exam.calDate) {
+        const calDate = new Date(exam.calDate);
+        if (today >= calDate) {
+          exam.status_code = 'LIVE_REGISTRATION_OPEN';
+          // Update display text to reflect registration is now open
+          exam.dateStr = exam.dateStr
+            .replace('Registration starts', 'Registration Open! Started')
+            .replace('Expected Registration:', 'Registration Open!');
+          console.log(`[AUTO-LIVE] ${exam.name} → LIVE (calDate ${exam.calDate} reached)`);
+        }
+      }
+    });
+
   } catch (error) {
     console.error('[ERROR] Could not load exams.json:', error);
-    // The array stays empty - the site will show a "no exams" message gracefully
   }
 }
+
 
 // DOM Elements
 const btnNext = document.getElementById('btn-next');
