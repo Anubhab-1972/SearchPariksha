@@ -448,7 +448,10 @@ function renderTab3Exams() {
       const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
       const jeIsLive = aaiJe.status_code ? aaiJe.status_code.startsWith('LIVE_') : false;
       const atcIsLive = aaiAtc && aaiAtc.status_code ? aaiAtc.status_code.startsWith('LIVE_') : false;
-      const groupTitle = atcIsLive ? '✈️ AAI JE / ATC' : '✈️ AAI JE';
+      const groupTitle = jeIsLive && atcIsLive ? '✈️ AAI JE / ATC'
+        : jeIsLive ? '✈️ AAI JE'
+        : atcIsLive ? '✈️ AAI ATC'
+        : '✈️ AAI JE / ATC';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       const atcSmartDate = (aaiAtc && aaiAtc.status_code === 'UPCOMING' && new Date() >= new Date('2026-09-01'))
         ? 'Expected Registration: September 2026'
@@ -788,7 +791,10 @@ function renderExamDirectory(searchTerm = "") {
 
       const jeIsLive = isExamLive(aaiJe);
       const atcIsLive = aaiAtc ? isExamLive(aaiAtc) : false;
-      const groupTitle = atcIsLive ? '✈️ AAI JE / ATC' : '✈️ AAI JE';
+      const groupTitle = jeIsLive && atcIsLive ? '✈️ AAI JE / ATC'
+        : jeIsLive ? '✈️ AAI JE'
+        : atcIsLive ? '✈️ AAI ATC'
+        : '✈️ AAI JE / ATC';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       const atcDate = aaiAtc ? getSmartDate(aaiAtc) : 'Expected Registration: August 2026';
 
