@@ -492,22 +492,22 @@
         "id":  "sbi_po",
         "name":  "SBI PO",
         "category":  "Government \u0026 Banking",
-        "dateStr":  "Expected Registration: September 2026",
         "hasExactDate":  false,
         "desc":  "Probationary Officer in State Bank of India",
         "goals":  [
                       "Job",
                       "Not Sure"
                   ],
-        "calDate":  "2026-08-01",
         "syllabus_link":  "https://sbi.co.in/careers",
-        "syllabus_summary":  "Covers Reasoning Ability, Quantitative Aptitude, English Language, General/Economy/Banking Awareness, and Data Analysis and Interpretation across Prelims and Mains."
+        "syllabus_summary":  "Covers Reasoning Ability, Quantitative Aptitude, English Language, General/Economy/Banking Awareness, and Data Analysis and Interpretation across Prelims and Mains.",
+        "status_code":  "UPCOMING",
+        "dateStr":  "Registration ended! Next registration: June 2027",
+        "calDate":  "2027-06-01"
     },
     {
         "id":  "ibps_po",
         "name":  "IBPS PO",
         "category":  "Government \u0026 Banking",
-        "dateStr":  "Registration ended! Exam Date: October 2026",
         "hasExactDate":  false,
         "desc":  "Probationary Officer in Public Sector Banks",
         "goals":  [
@@ -516,7 +516,9 @@
                   ],
         "calDate":  "2026-07-26",
         "syllabus_link":  "https://ibps.in",
-        "syllabus_summary":  "Covers Reasoning Ability and Computer Aptitude, Quantitative Aptitude and Data Interpretation, General/Economy/Banking Awareness, and English Language including Descriptive Writing."
+        "syllabus_summary":  "Covers Reasoning Ability and Computer Aptitude, Quantitative Aptitude and Data Interpretation, General/Economy/Banking Awareness, and English Language including Descriptive Writing.",
+        "status_code":  "LIVE_ADMIT_CARD",
+        "dateStr":  "Admit Card Released! Exam Date: October 2026"
     },
     {
         "id":  "rrb_ntpc_grad",
