@@ -52,11 +52,11 @@
         "goals":  [
                       "Job"
                   ],
-        "syllabus_link":  "https://aai.aero",
         "syllabus_summary":  "Covers General Intelligence, Reasoning, Numerical Ability, General Awareness, English Language, and discipline-specific technical domain subjects such as Physics and Mathematics for ATC.",
         "status_code":  "LIVE_REGISTRATION_OPEN",
         "dateStr":  "Registration Open! Apply by Sep 7, 2026",
-        "calDate":  "2026-09-07"
+        "calDate":  "2026-09-07",
+        "syllabus_link":  "https://www.aai.aero/en/careers/recruitment"
     },
     {
         "id":  "aai_atc",
@@ -70,8 +70,8 @@
                   ],
         "calDate":  "2026-08-20",
         "status_code":  "UPCOMING",
-        "syllabus_link":  "https://aai.aero",
-        "syllabus_summary":  "Covers Physics, Mathematics, English, General Intelligence, and Air Traffic Control domain knowledge."
+        "syllabus_summary":  "Covers Physics, Mathematics, English, General Intelligence, and Air Traffic Control domain knowledge.",
+        "syllabus_link":  "https://www.aai.aero/en/careers/recruitment"
     },
     {
         "id":  "gate_bt",

@@ -477,7 +477,7 @@ function renderTab3Exams() {
           </div>
           ${aaiAtc ? `<div class="exam-sub-item">
             <div class="exam-sub-name">✈️ AAI ATC (Air Traffic Controller)
-              <a href="https://aai.aero" target="_blank" style="color:#007bff; font-size:0.75em; font-weight:400; text-decoration:underline; margin-left:6px;">Official Site</a>
+              <a href="https://www.aai.aero/en/careers/recruitment" target="_blank" style="color:#007bff; font-size:0.75em; font-weight:400; text-decoration:underline; margin-left:6px;">Official Site</a>
             </div>
             <div class="exam-sub-date">${atcSmartDate}</div>
           </div>` : ''}
@@ -823,7 +823,7 @@ function renderExamDirectory(searchTerm = "") {
             <div class="exam-sub-name">✈️ AAI ATC (Air Traffic Controller)</div>
             <div class="exam-sub-date">${atcDate}</div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
-              <a href="https://aai.aero" target="_blank" style="font-size:0.8em; color:white; background:#28a745; padding:3px 9px; border-radius:4px; text-decoration:none; font-weight:bold;">🌐 Official Website</a>
+              <a href="https://www.aai.aero/en/careers/recruitment" target="_blank" style="font-size:0.8em; color:white; background:#28a745; padding:3px 9px; border-radius:4px; text-decoration:none; font-weight:bold;">🌐 Official Website</a>
             </div>
           </div>` : ''}
         </div>
