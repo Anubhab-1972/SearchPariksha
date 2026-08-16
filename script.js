@@ -19,7 +19,7 @@ const courseDurations = {
 const courseSpecializations = {
   'B.Com': ['Accounting & Finance', 'Banking & Insurance', 'Taxation', 'Business Analytics', 'Human Resource Management', 'General Commerce'],
   'B.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
-  'M.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
+  'M.Tech': ['Computer Science / IT', 'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics & Communication', 'Biotechnology', 'Marine Biotechnology', 'Chemical Engineering', 'Polymer Science', 'Other / General Engineering'],
   'B.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'Geology / Earth Sciences', 'General Science'],
   'M.Sc': ['Physics', 'Chemistry', 'Mathematics', 'Statistics', 'Botany', 'Zoology', 'Biotechnology / Life Sciences', 'Computer Science / IT', 'Geology / Earth Sciences', 'General Science'],
   'B.A': ['Economics', 'History', 'Political Science', 'Psychology', 'Sociology', 'English', 'General Arts'],
@@ -244,6 +244,10 @@ function getRelevantExams() {
   // Biotech & Life Sciences
   else if (branch === 'Biotechnology' || branch === 'Botany' || branch === 'Zoology' || branch === 'Biotechnology / Life Sciences') {
     validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'gpat', 'niper', 'barc', 'icmr_bret', ...govtExams];
+  }
+  // Marine Biotechnology
+  else if (branch === 'Marine Biotechnology') {
+    validIds = ['gate_bt', 'gate_xl', 'gate_ey', 'gate_es', 'csir', 'tifr', 'gatb', 'icmr_bret', 'barc', ...govtExams];
   }
   // Geology / Earth Sciences
   else if (branch === 'Geology / Earth Sciences') {
@@ -693,9 +697,9 @@ function renderExamDirectory(searchTerm = "") {
   if (!directoryList) return;
   directoryList.innerHTML = '';
   const term = searchTerm.toLowerCase();
-  
-  const filteredExams = masterExamsDatabase.filter(exam => 
-    exam.name.toLowerCase().includes(term) || 
+
+  const filteredExams = masterExamsDatabase.filter(exam =>
+    exam.name.toLowerCase().includes(term) ||
     exam.desc.toLowerCase().includes(term) ||
     exam.category.toLowerCase().includes(term)
   );
@@ -705,16 +709,82 @@ function renderExamDirectory(searchTerm = "") {
     return;
   }
 
+  // Helper: determine if an exam is live
+  const isExamLive = (exam) => exam.status_code
+    ? exam.status_code.startsWith('LIVE_')
+    : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
+
+  // Helper: get smart dateStr (auto-bump month for UPCOMING AAI ATC)
+  const getSmartDate = (exam) => {
+    if (exam.id === 'aai_atc' && exam.status_code === 'UPCOMING') {
+      const now = new Date();
+      // If we're past August 2026, show September
+      if (now >= new Date('2026-09-01')) return 'Expected Registration: September 2026';
+    }
+    return exam.dateStr;
+  };
+
+  // Check if AAI JE and ATC are both in filtered results — render as grouped card
+  const hasAaiJe = filteredExams.some(e => e.id === 'aai_je');
+  const hasAaiAtc = filteredExams.some(e => e.id === 'aai_atc');
+  let aaiGroupRendered = false;
+
   filteredExams.forEach(exam => {
+    // Skip aai_atc as standalone — it's handled inside the group card
+    if (exam.id === 'aai_atc') return;
+
+    // Render AAI group card when we hit aai_je
+    if (exam.id === 'aai_je' && (hasAaiJe || hasAaiAtc) && !aaiGroupRendered) {
+      aaiGroupRendered = true;
+      const aaiJe = exam;
+      const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
+
+      const jeIsLive = isExamLive(aaiJe);
+      const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
+      const atcDate = aaiAtc ? getSmartDate(aaiAtc) : 'Expected Registration: August 2026';
+
+      const groupCard = document.createElement('div');
+      groupCard.className = 'exam-group-card';
+      groupCard.innerHTML = `
+        <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="exam-group-title">
+            ✈️ AAI JE / ATC
+            ${jeIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
+          </div>
+          <span class="exam-group-chevron">▼</span>
+        </div>
+        <div class="exam-group-body">
+          <div class="exam-sub-item">
+            <div class="exam-sub-name">
+              ${jeLiveBadge} AAI Junior Executive (JE)
+            </div>
+            <div class="exam-sub-date">${aaiJe.dateStr}</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
+              ${aaiJe.syllabus_link ? `<a href="${aaiJe.syllabus_link}" target="_blank" style="font-size:0.8em; color:white; background:#28a745; padding:3px 9px; border-radius:4px; text-decoration:none; font-weight:bold;">🌐 Official Website</a>` : ''}
+            </div>
+          </div>
+          ${aaiAtc ? `
+          <div class="exam-sub-item">
+            <div class="exam-sub-name">✈️ AAI ATC (Air Traffic Controller)</div>
+            <div class="exam-sub-date">${atcDate}</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
+              <a href="https://aai.aero" target="_blank" style="font-size:0.8em; color:white; background:#28a745; padding:3px 9px; border-radius:4px; text-decoration:none; font-weight:bold;">🌐 Official Website</a>
+            </div>
+          </div>` : ''}
+        </div>
+      `;
+      directoryList.appendChild(groupCard);
+      return;
+    }
+
+    // Regular exam item
     const item = document.createElement('div');
     item.className = 'exam-item';
     item.style.flexDirection = 'column';
     item.style.alignItems = 'flex-start';
     item.style.gap = '8px';
 
-    const isOpen = exam.status_code
-      ? exam.status_code.startsWith('LIVE_')
-      : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
+    const isOpen = isExamLive(exam);
     const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
     item.innerHTML = `
@@ -733,6 +803,7 @@ function renderExamDirectory(searchTerm = "") {
     directoryList.appendChild(item);
   });
 }
+
 
 function openExamDirectory(searchTerm = "") {
   // Hide current tab

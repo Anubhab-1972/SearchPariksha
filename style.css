@@ -530,3 +530,99 @@ body {
     min-height: 70vh;
   }
 }
+
+/* AAI Exam Group Dropdown */
+.exam-group-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  margin-bottom: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.exam-group-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.exam-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  cursor: pointer;
+  user-select: none;
+  gap: 10px;
+}
+
+.exam-group-header:hover {
+  background: rgba(var(--primary-rgb, 76,175,80), 0.06);
+}
+
+.exam-group-title {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-group-chevron {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  flex-shrink: 0;
+}
+
+.exam-group-card.open .exam-group-chevron {
+  transform: rotate(180deg);
+}
+
+.exam-group-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+  opacity: 0;
+  border-top: 0px solid var(--border-color);
+}
+
+.exam-group-card.open .exam-group-body {
+  max-height: 400px;
+  opacity: 1;
+  border-top: 1px solid var(--border-color);
+}
+
+.exam-sub-item {
+  padding: 12px 18px 12px 28px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.exam-sub-item:last-child {
+  border-bottom: none;
+}
+
+.exam-sub-item:hover {
+  background: rgba(var(--primary-rgb, 76,175,80), 0.04);
+}
+
+.exam-sub-name {
+  font-weight: 600;
+  font-size: 0.95em;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-sub-date {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
