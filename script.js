@@ -447,6 +447,8 @@ function renderTab3Exams() {
       const aaiJe = exam;
       const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
       const jeIsLive = aaiJe.status_code ? aaiJe.status_code.startsWith('LIVE_') : false;
+      const atcIsLive = aaiAtc && aaiAtc.status_code ? aaiAtc.status_code.startsWith('LIVE_') : false;
+      const groupTitle = atcIsLive ? '✈️ AAI JE / ATC' : '✈️ AAI JE';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       const atcSmartDate = (aaiAtc && aaiAtc.status_code === 'UPCOMING' && new Date() >= new Date('2026-09-01'))
         ? 'Expected Registration: September 2026'
@@ -458,7 +460,7 @@ function renderTab3Exams() {
       groupCard.innerHTML = `
         <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="exam-group-title">
-            ✈️ AAI JE / ATC
+            ${groupTitle}
             ${jeIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
           </div>
           <span class="exam-group-chevron">▼</span>
@@ -785,6 +787,8 @@ function renderExamDirectory(searchTerm = "") {
       const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
 
       const jeIsLive = isExamLive(aaiJe);
+      const atcIsLive = aaiAtc ? isExamLive(aaiAtc) : false;
+      const groupTitle = atcIsLive ? '✈️ AAI JE / ATC' : '✈️ AAI JE';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       const atcDate = aaiAtc ? getSmartDate(aaiAtc) : 'Expected Registration: August 2026';
 
@@ -793,7 +797,7 @@ function renderExamDirectory(searchTerm = "") {
       groupCard.innerHTML = `
         <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="exam-group-title">
-            ✈️ AAI JE / ATC
+            ${groupTitle}
             ${jeIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
           </div>
           <span class="exam-group-chevron">▼</span>
