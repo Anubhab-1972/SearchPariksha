@@ -66,15 +66,14 @@ def query_exam_status(exam_name, exam_desc):
     prompt = f"""Today is {today}. I need the latest official status for the Indian competitive exam: "{exam_name}" ({exam_desc}).
 
 Search the internet and tell me:
-1. Is registration currently OPEN?
-2. If hasn't started yet, when is it expected?
-3. If registration is CLOSED, check the exact EXAM DATE first.
-   - If exam is in the PAST, check for RESULTS.
-   - If exam is in the FUTURE, check for ADMIT CARD.
+1. Is registration currently OPEN? -> status_code: LIVE_REGISTRATION_OPEN (display_text: "Registration Open! Apply by [Date]")
+2. If registration is CLOSED but Admit Card has been released / exam is scheduled in the immediate future: -> status_code: LIVE_ADMIT_CARD (display_text: "Admit Card Released! Exam Date: [Date]")
+3. If this year's exam has concluded / ended: -> status_code: UPCOMING (display_text: "Registration ended! Opens next year (Expected: [Month Year])" for next cycle)
+4. If registration hasn't started yet: -> status_code: UPCOMING (display_text: "Expected Registration: [Month Year]" or "Registration starts [Date]")
 
 CRITICAL: You must output a JSON object with two keys:
 1. 'status_code': Must be exactly one of: LIVE_REGISTRATION_OPEN, LIVE_ADMIT_CARD, LIVE_RESULTS, UPCOMING, PAST.
-2. 'display_text': A short display string (max 80 chars) like "Apply by: Oct 5, 2026" or "Expected Registration: Sep 2027" or "Admit Card Released! Exam Date: Aug 15".
+2. 'display_text': A short display string (max 80 chars) like "Registration Open! Apply by Oct 5, 2026", "Admit Card Released! Exam Date: Aug 22, 2026", or "Registration ended! Opens next year (Expected: July 2027)".
 
 Do NOT include any explanation or extra text."""
 

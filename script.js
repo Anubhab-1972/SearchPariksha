@@ -39,27 +39,58 @@ async function loadExamData() {
     masterExamsDatabase = await response.json();
     console.log(`[OK] Loaded ${masterExamsDatabase.length} exams from exams.json`);
 
-    // Auto-live & Auto-archive logic
+    // Auto-live & Auto-archive logic for all exams
     const today = new Date();
     today.setHours(0, 0, 0, 0);
+
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
     masterExamsDatabase.forEach(exam => {
-      // 1. Auto-archive: If exam has passed archive_after date (e.g. IBPS PO after Aug 23, 2026),
-      // pull it back from Live exams to Upcoming exams with next year registration notice
+      // 1. Universal Auto-archive: If any exam was LIVE (Admit Card released / Exam ongoing / Registration ended)
+      // and its exam/archive date has passed, retract it from Live exams to Upcoming exams with next year's registration notice
+      let archiveDate = null;
       if (exam.archive_after) {
-        const archiveDate = new Date(exam.archive_after);
-        if (today > archiveDate) {
-          exam.status_code = 'UPCOMING';
-          exam.dateStr = exam.next_cycle_text || 'Registration ended! Opens next year';
-          if (exam.next_cycle_date) {
-            exam.calDate = exam.next_cycle_date;
-            exam.hasExactDate = false;
-          }
-          if (exam.display_text) delete exam.display_text;
-          console.log(`[AUTO-ARCHIVE] ${exam.name} → UPCOMING (${exam.dateStr})`);
-        }
+        archiveDate = new Date(exam.archive_after);
+      } else if (exam.status_code === 'LIVE_ADMIT_CARD' && exam.calDate) {
+        archiveDate = new Date(exam.calDate);
       }
 
-      // 2. Auto-live: if an UPCOMING exam's calDate has arrived, mark it live for display.
+      if (archiveDate && today > archiveDate) {
+        exam.status_code = 'UPCOMING';
+
+        if (exam.next_cycle_text) {
+          exam.dateStr = exam.next_cycle_text;
+        } else {
+          // Compute next year registration month based on original cycle if available
+          let nextYear = today.getFullYear() + 1;
+          let monthStr = '';
+          if (exam.original_reg_month) {
+            monthStr = exam.original_reg_month;
+          } else if (exam.calDate) {
+            const d = new Date(exam.calDate);
+            monthStr = monthNames[d.getMonth()];
+          }
+          exam.dateStr = monthStr 
+            ? `Registration ended! Opens next year (Expected: ${monthStr} ${nextYear})`
+            : `Registration ended! Opens next year (${nextYear})`;
+        }
+
+        if (exam.next_cycle_date) {
+          exam.calDate = exam.next_cycle_date;
+        } else if (exam.calDate) {
+          const prevCal = new Date(exam.calDate);
+          prevCal.setFullYear(prevCal.getFullYear() + 1);
+          exam.calDate = prevCal.toISOString().split('T')[0];
+        }
+        exam.hasExactDate = false;
+        if (exam.display_text) delete exam.display_text;
+        console.log(`[AUTO-ARCHIVE] ${exam.name} → UPCOMING (${exam.dateStr})`);
+      }
+
+      // 2. Universal Auto-live: if an UPCOMING exam's calDate has arrived, mark it live for display.
       // The weekly auto-updater will eventually confirm and persist this in the JSON.
       if (exam.status_code === 'UPCOMING' && exam.hasExactDate && exam.calDate) {
         const calDate = new Date(exam.calDate);
