@@ -537,7 +537,10 @@
         "syllabus_summary":  "Covers Reasoning Ability and Computer Aptitude, Quantitative Aptitude and Data Interpretation, General/Economy/Banking Awareness, and English Language including Descriptive Writing.",
         "status_code":  "LIVE_ADMIT_CARD",
         "dateStr":  "Admit Card Released! Exam Date: August 22, 2026",
-        "calDate":  "2026-08-22"
+        "calDate":  "2026-08-22",
+        "archive_after":  "2026-08-23",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: July 1, 2027)",
+        "next_cycle_date":  "2027-07-01"
     },
     {
         "id":  "rrb_ntpc_grad",

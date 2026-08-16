@@ -39,11 +39,28 @@ async function loadExamData() {
     masterExamsDatabase = await response.json();
     console.log(`[OK] Loaded ${masterExamsDatabase.length} exams from exams.json`);
 
-    // Auto-live: if an UPCOMING exam's calDate has arrived, mark it live for display.
-    // The weekly auto-updater will eventually confirm and persist this in the JSON.
+    // Auto-live & Auto-archive logic
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     masterExamsDatabase.forEach(exam => {
+      // 1. Auto-archive: If exam has passed archive_after date (e.g. IBPS PO after Aug 23, 2026),
+      // pull it back from Live exams to Upcoming exams with next year registration notice
+      if (exam.archive_after) {
+        const archiveDate = new Date(exam.archive_after);
+        if (today > archiveDate) {
+          exam.status_code = 'UPCOMING';
+          exam.dateStr = exam.next_cycle_text || 'Registration ended! Opens next year';
+          if (exam.next_cycle_date) {
+            exam.calDate = exam.next_cycle_date;
+            exam.hasExactDate = false;
+          }
+          if (exam.display_text) delete exam.display_text;
+          console.log(`[AUTO-ARCHIVE] ${exam.name} → UPCOMING (${exam.dateStr})`);
+        }
+      }
+
+      // 2. Auto-live: if an UPCOMING exam's calDate has arrived, mark it live for display.
+      // The weekly auto-updater will eventually confirm and persist this in the JSON.
       if (exam.status_code === 'UPCOMING' && exam.hasExactDate && exam.calDate) {
         const calDate = new Date(exam.calDate);
         if (today >= calDate) {
