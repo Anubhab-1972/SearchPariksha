@@ -279,7 +279,7 @@ function getRelevantExams() {
   }
   // Polymer Science
   else if (branch === 'Polymer Science') {
-    validIds = ['gate_xe', 'gate_ch', 'barc', 'aai_je', ...govtExams];
+    validIds = ['gate_xe', 'gate_ch', 'barc', 'aai_je', 'aai_atc', ...govtExams];
   }
   // Statistics
   else if (branch === 'Statistics') {
@@ -341,6 +341,7 @@ function getRelevantExams() {
       state.course === 'LL.M' || 
       (isScience && ['Physics', 'Mathematics', 'Statistics', 'Computer Science / IT'].includes(branch))) {
     validIds.push('aai_je');
+    validIds.push('aai_atc');
   }
 
   const filteredExams = masterExamsDatabase.filter(exam => validIds.includes(exam.id));
@@ -431,15 +432,65 @@ function renderTab3Exams() {
   const liveExams = [];
   const otherExams = [];
 
+  // Check if AAI JE + ATC are both in relevantExams — render as group card
+  const hasAaiJeMain = relevantExams.some(e => e.id === 'aai_je');
+  const hasAaiAtcMain = relevantExams.some(e => e.id === 'aai_atc');
+  let aaiGroupRenderedMain = false;
+
   relevantExams.forEach(exam => {
+    // Skip aai_atc standalone — handled in group card
+    if (exam.id === 'aai_atc') return;
+
+    // When we hit aai_je, build a group card instead
+    if (exam.id === 'aai_je' && (hasAaiJeMain || hasAaiAtcMain) && !aaiGroupRenderedMain) {
+      aaiGroupRenderedMain = true;
+      const aaiJe = exam;
+      const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
+      const jeIsLive = aaiJe.status_code ? aaiJe.status_code.startsWith('LIVE_') : false;
+      const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
+      const atcSmartDate = (aaiAtc && aaiAtc.status_code === 'UPCOMING' && new Date() >= new Date('2026-09-01'))
+        ? 'Expected Registration: September 2026'
+        : (aaiAtc ? aaiAtc.dateStr : 'Expected Registration: August 2026');
+
+      const groupCard = document.createElement('div');
+      groupCard.className = 'exam-group-card';
+      groupCard.style.marginBottom = '6px';
+      groupCard.innerHTML = `
+        <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="exam-group-title">
+            ✈️ AAI JE / ATC
+            ${jeIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
+          </div>
+          <span class="exam-group-chevron">▼</span>
+        </div>
+        <div class="exam-group-body">
+          <div class="exam-sub-item">
+            <div class="exam-sub-name">${jeLiveBadge} AAI Junior Executive (JE)
+              <a href="#" onclick="openExamDirectory('AAI Junior Executive'); return false;" style="color:#007bff; font-size:0.75em; font-weight:400; text-decoration:underline; margin-left:6px;">Know more</a>
+            </div>
+            <div class="exam-sub-date">${aaiJe.dateStr}</div>
+          </div>
+          ${aaiAtc ? `<div class="exam-sub-item">
+            <div class="exam-sub-name">✈️ AAI ATC (Air Traffic Controller)
+              <a href="https://aai.aero" target="_blank" style="color:#007bff; font-size:0.75em; font-weight:400; text-decoration:underline; margin-left:6px;">Official Site</a>
+            </div>
+            <div class="exam-sub-date">${atcSmartDate}</div>
+          </div>` : ''}
+        </div>
+      `;
+      // Put in upcoming section (group contains both live + upcoming)
+      otherExams.push(groupCard);
+      return;
+    }
+
     const eligibility = evaluateEligibility(exam.id);
-    const isOpen = exam.status_code 
-      ? exam.status_code.startsWith('LIVE_') 
+    const isOpen = exam.status_code
+      ? exam.status_code.startsWith('LIVE_')
       : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
-    
+
     const item = document.createElement('div');
     item.className = 'exam-item';
-    
+
     if (!eligibility.eligible) {
       item.classList.add('locked');
       item.style.opacity = '0.5';
@@ -454,9 +505,7 @@ function renderTab3Exams() {
       otherExams.push(item);
     } else {
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
-
       let displayDate = exam.display_text || exam.dateStr || '';
-      
       if (exam.status_code) {
         if (exam.status_code === 'LIVE_ADMIT_CARD') {
           displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
@@ -464,14 +513,12 @@ function renderTab3Exams() {
           displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
         }
       } else {
-        // Backward compatibility
         if (exam.dateStr && exam.dateStr.toLowerCase().includes("admit card released")) {
           displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
         } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced")) {
           displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
         }
       }
-
       item.innerHTML = `
         <label>
           <input type="checkbox" value="${exam.id}">
@@ -479,7 +526,6 @@ function renderTab3Exams() {
         </label>
         <span class="exam-date">${liveBadge}${displayDate}</span>
       `;
-
       const checkbox = item.querySelector('input');
       checkbox.addEventListener('change', (e) => {
         if (e.target.checked) {
@@ -489,7 +535,6 @@ function renderTab3Exams() {
         }
         validateTab();
       });
-
       if (isOpen) {
         liveExams.push(item);
       } else {
