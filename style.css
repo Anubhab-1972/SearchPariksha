@@ -588,7 +588,7 @@ body {
 }
 
 .exam-group-card.open .exam-group-body {
-  max-height: 400px;
+  max-height: 2000px;
   opacity: 1;
   border-top: 1px solid var(--border-color);
 }

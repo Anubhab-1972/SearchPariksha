@@ -504,11 +504,16 @@ function renderTab3Exams() {
   const hasAaiAtcMain = relevantExams.some(e => e.id === 'aai_atc');
   let aaiGroupRenderedMain = false;
 
+  // ── GATE group detection ──────────────────────────────────────────────────
+  const gateExamsInList = relevantExams.filter(e => e.id.startsWith('gate_'));
+  const useGateGroup = gateExamsInList.length > 1;  // Only group if 2+ GATE papers
+  let gateGroupRendered = false;
+
   relevantExams.forEach(exam => {
-    // Skip aai_atc standalone — handled in group card
+    // ── AAI: skip aai_atc standalone ─────────────────────────────────────────
     if (exam.id === 'aai_atc') return;
 
-    // When we hit aai_je, build a group card instead
+    // ── AAI JE group card ────────────────────────────────────────────────────
     if (exam.id === 'aai_je' && (hasAaiJeMain || hasAaiAtcMain) && !aaiGroupRenderedMain) {
       aaiGroupRenderedMain = true;
       const aaiJe = exam;
@@ -550,11 +555,71 @@ function renderTab3Exams() {
           </div>` : ''}
         </div>
       `;
-      // Put in live section (JE is live, ATC is upcoming — shown together)
       liveExams.push(groupCard);
       return;
     }
 
+    // ── GATE group card (only when 2+ GATE papers in relevant list) ──────────
+    if (exam.id.startsWith('gate_') && useGateGroup && !gateGroupRendered) {
+      gateGroupRendered = true;
+
+      // Determine group-level live/status — live if any GATE is live
+      const anyGateLive = gateExamsInList.some(g => g.status_code && g.status_code.startsWith('LIVE_'));
+      const gateIsLive = anyGateLive;
+      const gateLiveBadge = gateIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
+
+      // Build sub-items for each GATE paper
+      const gateSubItems = gateExamsInList.map(g => {
+        const gElig = evaluateEligibility(g.id);
+        const gIsLive = g.status_code && g.status_code.startsWith('LIVE_');
+        const gLiveBadge = gIsLive ? `<span class="live-badge" style="font-size:0.75em;">LIVE<span class="live-indicator"></span></span>` : '';
+        const locked = !gElig.eligible;
+
+        let dateDisplay = g.dateStr || '';
+        if (g.status_code === 'LIVE_ADMIT_CARD') {
+          dateDisplay = `<span style="background:#0b1c5f;color:white;padding:2px 7px;border-radius:4px;font-size:0.8em;font-weight:bold;">${dateDisplay}</span>`;
+        } else if (g.status_code === 'LIVE_RESULTS') {
+          dateDisplay = `<span style="background:#28a745;color:white;padding:2px 7px;border-radius:4px;font-size:0.8em;font-weight:bold;">${dateDisplay}</span>`;
+        }
+
+        return `
+          <div class="exam-sub-item" style="${locked ? 'opacity:0.5;' : ''}">
+            <div class="exam-sub-name">
+              ${gLiveBadge} ${g.name}
+              ${locked ? `<span style="color:#d9534f;font-size:0.75em;margin-left:6px;">🔒 ${gElig.message}</span>` : `<a href="#" onclick="openExamDirectory('${g.name}'); return false;" style="color:#007bff;font-size:0.75em;font-weight:400;text-decoration:underline;margin-left:6px;">Know more</a>`}
+            </div>
+            <div class="exam-sub-date">${dateDisplay}</div>
+          </div>`;
+      }).join('');
+
+      const gateGroupCard = document.createElement('div');
+      gateGroupCard.className = 'exam-group-card';
+      gateGroupCard.style.marginBottom = '6px';
+      gateGroupCard.innerHTML = `
+        <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="exam-group-title">
+            🎓 GATE
+            ${gateIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
+          </div>
+          <span class="exam-group-chevron">▼</span>
+        </div>
+        <div class="exam-group-body">
+          ${gateSubItems}
+        </div>
+      `;
+
+      if (gateIsLive) {
+        liveExams.push(gateGroupCard);
+      } else {
+        otherExams.push(gateGroupCard);
+      }
+      return;
+    }
+
+    // ── Skip remaining GATE papers when group already rendered ────────────────
+    if (exam.id.startsWith('gate_') && useGateGroup) return;
+
+    // ── Regular exam card ─────────────────────────────────────────────────────
     const eligibility = evaluateEligibility(exam.id);
     const isOpen = exam.status_code
       ? exam.status_code.startsWith('LIVE_')
@@ -614,6 +679,7 @@ function renderTab3Exams() {
       }
     }
   });
+
 
   if (liveExams.length > 0) {
     const liveHeader = document.createElement('h3');
