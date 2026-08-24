@@ -342,7 +342,7 @@ function getRelevantExams() {
   }
   // Chemical Engineering
   else if (branch === 'Chemical Engineering') {
-    validIds = ['gate_cy', 'ies', 'vitmee', 'barc', ...govtExams];
+    validIds = ['gate_ch', 'gate_cy', 'gate_xe', 'ies', 'vitmee', 'barc', ...govtExams];
   }
   // Polymer Science
   else if (branch === 'Polymer Science') {
@@ -350,19 +350,19 @@ function getRelevantExams() {
   }
   // Statistics
   else if (branch === 'Statistics') {
-    validIds = ['gate_st', 'csir', ...govtExams];
+    validIds = ['gate_st', 'gate_ma', 'csir', ...govtExams];
   }
   // Mathematics
   else if (branch === 'Mathematics') {
-    validIds = ['gate_ma', 'csir', 'tifr', ...govtExams];
+    validIds = ['gate_ma', 'gate_st', 'csir', 'tifr', ...govtExams];
   }
   // Physics
   else if (branch === 'Physics') {
-    validIds = ['gate_ph', 'csir', 'tifr', 'barc', ...govtExams];
+    validIds = ['gate_ph', 'gate_in', 'csir', 'tifr', 'barc', ...govtExams];
   }
   // Chemistry
   else if (branch === 'Chemistry') {
-    validIds = ['gate_cy', 'csir', 'tifr', 'barc', ...govtExams];
+    validIds = ['gate_cy', 'gate_ch', 'gate_ph', 'csir', 'tifr', 'barc', ...govtExams];
   }
   // Commerce Branches
   else if (['Accounting & Finance', 'Banking & Insurance', 'Taxation', 'General Commerce'].includes(branch)) {
