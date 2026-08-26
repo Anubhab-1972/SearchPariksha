@@ -160,6 +160,13 @@ def should_check_exam(exam):
     cal_date = parse_date(cal_date_str)
     last_checked = parse_date(last_checked_str)
 
+    # 0. check_from_month: annual exams that only open in a specific season.
+    #    Skip entirely until that month arrives each year (e.g. DBT BITP → check_from_month=5 means skip Jan-Apr).
+    check_from_month = exam.get("check_from_month")
+    if check_from_month and status not in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_RESULTS"):
+        if today.month < int(check_from_month):
+            return False, f"Seasonal exam — checking starts from month {check_from_month} (currently month {today.month})"
+
     # 1. LIVE exams with a future deadline -> SKIP
     if status.startswith("LIVE_") and cal_date:
         if cal_date.date() > today.date():
@@ -176,6 +183,7 @@ def should_check_exam(exam):
         return False, "Already checked today"
         
     return True, "Needs update"
+
 
 def update_all_exams():
     """Main function: update all exams using Gemini AI."""

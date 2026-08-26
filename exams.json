@@ -658,7 +658,7 @@
         "name":  "DBT BITP",
         "category":  "Research \u0026 Fellowships",
         "hasExactDate":  true,
-        "desc":  "Biotech Industrial Training Programme by DBT — 6-month hands-on training in bioengineering \u0026 biomanufacturing",
+        "desc":  "Biotech Industrial Training Programme by DBT â€” 6-month hands-on training in bioengineering \u0026 biomanufacturing",
         "goals":  [
                       "Research",
                       "Job",
@@ -672,6 +672,7 @@
         "archive_after":  "2026-09-06",
         "next_cycle_text":  "Registration ended. Next cycle: Expected August 2027",
         "next_cycle_date":  "2027-08-01",
-        "last_checked_date":  "2026-08-26"
+        "last_checked_date":  "2026-08-26",
+        "check_from_month":  5
     }
 ]
