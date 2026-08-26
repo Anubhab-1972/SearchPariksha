@@ -306,15 +306,15 @@ function getRelevantExams() {
 
   // Pharmacy
   if (state.course === 'B.Pharm' || state.course === 'M.Pharm') {
-    validIds = ['gpat', 'niper', 'gate_bt', 'icmr_bret', ...govtExams];
+    validIds = ['gpat', 'niper', 'gate_bt', 'icmr_bret', 'dbt_bitp', ...govtExams];
   }
   // Biotech & Life Sciences
   else if (branch === 'Biotechnology' || branch === 'Botany' || branch === 'Zoology' || branch === 'Biotechnology / Life Sciences') {
-    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'gpat', 'niper', 'barc', 'icmr_bret', ...govtExams];
+    validIds = ['iit_jam_bt', 'gate_bt', 'gate_xl', 'gate_ey', 'csir', 'vitmee', 'tifr', 'gatb', 'gpat', 'niper', 'barc', 'icmr_bret', 'dbt_bitp', ...govtExams];
   }
   // Marine Biotechnology
   else if (branch === 'Marine Biotechnology') {
-    validIds = ['gate_bt', 'gate_xl', 'gate_ey', 'gate_es', 'csir', 'tifr', 'gatb', 'icmr_bret', 'barc', ...govtExams];
+    validIds = ['gate_bt', 'gate_xl', 'gate_ey', 'gate_es', 'csir', 'tifr', 'gatb', 'icmr_bret', 'barc', 'dbt_bitp', ...govtExams];
   }
   // Geology / Earth Sciences
   else if (branch === 'Geology / Earth Sciences') {
