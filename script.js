@@ -49,12 +49,16 @@ async function loadExamData() {
     ];
 
     masterExamsDatabase.forEach(exam => {
-      // 1. Universal Auto-archive: If any exam was LIVE (Admit Card released / Exam ongoing / Registration ended)
-      // and its exam/archive date has passed, retract it from Live exams to Upcoming exams with next year's registration notice
+      // 1. Universal Auto-archive:
+      //    - archive_after: only applies when exam is in registration/upcoming phase.
+      //      If AI updater has already moved it to LIVE_ADMIT_CARD/LIVE_RESULTS, respect that.
+      //    - LIVE_ADMIT_CARD: auto-archives when its calDate (exam date) passes.
       let archiveDate = null;
-      if (exam.archive_after) {
+      if (exam.archive_after && exam.status_code !== 'LIVE_ADMIT_CARD' && exam.status_code !== 'LIVE_RESULTS') {
+        // Only apply registration-close archiving if NOT already in a later live stage
         archiveDate = new Date(exam.archive_after);
       } else if (exam.status_code === 'LIVE_ADMIT_CARD' && exam.calDate) {
+        // Admit card phase ends when the actual exam date passes
         archiveDate = new Date(exam.calDate);
       }
 
@@ -64,7 +68,6 @@ async function loadExamData() {
         if (exam.next_cycle_text) {
           exam.dateStr = exam.next_cycle_text;
         } else {
-          // Compute next year registration month based on original cycle if available
           let nextYear = today.getFullYear() + 1;
           let monthStr = '';
           if (exam.original_reg_month) {
@@ -73,7 +76,7 @@ async function loadExamData() {
             const d = new Date(exam.calDate);
             monthStr = monthNames[d.getMonth()];
           }
-          exam.dateStr = monthStr 
+          exam.dateStr = monthStr
             ? `Registration ended! Opens next year (Expected: ${monthStr} ${nextYear})`
             : `Registration ended! Opens next year (${nextYear})`;
         }
