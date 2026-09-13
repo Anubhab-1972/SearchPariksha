@@ -48,62 +48,101 @@ async function loadExamData() {
       "July", "August", "September", "October", "November", "December"
     ];
 
+    // Helper: parse dates from strings or ISO formats (e.g., "Apply by Sep 7, 2026", "2026-09-07")
+    function parseDateString(dateInput) {
+      if (!dateInput) return null;
+      if (/^\d{4}-\d{2}-\d{2}$/.test(dateInput)) {
+        const [y, m, d] = dateInput.split('-').map(Number);
+        const parsed = new Date(y, m - 1, d);
+        parsed.setHours(23, 59, 59, 999);
+        return parsed;
+      }
+      const match = dateInput.match(/(?:apply by|last date|ends|deadline:?|exam date:?)\s*([A-Za-z]+ \d{1,2},? \d{4}|\d{1,2} [A-Za-z]+ \d{4})/i)
+        || dateInput.match(/([A-Za-z]+ \d{1,2},? \d{4})/);
+      if (match) {
+        const parsed = new Date(match[1]);
+        if (!isNaN(parsed.getTime())) {
+          parsed.setHours(23, 59, 59, 999);
+          return parsed;
+        }
+      }
+      return null;
+    }
+
     masterExamsDatabase.forEach(exam => {
-      // 1. Universal Auto-archive:
-      //    - archive_after: only applies when exam is in registration/upcoming phase.
-      //      If AI updater has already moved it to LIVE_ADMIT_CARD/LIVE_RESULTS, respect that.
-      //    - LIVE_ADMIT_CARD: auto-archives when its calDate (exam date) passes.
-      let archiveDate = null;
-      if (exam.archive_after && exam.status_code !== 'LIVE_ADMIT_CARD' && exam.status_code !== 'LIVE_RESULTS') {
-        // Only apply registration-close archiving if NOT already in a later live stage
-        archiveDate = new Date(exam.archive_after);
-      } else if (exam.status_code === 'LIVE_ADMIT_CARD' && exam.calDate) {
-        // Admit card phase ends when the actual exam date passes
-        archiveDate = new Date(exam.calDate);
+      // 1. Universal Auto-Live: if an UPCOMING exam with an exact start date has arrived
+      // (e.g. "Registration starts August 27, 2026"), mark it LIVE
+      if (exam.status_code === 'UPCOMING' && exam.hasExactDate && exam.calDate && exam.dateStr && exam.dateStr.toLowerCase().includes('starts')) {
+        const startDate = parseDateString(exam.calDate);
+        if (startDate && today >= startDate) {
+          exam.status_code = 'LIVE_REGISTRATION_OPEN';
+          exam.dateStr = exam.dateStr
+            .replace(/Registration starts/i, 'Registration Open! Started')
+            .replace(/Expected Registration:/i, 'Registration Open!');
+          console.log(`[AUTO-LIVE] ${exam.name} → LIVE (start date reached)`);
+        }
       }
 
-      if (archiveDate && today > archiveDate) {
-        exam.status_code = 'UPCOMING';
+      // 2. Universal Auto-Archive for ALL exams:
+      // If registration deadline or exam date has passed, take it down from LIVE immediately
+      const isRegOpen = exam.status_code === 'LIVE_REGISTRATION_OPEN' || (exam.dateStr && exam.dateStr.toLowerCase().includes('registration open'));
+      const isAdmitCard = exam.status_code === 'LIVE_ADMIT_CARD' || (exam.dateStr && exam.dateStr.toLowerCase().includes('admit card released'));
 
-        if (exam.next_cycle_text) {
-          exam.dateStr = exam.next_cycle_text;
-        } else {
+      if (isRegOpen) {
+        // Find closing deadline: archive_after > calDate > parsed from dateStr
+        let closingDate = null;
+        if (exam.archive_after) {
+          closingDate = parseDateString(exam.archive_after);
+        } else if (exam.calDate && exam.hasExactDate) {
+          closingDate = parseDateString(exam.calDate);
+        }
+        if (!closingDate && exam.dateStr) {
+          closingDate = parseDateString(exam.dateStr);
+        }
+
+        // If today is past the last date of registration, retract it!
+        if (closingDate && today > closingDate) {
+          exam.status_code = 'UPCOMING';
+          exam.dateStr = exam.next_cycle_text || 'Registration ended! Exam Date / Admit Card to be announced';
+          exam.hasExactDate = false;
+          if (exam.next_cycle_date) {
+            exam.calDate = exam.next_cycle_date;
+          }
+          if (exam.display_text) delete exam.display_text;
+          console.log(`[AUTO-ARCHIVE REGISTRATION] ${exam.name} → UPCOMING (Deadline ${closingDate.toISOString().slice(0,10)} passed)`);
+        }
+      } else if (isAdmitCard) {
+        // Find exam date: calDate > archive_after > parsed from dateStr
+        let examDate = null;
+        if (exam.calDate) {
+          examDate = parseDateString(exam.calDate);
+        } else if (exam.archive_after) {
+          examDate = parseDateString(exam.archive_after);
+        }
+        if (!examDate && exam.dateStr) {
+          examDate = parseDateString(exam.dateStr);
+        }
+
+        // If today is past the exam date, retract it!
+        if (examDate && today > examDate) {
+          exam.status_code = 'UPCOMING';
           let nextYear = today.getFullYear() + 1;
           let monthStr = '';
           if (exam.original_reg_month) {
             monthStr = exam.original_reg_month;
           } else if (exam.calDate) {
-            const d = new Date(exam.calDate);
-            monthStr = monthNames[d.getMonth()];
+            const d = parseDateString(exam.calDate);
+            if (d) monthStr = monthNames[d.getMonth()];
           }
-          exam.dateStr = monthStr
+          exam.dateStr = exam.next_cycle_text || (monthStr
             ? `Registration ended! Opens next year (Expected: ${monthStr} ${nextYear})`
-            : `Registration ended! Opens next year (${nextYear})`;
-        }
-
-        if (exam.next_cycle_date) {
-          exam.calDate = exam.next_cycle_date;
-        } else if (exam.calDate) {
-          const prevCal = new Date(exam.calDate);
-          prevCal.setFullYear(prevCal.getFullYear() + 1);
-          exam.calDate = prevCal.toISOString().split('T')[0];
-        }
-        exam.hasExactDate = false;
-        if (exam.display_text) delete exam.display_text;
-        console.log(`[AUTO-ARCHIVE] ${exam.name} → UPCOMING (${exam.dateStr})`);
-      }
-
-      // 2. Universal Auto-live: if an UPCOMING exam's calDate has arrived, mark it live for display.
-      // The weekly auto-updater will eventually confirm and persist this in the JSON.
-      if (exam.status_code === 'UPCOMING' && exam.hasExactDate && exam.calDate) {
-        const calDate = new Date(exam.calDate);
-        if (today >= calDate) {
-          exam.status_code = 'LIVE_REGISTRATION_OPEN';
-          // Update display text to reflect registration is now open
-          exam.dateStr = exam.dateStr
-            .replace('Registration starts', 'Registration Open! Started')
-            .replace('Expected Registration:', 'Registration Open!');
-          console.log(`[AUTO-LIVE] ${exam.name} → LIVE (calDate ${exam.calDate} reached)`);
+            : `Registration ended! Opens next year (${nextYear})`);
+          exam.hasExactDate = false;
+          if (exam.next_cycle_date) {
+            exam.calDate = exam.next_cycle_date;
+          }
+          if (exam.display_text) delete exam.display_text;
+          console.log(`[AUTO-ARCHIVE ADMIT CARD] ${exam.name} → UPCOMING (Exam date ${examDate.toISOString().slice(0,10)} passed)`);
         }
       }
     });
@@ -523,11 +562,13 @@ function renderTab3Exams() {
       const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
       const jeIsLive = aaiJe.status_code ? aaiJe.status_code.startsWith('LIVE_') : false;
       const atcIsLive = aaiAtc && aaiAtc.status_code ? aaiAtc.status_code.startsWith('LIVE_') : false;
+      const aaiAnyLive = jeIsLive || atcIsLive;
       const groupTitle = jeIsLive && atcIsLive ? '👷✈️ AAI JE / ATC'
         : jeIsLive ? '👷 AAI JE'
         : atcIsLive ? '✈️ AAI ATC'
         : '👷✈️ AAI JE / ATC';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
+      const atcLiveBadge = atcIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span> ` : '';
       const atcSmartDate = (aaiAtc && aaiAtc.status_code === 'UPCOMING' && new Date() >= new Date('2026-09-01'))
         ? 'Expected Registration: September 2026'
         : (aaiAtc ? aaiAtc.dateStr : 'Expected Registration: August 2026');
@@ -539,7 +580,7 @@ function renderTab3Exams() {
         <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="exam-group-title">
             ${groupTitle}
-            ${jeIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
+            ${aaiAnyLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
           </div>
           <span class="exam-group-chevron">▼</span>
         </div>
@@ -551,14 +592,18 @@ function renderTab3Exams() {
             <div class="exam-sub-date">${aaiJe.dateStr}</div>
           </div>
           ${aaiAtc ? `<div class="exam-sub-item">
-            <div class="exam-sub-name">✈️ AAI ATC (Air Traffic Controller)
+            <div class="exam-sub-name">${atcLiveBadge}✈️ AAI ATC (Air Traffic Controller)
               <a href="https://www.aai.aero/en/careers/recruitment" target="_blank" style="color:#007bff; font-size:0.75em; font-weight:400; text-decoration:underline; margin-left:6px;">Official Site</a>
             </div>
             <div class="exam-sub-date">${atcSmartDate}</div>
           </div>` : ''}
         </div>
       `;
-      liveExams.push(groupCard);
+      if (aaiAnyLive) {
+        liveExams.push(groupCard);
+      } else {
+        otherExams.push(groupCard);
+      }
       return;
     }
 
@@ -927,11 +972,13 @@ function renderExamDirectory(searchTerm = "") {
 
       const jeIsLive = isExamLive(aaiJe);
       const atcIsLive = aaiAtc ? isExamLive(aaiAtc) : false;
+      const aaiAnyLive = jeIsLive || atcIsLive;
       const groupTitle = jeIsLive && atcIsLive ? '👷✈️ AAI JE / ATC'
         : jeIsLive ? '👷 AAI JE'
         : atcIsLive ? '✈️ AAI ATC'
         : '👷✈️ AAI JE / ATC';
       const jeLiveBadge = jeIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
+      const atcLiveBadge = atcIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span> ` : '';
       const atcDate = aaiAtc ? getSmartDate(aaiAtc) : 'Expected Registration: August 2026';
 
       const groupCard = document.createElement('div');
@@ -940,7 +987,7 @@ function renderExamDirectory(searchTerm = "") {
         <div class="exam-group-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="exam-group-title">
             ${groupTitle}
-            ${jeIsLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
+            ${aaiAnyLive ? `<span class="live-badge" style="font-size:0.8em;">LIVE<span class="live-indicator"></span></span>` : ''}
           </div>
           <span class="exam-group-chevron">▼</span>
         </div>
@@ -956,7 +1003,7 @@ function renderExamDirectory(searchTerm = "") {
           </div>
           ${aaiAtc ? `
           <div class="exam-sub-item">
-            <div class="exam-sub-name">✈️ AAI ATC (Air Traffic Controller)</div>
+            <div class="exam-sub-name">${atcLiveBadge}✈️ AAI ATC (Air Traffic Controller)</div>
             <div class="exam-sub-date">${atcDate}</div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
               <a href="https://www.aai.aero/en/careers/recruitment" target="_blank" style="font-size:0.8em; color:white; background:#28a745; padding:3px 9px; border-radius:4px; text-decoration:none; font-weight:bold;">🌐 Official Website</a>
