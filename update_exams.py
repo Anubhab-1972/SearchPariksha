@@ -57,25 +57,74 @@ def save_exams(exams):
         json.dump(exams, f, indent=2, ensure_ascii=False)
     print(f"[OK] Saved {len(exams)} exams to {EXAMS_JSON_PATH}")
 
-def query_exam_status(exam_name, exam_desc):
+def query_exam_status(exam_name, exam_desc, current_status="UPCOMING", current_datestr=""):
     """
-    Ask Gemini AI for the latest dates and status code.
+    Ask Gemini AI for the latest dates and status code with stage-aware rules.
+    - If registration hasn't opened yet: ONLY look for registration/notification (NEVER search for admit cards).
+    - If registration is live: check for deadline extensions or registration close.
+    - If registration has closed: look for Admit Card, Exam Date, or Results.
     """
     today = datetime.now().strftime("%B %d, %Y")
+    current_year = datetime.now().year
     
-    prompt = f"""Today is {today}. I need the latest official status for the Indian competitive exam: "{exam_name}" ({exam_desc}).
+    # Check if this exam is currently waiting for notification/registration to open
+    is_pre_registration = (
+        current_status == "UPCOMING" and 
+        not any(w in (current_datestr or "").lower() for w in ["registration ended", "ended", "admit card", "results"])
+    )
+    
+    if is_pre_registration:
+        # STAGE 1: Registration has NOT opened yet (e.g. TIFR, AAI ATC, ICMR BRET)
+        # The bot MUST ONLY check whether registration/notification has opened!
+        # It must NEVER search for or return Admit Card status here!
+        prompt = f"""Today is {today}. I am tracking the upcoming Indian competitive exam: "{exam_name}" ({exam_desc}).
+Current site status: "{current_datestr}".
 
-Search the internet and tell me:
-1. Is registration currently OPEN? -> status_code: LIVE_REGISTRATION_OPEN (display_text: "Registration Open! Apply by [Date]")
-2. If registration is CLOSED but Admit Card has been released / exam is scheduled in the immediate future: -> status_code: LIVE_ADMIT_CARD (display_text: "Admit Card Released! Exam Date: [Date]")
-3. If this year's exam has concluded / ended: -> status_code: UPCOMING (display_text: "Registration ended! Opens next year (Expected: [Month Year])" for next cycle)
-4. If registration hasn't started yet: -> status_code: UPCOMING (display_text: "Expected Registration: [Month Year]" or "Registration starts [Date]")
+The application window for the upcoming cycle ({current_year} or {current_year+1}) has NOT opened yet.
+STRICT RULE: Do NOT search for or return Admit Card status! Admit cards CANNOT exist before registration opens. Ignore any old past years' admit card articles.
 
-CRITICAL: You must output a JSON object with two keys:
-1. 'status_code': Must be exactly one of: LIVE_REGISTRATION_OPEN, LIVE_ADMIT_CARD, LIVE_RESULTS, UPCOMING, PAST.
-2. 'display_text': A short display string (max 80 chars) like "Registration Open! Apply by Oct 5, 2026", "Admit Card Released! Exam Date: Aug 22, 2026", or "Registration ended! Opens next year (Expected: July 2027)".
+Search the official website / official news and check:
+1. Has official registration / application OPENED for the new cycle?
+   -> If YES: status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
+2. If registration has NOT opened yet:
+   -> status_code: "UPCOMING", display_text: "Expected Registration: [Month Year]" or "Registration starts [Date]" (if an upcoming start date is officially announced).
 
-Do NOT include any explanation or extra text."""
+CRITICAL: Output ONLY a JSON object with:
+- 'status_code': "LIVE_REGISTRATION_OPEN" or "UPCOMING"
+- 'display_text': A short string (max 80 chars)
+"""
+    elif current_status == "LIVE_REGISTRATION_OPEN":
+        # STAGE 2: Registration is currently OPEN (e.g. GATE)
+        prompt = f"""Today is {today}. The Indian competitive exam: "{exam_name}" ({exam_desc}) currently has registration open on our site ("{current_datestr}").
+
+Search the official website / news and check:
+1. Is registration still open or has the deadline been extended?
+   -> status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
+2. Has registration officially CLOSED?
+   - If closed and Admit Card is ALREADY released: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
+   - If closed and waiting for exam/admit card: -> status_code: "UPCOMING", display_text: "Registration ended! Exam Date / Admit Card to be announced"
+   - If exam has already concluded: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
+
+CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
+"""
+    else:
+        # STAGE 3: Registration has CLOSED (e.g. SSC CGL, IBPS PO)
+        # NOW it is appropriate to look for Admit Card, Exam Date, or Results!
+        prompt = f"""Today is {today}. For the Indian competitive exam: "{exam_name}" ({exam_desc}), registration has already closed.
+Current site status: "{current_datestr}".
+
+Search the official website / news and check:
+1. Has the Admit Card been officially RELEASED for this year's exam?
+   -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
+2. Has the exam already taken place / CONCLUDED?
+   -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
+3. Have final RESULTS been announced?
+   -> status_code: "LIVE_RESULTS", display_text: "Results Announced! Check Official Website"
+4. If still waiting for admit card:
+   -> status_code: "UPCOMING", display_text: "{current_datestr}"
+
+CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
+"""
 
     try:
         response = client.models.generate_content(
@@ -202,7 +251,9 @@ def update_all_exams():
             print("\n[GATE] Querying for GATE exam dates...")
             gate_result = query_exam_status(
                 "GATE (Graduate Aptitude Test in Engineering)",
-                "Common notification for all GATE papers - registration and exam dates"
+                "Common notification for all GATE papers - registration and exam dates",
+                current_status=gate_exams[0].get("status_code", "UPCOMING"),
+                current_datestr=gate_exams[0].get("dateStr", "")
             )
             if gate_result and "display_text" in gate_result:
                 print(f"  [GATE] AI says: {gate_result['display_text']} ({gate_result.get('status_code')})")
@@ -227,7 +278,12 @@ def update_all_exams():
         if needs_check:
             print(f"\n[{exam['id']}] Querying for {exam['name']}...")
             
-            result = query_exam_status(exam["name"], exam["desc"])
+            result = query_exam_status(
+                exam["name"],
+                exam["desc"],
+                current_status=exam.get("status_code", "UPCOMING"),
+                current_datestr=exam.get("dateStr", "")
+            )
             
             if result and "display_text" in result:
                 print(f"  [{exam['id']}] AI says: {result['display_text']} ({result.get('status_code')})")
