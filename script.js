@@ -89,15 +89,17 @@ async function loadExamData() {
       const isAdmitCard = exam.status_code === 'LIVE_ADMIT_CARD' || (exam.dateStr && exam.dateStr.toLowerCase().includes('admit card released'));
 
       if (isRegOpen) {
-        // Find closing deadline: archive_after > calDate > parsed from dateStr
+        // Find closing deadline:
+        // 1. archive_after is the definitive closing deadline (including extended window)
+        // 2. Or parse from dateStr if it explicitly contains apply by / last date / deadline
+        // 3. calDate ONLY if it is not a start date!
         let closingDate = null;
         if (exam.archive_after) {
           closingDate = parseDateString(exam.archive_after);
-        } else if (exam.calDate && exam.hasExactDate) {
-          closingDate = parseDateString(exam.calDate);
-        }
-        if (!closingDate && exam.dateStr) {
+        } else if (exam.dateStr && /(?:apply by|last date|ends|deadline:?|till)\s*([A-Za-z]+ \d{1,2})/i.test(exam.dateStr)) {
           closingDate = parseDateString(exam.dateStr);
+        } else if (exam.calDate && exam.hasExactDate && !(exam.dateStr && /start|expected/i.test(exam.dateStr))) {
+          closingDate = parseDateString(exam.calDate);
         }
 
         // If today is past the last date of registration, retract it!
@@ -519,6 +521,13 @@ function getRelevantExams() {
   today.setHours(0, 0, 0, 0);
 
   filteredExams.sort((a, b) => {
+    const isLiveA = a.status_code && a.status_code.startsWith('LIVE_');
+    const isLiveB = b.status_code && b.status_code.startsWith('LIVE_');
+
+    // LIVE exams always come first!
+    if (isLiveA && !isLiveB) return -1;
+    if (!isLiveA && isLiveB) return 1;
+
     const dateA = a.calDate ? new Date(a.calDate) : new Date('2099-12-31');
     const dateB = b.calDate ? new Date(b.calDate) : new Date('2099-12-31');
     
@@ -691,11 +700,16 @@ function renderTab3Exams() {
 
         return `
           <div class="exam-sub-item" style="${locked ? 'opacity:0.5;' : ''}">
-            <div class="exam-sub-name">
-              ${gLiveBadge} ${g.name}
-              ${locked ? `<span style="color:#d9534f;font-size:0.75em;margin-left:6px;">🔒 ${gElig.message}</span>` : `<a href="#" onclick="openExamDirectory('${g.name}'); return false;" style="color:#007bff;font-size:0.75em;font-weight:400;text-decoration:underline;margin-left:6px;">Know more</a>`}
+            <div style="display:flex; align-items:center; width:100%; justify-content:space-between; flex-wrap:wrap; gap:6px;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:${locked ? 'not-allowed' : 'pointer'};">
+                <input type="checkbox" class="gate-checkbox" value="${g.id}" ${locked ? 'disabled' : ''} ${state.selectedExams.includes(g.id) ? 'checked' : ''}>
+                <span class="exam-sub-name" style="font-weight:600;">
+                  ${gLiveBadge} ${g.name}
+                </span>
+              </label>
+              ${locked ? `<span style="color:#d9534f;font-size:0.75em;">🔒 ${gElig.message}</span>` : `<a href="#" onclick="openExamDirectory('${g.name}'); return false;" style="color:#007bff;font-size:0.75em;font-weight:400;text-decoration:underline;">Know more</a>`}
             </div>
-            <div class="exam-sub-date">${dateDisplay}</div>
+            <div class="exam-sub-date" style="margin-left:24px;">${dateDisplay}</div>
           </div>`;
       }).join('');
 
@@ -714,6 +728,18 @@ function renderTab3Exams() {
           ${gateSubItems}
         </div>
       `;
+
+      // Wire up checkboxes inside GATE group
+      gateGroupCard.querySelectorAll('.gate-checkbox').forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          if (e.target.checked) {
+            state.selectedExams.push(e.target.value);
+          } else {
+            state.selectedExams = state.selectedExams.filter(id => id !== e.target.value);
+          }
+          validateTab();
+        });
+      });
 
       if (gateIsLive) {
         liveExams.push(gateGroupCard);

@@ -39,10 +39,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, Process Calculations, Thermodynamics, Fluid Mechanics, Heat Transfer, Mass Transfer, Chemical Reaction Engineering, Process Control, Plant Design, and Chemical Technology.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "aai_je",
@@ -86,10 +89,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, General Biology, Genetics, Cell and Molecular Biology, Fundamentals of Biological Engineering, Bioprocess Engineering, Recombinant DNA Technology, and Bioinformatics.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_xl",
@@ -102,10 +108,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Chemistry (Compulsory) along with elective sections in Biochemistry, Botany, Microbiology, Zoology, and Food Technology.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_ey",
@@ -117,10 +126,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Ecology, Evolution, Behavioural Ecology, Applied Ecology, Quantitative Ecology, and Evolutionary Genetics.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_cs",
@@ -133,10 +145,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Discrete Mathematics, Engineering Mathematics, Digital Logic, Computer Organization, Programming and Data Structures, Algorithms, Theory of Computation, Compiler Design, Operating Systems, Databases, and Computer Networks.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_da",
@@ -149,10 +164,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Probability and Statistics, Linear Algebra, Calculus and Optimization, Programming, Data Structures and Algorithms, Database Management and Warehousing, Machine Learning, and Artificial Intelligence.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_me",
@@ -165,10 +183,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, Applied Mechanics and Design, Fluid Mechanics and Thermal Sciences, and Materials, Manufacturing and Industrial Engineering.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_pi",
@@ -181,10 +202,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, General Engineering, Manufacturing Processes, Quality and Reliability, Operations Research, and Industrial Engineering.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_xe",
@@ -196,10 +220,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics (Compulsory) and choice of two subjects among Fluid Mechanics, Materials Science, Solid Mechanics, Thermodynamics, Polymer Science, Food Technology, and Atmospheric Sciences.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_ce",
@@ -212,10 +239,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, Structural Engineering, Geotechnical Engineering, Water Resources Engineering, Environmental Engineering, Transportation Engineering, and Geomatics Engineering.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_es",
@@ -228,10 +258,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Mathematics Foundation, Environmental Chemistry, Environmental Microbiology, Water and Wastewater Engineering, Air Pollution and Control, Solid and Hazardous Waste Management, and Environmental Management.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_ee",
@@ -244,10 +277,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, Electric Circuits, Electromagnetic Fields, Signals and Systems, Electrical Machines, Power Systems, Control Systems, Electrical Measurements, Analog and Digital Electronics, and Power Electronics.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_ec",
@@ -260,10 +296,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, Networks, Signals and Systems, Electronic Devices, Analog Circuits, Digital Circuits, Control Systems, Communications, and Electromagnetics.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_in",
@@ -276,10 +315,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Engineering Mathematics, Electricity and Magnetism, Signals and Systems, Transducers and Optical Instrumentation, Analog and Digital Electronics, Control Systems, Measurements, and Process Control.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_general",
@@ -291,10 +333,13 @@
                       "Higher Studies",
                       "Not Sure"
                   ],
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_st",
@@ -307,10 +352,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Calculus, Matrix Theory, Probability, Standard Distributions, Stochastic Processes, Estimation, Testing of Hypotheses, Non-parametric Tests, Multivariate Analysis, and Regression Analysis.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_ma",
@@ -322,10 +370,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Calculus, Linear Algebra, Real Analysis, Complex Analysis, Ordinary and Partial Differential Equations, Algebra, Functional Analysis, Numerical Analysis, Topology, and Linear Programming.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_ph",
@@ -338,10 +389,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Mathematical Physics, Classical Mechanics, Electromagnetic Theory, Quantum Mechanics, Thermodynamics and Statistical Physics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, and Electronics.",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "gate_cy",
@@ -354,10 +408,13 @@
                   ],
         "syllabus_link":  "https://gate2027.iitm.ac.in/",
         "syllabus_summary":  "Covers Physical Chemistry (Structure, Equilibrium, Kinetics), Inorganic Chemistry (Main group, Transition Metals, Organometallics), and Organic Chemistry (Stereochemistry, Reaction Mechanisms, Synthesis, Biomolecules).",
-        "dateStr":  "Registration starts August 27, 2026",
-        "status_code":  "UPCOMING",
-        "calDate":  "2026-08-27",
-        "hasExactDate":  true
+        "status_code":  "LIVE_REGISTRATION_OPEN",
+        "dateStr":  "Registration Open! Apply by Sep 27, 2026 (Extended window follows)",
+        "calDate":  "2026-09-27",
+        "hasExactDate":  true,
+        "archive_after":  "2026-10-15",
+        "next_cycle_text":  "Registration ended! Opens next year (Expected: August 2027)",
+        "next_cycle_date":  "2027-08-27"
     },
     {
         "id":  "csir",
@@ -658,7 +715,7 @@
         "id":  "dbt_bitp",
         "name":  "DBT BITP",
         "category":  "Research \u0026 Fellowships",
-        "desc":  "Biotech Industrial Training Programme by DBT ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 6-month hands-on training in bioengineering \u0026 biomanufacturing",
+        "desc":  "Biotech Industrial Training Programme by DBT ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â 6-month hands-on training in bioengineering \u0026 biomanufacturing",
         "goals":  [
                       "Research",
                       "Job",
