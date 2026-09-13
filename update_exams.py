@@ -265,6 +265,8 @@ def update_all_exams():
                     cal = extract_cal_date(gate_result["display_text"])
                     if cal:
                         exam["calDate"] = cal
+                        if exam["status_code"] in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD"):
+                            exam["archive_after"] = cal
                 updated_count += len(gate_exams)
             else:
                 print("  [GATE] No update - keeping existing data")
@@ -294,6 +296,8 @@ def update_all_exams():
                 cal = extract_cal_date(result["display_text"])
                 if cal:
                     exam["calDate"] = cal
+                    if exam["status_code"] in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD"):
+                        exam["archive_after"] = cal
                 updated_count += 1
             else:
                 print(f"  [{exam['id']}] No update - keeping existing data")
