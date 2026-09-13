@@ -12,7 +12,8 @@
                   ],
         "calDate":  "2026-10-01",
         "syllabus_link":  "https://aiimsexams.ac.in/landingpage/courses/advertisement/6905044c36116d6a6676a872",
-        "syllabus_summary":  "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C)."
+        "syllabus_summary":  "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C).",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "iit_jam_bt",
@@ -26,7 +27,8 @@
                   ],
         "calDate":  "2026-09-20",
         "syllabus_link":  "",
-        "syllabus_summary":  "Official website to be announced."
+        "syllabus_summary":  "Official website to be announced.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "gate_ch",
@@ -430,7 +432,8 @@
                       "Not Sure"
                   ],
         "syllabus_link":  "https://csirhrdg.res.in",
-        "syllabus_summary":  "Covers General Aptitude (Part A) and advanced domain knowledge (Part B and C) across Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences, and Physical Sciences."
+        "syllabus_summary":  "Covers General Aptitude (Part A) and advanced domain knowledge (Part B and C) across Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences, and Physical Sciences.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "ugc",
@@ -446,7 +449,8 @@
                   ],
         "calDate":  "2026-09-20",
         "syllabus_link":  "https://ugcnet.nta.ac.in",
-        "syllabus_summary":  "Covers Paper 1 (General Paper on Teaching and Research Aptitude, Reasoning, ICT, Higher Education System) and Paper 2 (Elective subject-specific postgraduate discipline)."
+        "syllabus_summary":  "Covers Paper 1 (General Paper on Teaching and Research Aptitude, Reasoning, ICT, Higher Education System) and Paper 2 (Elective subject-specific postgraduate discipline).",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "vitmee",
@@ -461,7 +465,8 @@
                   ],
         "calDate":  "2026-11-20",
         "syllabus_link":  "https://vit.ac.in",
-        "syllabus_summary":  "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills."
+        "syllabus_summary":  "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "ies",
@@ -476,7 +481,8 @@
                   ],
         "calDate":  "2026-09-20",
         "syllabus_link":  "https://upsc.gov.in",
-        "syllabus_summary":  "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains."
+        "syllabus_summary":  "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "tifr",
@@ -491,7 +497,8 @@
                   ],
         "calDate":  "2026-09-20",
         "syllabus_link":  "https://www.tifr.res.in",
-        "syllabus_summary":  "Evaluates basic scientific knowledge across General Science (Physics, Chemistry, Math), Biology (Cell/Molecular Biology, Genetics, Biochemistry), and scientific reasoning."
+        "syllabus_summary":  "Evaluates basic scientific knowledge across General Science (Physics, Chemistry, Math), Biology (Cell/Molecular Biology, Genetics, Biochemistry), and scientific reasoning.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "gatb",
@@ -506,7 +513,8 @@
                   ],
         "calDate":  "2026-03-20",
         "syllabus_link":  "https://dbt.nic.in",
-        "syllabus_summary":  "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor\u0027s level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B)."
+        "syllabus_summary":  "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor\u0027s level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B).",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "gpat",
@@ -520,7 +528,8 @@
                   ],
         "calDate":  "2026-12-20",
         "syllabus_link":  "https://natboard.edu.in",
-        "syllabus_summary":  "Covers core B.Pharm subjects including Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy, Pharmacology, and allied pharmaceutical science disciplines."
+        "syllabus_summary":  "Covers core B.Pharm subjects including Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy, Pharmacology, and allied pharmaceutical science disciplines.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "niper",
@@ -534,7 +543,8 @@
                   ],
         "calDate":  "2026-04-20",
         "syllabus_link":  "https://niperraipur.ac.in",
-        "syllabus_summary":  "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude."
+        "syllabus_summary":  "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "barc",
@@ -548,7 +558,8 @@
                   ],
         "calDate":  "2026-12-20",
         "syllabus_link":  "https://www.barc.gov.in",
-        "syllabus_summary":  "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate\u0027s specific discipline."
+        "syllabus_summary":  "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate\u0027s specific discipline.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "upsc_cse",
@@ -563,7 +574,8 @@
                   ],
         "calDate":  "2026-08-21",
         "syllabus_link":  "https://upsc.gov.in",
-        "syllabus_summary":  "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers."
+        "syllabus_summary":  "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "sbi_po",
@@ -651,7 +663,8 @@
                   ],
         "calDate":  "2026-07-20",
         "syllabus_link":  "https://ssc.gov.in/",
-        "syllabus_summary":  "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts."
+        "syllabus_summary":  "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "ibacio",
@@ -666,7 +679,8 @@
                   ],
         "calDate":  "2026-10-20",
         "syllabus_link":  "https://mha.gov.in",
-        "syllabus_summary":  "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2."
+        "syllabus_summary":  "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "ssc",
@@ -681,7 +695,8 @@
                       "Not Sure"
                   ],
         "syllabus_link":  "https://ssc.gov.in/",
-        "syllabus_summary":  "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts."
+        "syllabus_summary":  "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts.",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "ctet",
@@ -695,7 +710,8 @@
                   ],
         "calDate":  "2026-09-06",
         "syllabus_link":  "https://ctet.nic.in",
-        "syllabus_summary":  "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II)."
+        "syllabus_summary":  "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II).",
+        "status_code":  "UPCOMING"
     },
     {
         "id":  "atma",
@@ -715,7 +731,7 @@
         "id":  "dbt_bitp",
         "name":  "DBT BITP",
         "category":  "Research \u0026 Fellowships",
-        "desc":  "Biotech Industrial Training Programme by DBT ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â 6-month hands-on training in bioengineering \u0026 biomanufacturing",
+        "desc":  "Biotech Industrial Training Programme by DBT ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â 6-month hands-on training in bioengineering \u0026 biomanufacturing",
         "goals":  [
                       "Research",
                       "Job",
