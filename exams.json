@@ -726,27 +726,5 @@
         "status_code":  "UPCOMING",
         "syllabus_link":  "https://www.atmaaims.com",
         "syllabus_summary":  "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections."
-    },
-    {
-        "id":  "dbt_bitp",
-        "name":  "DBT BITP",
-        "category":  "Research \u0026 Fellowships",
-        "desc":  "Biotech Industrial Training Programme by DBT ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â 6-month hands-on training in bioengineering \u0026 biomanufacturing",
-        "goals":  [
-                      "Research",
-                      "Job",
-                      "Not Sure"
-                  ],
-        "syllabus_link":  "https://bitp26.onlineapplicationform.org/BITP/",
-        "syllabus_summary":  "Selection via All-India CBT. 6-month full-time industrial training at leading biotech companies. Open to B.E/B.Tech/M.Sc/M.Tech in Biotechnology or Bioinformatics (2023-26 batches). Min 50% marks required.",
-        "calDate":  "2026-09-06",
-        "next_cycle_text":  "Registration ended. Next cycle: Expected August 2027",
-        "next_cycle_date":  "2027-08-01",
-        "last_checked_date":  "2026-08-26",
-        "check_from_month":  5,
-        "status_code":  "UPCOMING",
-        "dateStr":  "Registration ended. Next cycle: Expected August 2027",
-        "archive_after":  "2026-09-06",
-        "hasExactDate":  false
     }
 ]
