@@ -626,3 +626,54 @@ body {
   font-weight: 500;
 }
 
+/* Notification Bell in Header */
+.notify-btn {
+  position: absolute;
+  top: 0;
+  right: 55px;
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed);
+  box-shadow: var(--glass-shadow);
+  color: var(--text-main);
+}
+.notify-btn:hover {
+  background: var(--glass-bg-hover);
+  transform: scale(1.1);
+}
+
+/* Admit Card Alert Banner */
+.admit-card-banner {
+  background: linear-gradient(135deg, #0b1c5f, #1a3a8f);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(11, 28, 95, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: bannerSlide 0.4s ease;
+}
+
+.admit-card-banner a {
+  color: #ffeb3b;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@keyframes bannerSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

@@ -143,6 +143,9 @@ async function loadExamData() {
           }
           if (exam.display_text) delete exam.display_text;
           console.log(`[AUTO-ARCHIVE ADMIT CARD] ${exam.name} → UPCOMING (Exam date ${examDate.toISOString().slice(0,10)} passed)`);
+        } else {
+          // Exam date has NOT passed: GUARANTEE it is marked LIVE_ADMIT_CARD for Live Exams section
+          exam.status_code = 'LIVE_ADMIT_CARD';
         }
       }
     });
@@ -189,8 +192,64 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
+  // Notification Bell: Allow user to get notified when Admit Cards are released
+  const notifyBtn = document.getElementById('notify-btn');
+  if (notifyBtn) {
+    if ('Notification' in window && Notification.permission === 'granted') {
+      notifyBtn.style.color = '#ffc107';
+      notifyBtn.title = 'Alerts are active (Click to test)';
+    }
+
+    notifyBtn.addEventListener('click', async () => {
+      if (!('Notification' in window)) {
+        alert('Browser notifications are not supported in your browser.');
+        return;
+      }
+
+      if (Notification.permission === 'granted') {
+        sendAdmitCardNotification(true);
+      } else if (Notification.permission !== 'denied') {
+        const permission = await Notification.requestPermission();
+        if (permission === 'granted') {
+          notifyBtn.style.color = '#ffc107';
+          notifyBtn.title = 'Alerts are active';
+          new Notification('🎓 SearchPariksha Alerts Active', {
+            body: "You will now be alerted when Admit Cards and exam registrations go live!",
+            icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>'
+          });
+          sendAdmitCardNotification(true);
+        }
+      } else {
+        alert('Notifications are currently blocked. Please click the icon in your address bar and allow notifications to receive admit card alerts.');
+      }
+    });
+
+    if ('Notification' in window && Notification.permission === 'granted') {
+      sendAdmitCardNotification(false);
+    }
+  }
+
   validateTab();
 });
+
+function sendAdmitCardNotification(isManualCheck) {
+  if (!('Notification' in window) || Notification.permission !== 'granted') return;
+
+  const admitExams = masterExamsDatabase.filter(e => e.status_code === 'LIVE_ADMIT_CARD');
+  if (admitExams.length > 0) {
+    admitExams.forEach(exam => {
+      new Notification(`🎟️ ${exam.name}: Admit Card Released!`, {
+        body: `${exam.dateStr}\nVisit SearchPariksha for official links.`,
+        icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎫</text></svg>'
+      });
+    });
+  } else if (isManualCheck) {
+    new Notification('🎓 SearchPariksha Status', {
+      body: 'No new admit cards released right now. You will receive an instant notification the moment one is out!',
+      icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>'
+    });
+  }
+}
 
 function setupOptionCards(containerId, stateKey) {
   const container = document.getElementById(containerId);
@@ -728,6 +787,26 @@ function renderTab3Exams() {
     }
   });
 
+
+  // Admit Card Alert Banner: if any exam has an active admit card released
+  const admitCardExams = relevantExams.filter(e => e.status_code === 'LIVE_ADMIT_CARD');
+  if (admitCardExams.length > 0) {
+    const banner = document.createElement('div');
+    banner.className = 'admit-card-banner';
+    banner.innerHTML = `
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-size:1.4em;">🎫</span>
+        <div>
+          <div style="font-weight:bold; font-size:0.95em; letter-spacing:0.5px;">ADMIT CARD RELEASED</div>
+          <div style="font-size:0.85em; opacity:0.95;">
+            ${admitCardExams.map(e => `<strong>${e.name}</strong>: ${e.dateStr}`).join(' | ')}
+          </div>
+        </div>
+      </div>
+      <button onclick="openExamDirectory('${admitCardExams[0].name}')" style="background:#ffeb3b; color:#0b1c5f; border:none; padding:6px 14px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:0.85em; white-space:nowrap;">Official Info</button>
+    `;
+    examSelectionList.appendChild(banner);
+  }
 
   if (liveExams.length > 0) {
     const liveHeader = document.createElement('h3');
