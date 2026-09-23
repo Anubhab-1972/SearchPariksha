@@ -85,8 +85,9 @@ async function loadExamData() {
 
       // 2. Universal Auto-Archive for ALL exams:
       // If registration deadline or exam date has passed, take it down from LIVE immediately
-      const isRegOpen = exam.status_code === 'LIVE_REGISTRATION_OPEN' || (exam.dateStr && exam.dateStr.toLowerCase().includes('registration open'));
-      const isAdmitCard = exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION' || (exam.dateStr && (exam.dateStr.toLowerCase().includes('admit card released') || exam.dateStr.toLowerCase().includes('city intimation')));
+      const isRegOpen = exam.status_code === 'LIVE_REGISTRATION_OPEN' || (exam.status_code !== 'UPCOMING' && exam.status_code !== 'PAST' && exam.dateStr && exam.dateStr.toLowerCase().includes('registration open'));
+      const isAdmitCard = (exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION') ||
+        (exam.status_code !== 'UPCOMING' && exam.status_code !== 'PAST' && exam.dateStr && (exam.dateStr.toLowerCase().includes('admit card released') || exam.dateStr.toLowerCase().includes('city intimation live')));
 
       if (isRegOpen) {
         // Find closing deadline:
@@ -788,7 +789,7 @@ function renderTab3Exams() {
           displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
         }
       } else {
-        if (exam.dateStr && (exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("city intimation"))) {
+        if (exam.dateStr && (exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("city intimation live"))) {
           displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
         } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced")) {
           displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
@@ -819,8 +820,15 @@ function renderTab3Exams() {
   });
 
 
-  // Admit Card / City Intimation Alert Banner: if any exam has an active admit card or city intimation released
-  const admitCardExams = relevantExams.filter(e => e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION' || (e.dateStr && (e.dateStr.toLowerCase().includes('admit card') || e.dateStr.toLowerCase().includes('city intimation'))));
+  // Admit Card / City Intimation Alert Banner: only include exams where Admit Card or City Intimation is ACTUALLY LIVE
+  const admitCardExams = relevantExams.filter(e => {
+    if (e.status_code === 'UPCOMING' || e.status_code === 'PAST') return false;
+    if (e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION') return true;
+    if (e.dateStr && (e.dateStr.toLowerCase().includes('admit card released') || e.dateStr.toLowerCase().includes('city intimation live'))) {
+      return true;
+    }
+    return false;
+  });
   if (admitCardExams.length > 0) {
     const hasCity = admitCardExams.some(e => e.status_code === 'LIVE_CITY_INTIMATION' || (e.dateStr && e.dateStr.toLowerCase().includes('city intimation')));
     const bannerTitle = hasCity ? 'ADMIT CARD / CITY INTIMATION RELEASED' : 'ADMIT CARD RELEASED';
@@ -1055,7 +1063,7 @@ function renderExamDirectory(searchTerm = "") {
   // Helper: determine if an exam is live
   const isExamLive = (exam) => exam.status_code
     ? exam.status_code.startsWith('LIVE_')
-    : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced") || exam.dateStr.toLowerCase().includes("city intimation")));
+    : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced") || exam.dateStr.toLowerCase().includes("city intimation live")));
 
   // Helper: get smart dateStr (auto-bump month for UPCOMING AAI ATC)
   const getSmartDate = (exam) => {
@@ -1138,7 +1146,7 @@ function renderExamDirectory(searchTerm = "") {
     const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
     let dirDateDisplay = exam.dateStr || '';
-    if (exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION' || (exam.dateStr && (exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("city intimation")))) {
+    if (exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION' || (exam.status_code !== 'UPCOMING' && exam.status_code !== 'PAST' && exam.dateStr && (exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("city intimation live")))) {
       dirDateDisplay = `<span style="background-color: #0b1c5f; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em;">${dirDateDisplay}</span>`;
     } else if (exam.status_code === 'LIVE_RESULTS' || (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced"))) {
       dirDateDisplay = `<span style="background-color: #28a745; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em;">${dirDateDisplay}</span>`;
