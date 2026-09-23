@@ -86,7 +86,7 @@ async function loadExamData() {
       // 2. Universal Auto-Archive for ALL exams:
       // If registration deadline or exam date has passed, take it down from LIVE immediately
       const isRegOpen = exam.status_code === 'LIVE_REGISTRATION_OPEN' || (exam.dateStr && exam.dateStr.toLowerCase().includes('registration open'));
-      const isAdmitCard = exam.status_code === 'LIVE_ADMIT_CARD' || (exam.dateStr && exam.dateStr.toLowerCase().includes('admit card released'));
+      const isAdmitCard = exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION' || (exam.dateStr && (exam.dateStr.toLowerCase().includes('admit card released') || exam.dateStr.toLowerCase().includes('city intimation')));
 
       if (isRegOpen) {
         // Find closing deadline:
@@ -146,8 +146,12 @@ async function loadExamData() {
           if (exam.display_text) delete exam.display_text;
           console.log(`[AUTO-ARCHIVE ADMIT CARD] ${exam.name} → UPCOMING (Exam date ${examDate.toISOString().slice(0,10)} passed)`);
         } else {
-          // Exam date has NOT passed: GUARANTEE it is marked LIVE_ADMIT_CARD for Live Exams section
-          exam.status_code = 'LIVE_ADMIT_CARD';
+          // Exam date has NOT passed: GUARANTEE it is marked LIVE for Live Exams section
+          if (!exam.status_code || !exam.status_code.startsWith('LIVE_')) {
+            exam.status_code = (exam.dateStr && exam.dateStr.toLowerCase().includes('city intimation'))
+              ? 'LIVE_CITY_INTIMATION'
+              : 'LIVE_ADMIT_CARD';
+          }
         }
       }
     });
@@ -237,10 +241,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 function sendAdmitCardNotification(isManualCheck) {
   if (!('Notification' in window) || Notification.permission !== 'granted') return;
 
-  const admitExams = masterExamsDatabase.filter(e => e.status_code === 'LIVE_ADMIT_CARD');
+  const admitExams = masterExamsDatabase.filter(e => e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION');
   if (admitExams.length > 0) {
     admitExams.forEach(exam => {
-      new Notification(`🎟️ ${exam.name}: Admit Card Released!`, {
+      const typeLabel = exam.status_code === 'LIVE_CITY_INTIMATION' ? 'City Intimation Live!' : 'Admit Card Released!';
+      new Notification(`🎟️ ${exam.name}: ${typeLabel}`, {
         body: `${exam.dateStr}\nVisit SearchPariksha for official links.`,
         icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎫</text></svg>'
       });
@@ -692,7 +697,7 @@ function renderTab3Exams() {
         const locked = !gElig.eligible;
 
         let dateDisplay = g.dateStr || '';
-        if (g.status_code === 'LIVE_ADMIT_CARD') {
+        if (g.status_code === 'LIVE_ADMIT_CARD' || g.status_code === 'LIVE_CITY_INTIMATION') {
           dateDisplay = `<span style="background:#0b1c5f;color:white;padding:2px 7px;border-radius:4px;font-size:0.8em;font-weight:bold;">${dateDisplay}</span>`;
         } else if (g.status_code === 'LIVE_RESULTS') {
           dateDisplay = `<span style="background:#28a745;color:white;padding:2px 7px;border-radius:4px;font-size:0.8em;font-weight:bold;">${dateDisplay}</span>`;
@@ -777,13 +782,13 @@ function renderTab3Exams() {
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
       let displayDate = exam.display_text || exam.dateStr || '';
       if (exam.status_code) {
-        if (exam.status_code === 'LIVE_ADMIT_CARD') {
+        if (exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION') {
           displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
         } else if (exam.status_code === 'LIVE_RESULTS') {
           displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${displayDate}</span>`;
         }
       } else {
-        if (exam.dateStr && exam.dateStr.toLowerCase().includes("admit card released")) {
+        if (exam.dateStr && (exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("city intimation"))) {
           displayDate = `<span style="background-color: #0b1c5f; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
         } else if (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced")) {
           displayDate = `<span style="background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${exam.dateStr}</span>`;
@@ -814,16 +819,18 @@ function renderTab3Exams() {
   });
 
 
-  // Admit Card Alert Banner: if any exam has an active admit card released
-  const admitCardExams = relevantExams.filter(e => e.status_code === 'LIVE_ADMIT_CARD');
+  // Admit Card / City Intimation Alert Banner: if any exam has an active admit card or city intimation released
+  const admitCardExams = relevantExams.filter(e => e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION' || (e.dateStr && (e.dateStr.toLowerCase().includes('admit card') || e.dateStr.toLowerCase().includes('city intimation'))));
   if (admitCardExams.length > 0) {
+    const hasCity = admitCardExams.some(e => e.status_code === 'LIVE_CITY_INTIMATION' || (e.dateStr && e.dateStr.toLowerCase().includes('city intimation')));
+    const bannerTitle = hasCity ? 'ADMIT CARD / CITY INTIMATION RELEASED' : 'ADMIT CARD RELEASED';
     const banner = document.createElement('div');
     banner.className = 'admit-card-banner';
     banner.innerHTML = `
       <div style="display:flex; align-items:center; gap:10px;">
         <span style="font-size:1.4em;">🎫</span>
         <div>
-          <div style="font-weight:bold; font-size:0.95em; letter-spacing:0.5px;">ADMIT CARD RELEASED</div>
+          <div style="font-weight:bold; font-size:0.95em; letter-spacing:0.5px;">${bannerTitle}</div>
           <div style="font-size:0.85em; opacity:0.95;">
             ${admitCardExams.map(e => `<strong>${e.name}</strong>: ${e.dateStr}`).join(' | ')}
           </div>
@@ -1048,7 +1055,7 @@ function renderExamDirectory(searchTerm = "") {
   // Helper: determine if an exam is live
   const isExamLive = (exam) => exam.status_code
     ? exam.status_code.startsWith('LIVE_')
-    : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
+    : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced") || exam.dateStr.toLowerCase().includes("city intimation")));
 
   // Helper: get smart dateStr (auto-bump month for UPCOMING AAI ATC)
   const getSmartDate = (exam) => {
@@ -1130,6 +1137,13 @@ function renderExamDirectory(searchTerm = "") {
     const isOpen = isExamLive(exam);
     const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
+    let dirDateDisplay = exam.dateStr || '';
+    if (exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION' || (exam.dateStr && (exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("city intimation")))) {
+      dirDateDisplay = `<span style="background-color: #0b1c5f; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em;">${dirDateDisplay}</span>`;
+    } else if (exam.status_code === 'LIVE_RESULTS' || (exam.dateStr && exam.dateStr.toLowerCase().includes("results announced"))) {
+      dirDateDisplay = `<span style="background-color: #28a745; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em;">${dirDateDisplay}</span>`;
+    }
+
     item.innerHTML = `
       <div style="font-size: 1.1em; font-weight: 600; color: var(--text-main);">
         ${exam.name}
@@ -1137,8 +1151,8 @@ function renderExamDirectory(searchTerm = "") {
       <div style="color: var(--text-muted); font-size: 0.9em;">
         ${exam.desc}
       </div>
-      <div style="color: var(--text-main); font-weight: bold; font-size: 0.95em;">
-        ${liveBadge}${exam.dateStr}
+      <div style="color: var(--text-main); font-weight: bold; font-size: 0.95em; margin-top: 2px;">
+        ${liveBadge}${dirDateDisplay}
       </div>
       ${exam.syllabus_summary ? `<div style="margin-top: 10px; font-size: 0.85em; background: rgba(0,0,0,0.03); padding: 8px; border-radius: 4px; width: 100%;"><strong>Syllabus Highlights:</strong><br>${exam.syllabus_summary.replace(/\n/g, '<br>')}</div>` : ''}
       ${exam.syllabus_link === '' ? `<span style="margin-top: 5px; display: inline-block; font-size: 0.85em; color: #856404; background: #fff3cd; border: 1px solid #ffc107; padding: 4px 10px; border-radius: 4px; font-weight: bold;">🔔 Official Website: To Be Announced</span>` : exam.syllabus_link ? `<a href="${exam.syllabus_link}" target="_blank" style="margin-top: 5px; display: inline-block; font-size: 0.85em; color: white; background: #28a745; padding: 4px 10px; border-radius: 4px; text-decoration: none; font-weight: bold;">🌐 Official Website</a>` : ''}

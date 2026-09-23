@@ -109,18 +109,19 @@ CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
     else:
         # STAGE 3: Registration has CLOSED (e.g. SSC CGL, IBPS PO)
-        # NOW it is appropriate to look for Admit Card, Exam Date, or Results!
+        # NOW it is appropriate to look for Admit Card, City Intimation, Exam Date, or Results!
         prompt = f"""Today is {today}. For the Indian competitive exam: "{exam_name}" ({exam_desc}), registration has already closed.
 Current site status: "{current_datestr}".
 
 Search the official website / news and check:
-1. Has the Admit Card been officially RELEASED for this year's exam?
-   -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
+1. Has the Admit Card or City Intimation slip been officially RELEASED for this year's exam?
+   - If Admit Card released: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
+   - If City Intimation slip released: -> status_code: "LIVE_CITY_INTIMATION", display_text: "City Intimation Live! Exam Date: [Date]"
 2. Has the exam already taken place / CONCLUDED?
    -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
 3. Have final RESULTS been announced?
    -> status_code: "LIVE_RESULTS", display_text: "Results Announced! Check Official Website"
-4. If still waiting for admit card:
+4. If still waiting for admit card or city intimation:
    -> status_code: "UPCOMING", display_text: "{current_datestr}"
 
 CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
@@ -166,22 +167,28 @@ def extract_cal_date(date_str):
     current_year = datetime.now().year
     
     # Try exact date first: "Month Day, Year" or "Month Day"
-    match = re.search(
+    # If date range is given (e.g. "Sep 30 – Oct 30, 2026"), take the end date for calendar/archive
+    matches = list(re.finditer(
         r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+(\d{1,2})(?:,?\s+(\d{4}))?',
         date_str, re.IGNORECASE
-    )
-    if match:
+    ))
+    if matches:
+        match = matches[-1]
         month = month_map[match.group(1)[:3].lower()]
         day = match.group(2).zfill(2)
-        year = match.group(3) if match.group(3) else str(current_year)
+        year = match.group(3)
+        if not year:
+            year_match = re.search(r'\b(20\d\d)\b', date_str)
+            year = year_match.group(1) if year_match else str(current_year)
         return f"{year}-{month}-{day}"
         
     # Fallback: Just a month "Month Year" or "Month"
-    match = re.search(
+    month_matches = list(re.finditer(
         r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*(?:\s+(\d{4}))?',
         date_str, re.IGNORECASE
-    )
-    if match:
+    ))
+    if month_matches:
+        match = month_matches[-1]
         month = month_map[match.group(1)[:3].lower()]
         year = match.group(2) if match.group(2) else str(current_year)
         # Default to the 15th of the expected month
@@ -212,7 +219,7 @@ def should_check_exam(exam):
     # 0. check_from_month: annual exams that only open in a specific season.
     #    Skip entirely until that month arrives each year (e.g. DBT BITP → check_from_month=5 means skip Jan-Apr).
     check_from_month = exam.get("check_from_month")
-    if check_from_month and status not in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_RESULTS"):
+    if check_from_month and status not in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_CITY_INTIMATION", "LIVE_RESULTS"):
         if today.month < int(check_from_month):
             return False, f"Seasonal exam — checking starts from month {check_from_month} (currently month {today.month})"
 
@@ -265,7 +272,7 @@ def update_all_exams():
                     cal = extract_cal_date(gate_result["display_text"])
                     if cal:
                         exam["calDate"] = cal
-                        if exam["status_code"] in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD"):
+                        if exam["status_code"] in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_CITY_INTIMATION"):
                             exam["archive_after"] = cal
                 updated_count += len(gate_exams)
             else:
@@ -296,7 +303,7 @@ def update_all_exams():
                 cal = extract_cal_date(result["display_text"])
                 if cal:
                     exam["calDate"] = cal
-                    if exam["status_code"] in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD"):
+                    if exam["status_code"] in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_CITY_INTIMATION"):
                         exam["archive_after"] = cal
                 updated_count += 1
             else:

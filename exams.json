@@ -686,9 +686,10 @@
     "id": "ssc",
     "name": "SSC CGL",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 2026",
+    "dateStr": "City Intimation Live! Tier 1 Exam: Sep 30 – Oct 30, 2026",
     "hasExactDate": true,
-    "calDate": "2026-08-20",
+    "calDate": "2026-10-30",
+    "archive_after": "2026-10-30",
     "desc": "Group B & C Government Posts",
     "goals": [
       "Job",
@@ -696,7 +697,7 @@
     ],
     "syllabus_link": "https://ssc.gov.in/",
     "syllabus_summary": "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts.",
-    "status_code": "UPCOMING"
+    "status_code": "LIVE_CITY_INTIMATION"
   },
   {
     "id": "ctet",
