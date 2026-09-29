@@ -488,17 +488,20 @@
     "id": "tifr",
     "name": "TIFR GS / JGEEBILS",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Registration Open! Apply by Oct 25, 2026",
     "hasExactDate": true,
     "desc": "PhD at TIFR / Biology Research PhD",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-09-20",
+    "calDate": "2026-10-25",
+    "archive_after": "2026-10-25",
     "syllabus_link": "https://www.tifr.res.in",
     "syllabus_summary": "Evaluates basic scientific knowledge across General Science (Physics, Chemistry, Math), Biology (Cell/Molecular Biology, Genetics, Biochemistry), and scientific reasoning.",
-    "status_code": "UPCOMING"
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "next_cycle_text": "Registration ended! Opens next year (Expected: September 2027)",
+    "next_cycle_date": "2027-09-26"
   },
   {
     "id": "gatb",

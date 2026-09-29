@@ -127,26 +127,34 @@ Search the official website / news and check:
 CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
 
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction="You are a strict data extraction bot. ONLY output a valid JSON object.",
-                tools=[types.Tool(google_search=types.GoogleSearch())],
-                temperature=0.0
-            ),
-        )
-        text = response.text.strip()
-        start = text.find('{')
-        end = text.rfind('}')
-        if start != -1 and end != -1:
-            return json.loads(text[start:end+1])
-        return None
-    except Exception as e:
-        print(f"  [ERROR] Gemini API error: {e}")
-        traceback.print_exc()
-        return None
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction="You are a strict data extraction bot. ONLY output a valid JSON object.",
+                    tools=[types.Tool(google_search=types.GoogleSearch())],
+                    temperature=0.0
+                ),
+            )
+            text = response.text.strip()
+            start = text.find('{')
+            end = text.rfind('}')
+            if start != -1 and end != -1:
+                return json.loads(text[start:end+1])
+            return None
+        except Exception as e:
+            err_msg = str(e).lower()
+            if ("429" in err_msg or "resource_exhausted" in err_msg or "quota" in err_msg) and attempt < max_retries - 1:
+                wait_secs = (attempt + 1) * 8
+                print(f"  [RATE-LIMIT] Rate limit hit for {exam_name}. Waiting {wait_secs}s before retry ({attempt+2}/{max_retries})...")
+                time.sleep(wait_secs)
+                continue
+            print(f"  [ERROR] Gemini API error: {e}")
+            traceback.print_exc()
+            return None
 
 def has_exact_date(date_str):
     import re
@@ -277,7 +285,7 @@ def update_all_exams():
                 updated_count += len(gate_exams)
             else:
                 print("  [GATE] No update - keeping existing data")
-            time.sleep(2)  # Rate limiting
+            time.sleep(4.5)  # Rate limiting - stay safely under 15 RPM limit
         else:
             print(f"\n[GATE] Skipping check: {reason}")
     
@@ -309,7 +317,7 @@ def update_all_exams():
             else:
                 print(f"  [{exam['id']}] No update - keeping existing data")
             
-            time.sleep(2)  # Rate limiting - be nice to Google's API
+            time.sleep(4.5)  # Rate limiting - stay safely under 15 RPM limit
         else:
             print(f"\n[{exam['id']}] Skipping check: {reason}")
     
