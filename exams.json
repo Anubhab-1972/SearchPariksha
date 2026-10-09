@@ -422,18 +422,21 @@
     "id": "csir",
     "name": "CSIR UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: August 2027",
+    "dateStr": "Registration Open! Apply by Nov 5, 2026",
     "hasExactDate": true,
-    "calDate": "2026-08-20",
+    "calDate": "2026-11-05",
+    "archive_after": "2026-11-09",
     "desc": "JRF, Asst Professor",
     "goals": [
       "Higher Studies",
       "Job",
       "Not Sure"
     ],
-    "syllabus_link": "https://csirhrdg.res.in",
+    "syllabus_link": "https://csirnet.nta.nic.in",
     "syllabus_summary": "Covers General Aptitude (Part A) and advanced domain knowledge (Part B and C) across Chemical Sciences, Earth Sciences, Life Sciences, Mathematical Sciences, and Physical Sciences.",
-    "status_code": "UPCOMING"
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "next_cycle_text": "Registration ended! Opens next cycle (Expected: March 2027)",
+    "next_cycle_date": "2027-03-15"
   },
   {
     "id": "ugc",
