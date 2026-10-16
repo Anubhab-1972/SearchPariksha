@@ -46,6 +46,45 @@ if not GEMINI_API_KEY:
 # Initialize the Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
 
+# --- Model selection ---------------------------------------------------------
+# Gemini model names get retired. When that happens every request returns
+# 404 NOT_FOUND; the old code swallowed that, so the site quietly went stale for
+# weeks while the workflow kept reporting success. We try these in order and
+# stick with the first one that actually answers.
+MODEL_CANDIDATES = []
+_env_model = os.environ.get("GEMINI_MODEL", "").strip()
+if _env_model:
+    MODEL_CANDIDATES.append(_env_model)
+MODEL_CANDIDATES += [
+    "gemini-3.8-flash",      # current recommended replacement for gemini-2.0-flash
+    "gemini-3-flash",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+]
+
+_model_index = 0
+stats = {"queries": 0, "failures": 0, "model_switches": []}
+
+
+def current_model():
+    return MODEL_CANDIDATES[min(_model_index, len(MODEL_CANDIDATES) - 1)]
+
+
+def list_available_models():
+    """Ask the API which models this key can really use, so failures explain themselves."""
+    try:
+        names = set()
+        for m in client.models.list():
+            name = (getattr(m, "name", "") or "").replace("models/", "")
+            actions = (getattr(m, "supported_actions", None)
+                       or getattr(m, "supported_generation_methods", None) or [])
+            if name and (not actions or any("generateContent" in str(a) for a in actions)):
+                names.add(name)
+        return sorted(names)
+    except Exception as e:
+        return ["<could not list models: %s>" % e]
+
+
 def load_exams():
     """Load the current exams database from JSON file."""
     with open(EXAMS_JSON_PATH, "r", encoding="utf-8-sig") as f:  # utf-8-sig strips BOM if present
@@ -64,6 +103,7 @@ def query_exam_status(exam_name, exam_desc, current_status="UPCOMING", current_d
     - If registration is live: check for deadline extensions or registration close.
     - If registration has closed: look for Admit Card, Exam Date, or Results.
     """
+    global _model_index
     today = datetime.now().strftime("%B %d, %Y")
     current_year = datetime.now().year
     
@@ -128,10 +168,12 @@ CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
 
     max_retries = 3
-    for attempt in range(max_retries):
+    attempt = 0
+    while attempt < max_retries:
+        stats["queries"] += 1
         try:
             response = client.models.generate_content(
-                model="gemini-2.0-flash",
+                model=current_model(),
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     system_instruction="You are a strict data extraction bot. ONLY output a valid JSON object.",
@@ -147,14 +189,36 @@ CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
             return None
         except Exception as e:
             err_msg = str(e).lower()
-            if ("429" in err_msg or "resource_exhausted" in err_msg or "quota" in err_msg) and attempt < max_retries - 1:
-                wait_secs = (attempt + 1) * 8
-                print(f"  [RATE-LIMIT] Rate limit hit for {exam_name}. Waiting {wait_secs}s before retry ({attempt+2}/{max_retries})...")
+            is_missing_model = ("404" in err_msg or "not_found" in err_msg
+                                or "no longer available" in err_msg
+                                or "is not supported" in err_msg)
+            is_rate_limit = ("429" in err_msg or "resource_exhausted" in err_msg
+                             or "quota" in err_msg)
+
+            # A retired model 404s on every exam. Stepping to the next candidate here
+            # is what keeps the updater alive across model retirements.
+            if is_missing_model and _model_index < len(MODEL_CANDIDATES) - 1:
+                print(f"  [MODEL] '{current_model()}' unavailable -> switching to '{MODEL_CANDIDATES[_model_index + 1]}'")
+                stats["model_switches"].append(current_model())
+                _model_index += 1
+                continue
+
+            if is_rate_limit and attempt < max_retries - 1:
+                attempt += 1
+                wait_secs = attempt * 8
+                print(f"  [RATE-LIMIT] Rate limit hit for {exam_name}. Waiting {wait_secs}s before retry ({attempt+1}/{max_retries})...")
                 time.sleep(wait_secs)
                 continue
-            print(f"  [ERROR] Gemini API error: {e}")
-            traceback.print_exc()
+
+            if stats["failures"] == 0:
+                traceback.print_exc()
+            stats["failures"] += 1
+            print(f"  [ERROR] Gemini API error for {exam_name} on '{current_model()}': {e}")
             return None
+
+    stats["failures"] += 1
+    print(f"  [ERROR] {exam_name}: gave up after {max_retries} attempts on '{current_model()}'")
+    return None
 
 def has_exact_date(date_str):
     import re
@@ -326,8 +390,39 @@ def update_all_exams():
     
     print(f"\n{'='*50}")
     print(f"UPDATE COMPLETE: {updated_count}/{len(exams)} exams updated")
+    print(f"AI queries: {stats['queries']}   failures: {stats['failures']}")
+    print(f"Model in use: {current_model()}")
+    if stats["model_switches"]:
+        print(f"Models that had been retired: {', '.join(stats['model_switches'])}")
     print(f"Timestamp: {datetime.now().isoformat()}")
     print(f"{'='*50}")
+
+    live_now = [e["name"] for e in exams if str(e.get("status_code", "")).startswith("LIVE_")]
+
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        try:
+            with open(summary_path, "a", encoding="utf-8") as f:
+                f.write(
+                    "## Exam updater\n\n"
+                    f"- Exams updated: **{updated_count}/{len(exams)}**\n"
+                    f"- AI queries: {stats['queries']} (failures: {stats['failures']})\n"
+                    f"- Model used: `{current_model()}`\n"
+                    f"- Currently live: {', '.join(live_now) if live_now else '_none_'}\n"
+                )
+        except Exception as e:
+            print(f"[WARN] could not write step summary: {e}")
+
+    # Fail loudly. A silent "success" while every single query failed is exactly how
+    # this site sat stale for weeks without anyone being told.
+    if updated_count == 0 and stats["failures"] > 0:
+        print("\nFATAL: every AI query failed - no exam could be updated.")
+        print("Models this API key can use:", ", ".join(list_available_models()))
+        sys.exit(1)
+
+    if stats["failures"] > 0:
+        print(f"\n[WARNING] {stats['failures']} of {stats['queries']} queries failed; "
+              f"{updated_count} exams were still updated.")
 
 if __name__ == "__main__":
     print("=" * 50)
