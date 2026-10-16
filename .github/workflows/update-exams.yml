@@ -10,9 +10,19 @@ on:
     # Deliberately just after the Gemini free-tier daily quota resets at midnight
     # Pacific Time, so this runs against a fresh quota instead of an already-spent one.
     - cron: '15 7 * * *'
+    # Safety net ~12 hours later, deliberately still the SAME UTC day: once the main
+    # run has succeeded every exam carries last_checked_date, so this pass makes zero
+    # AI requests. It only does real work on days GitHub skips or the main run fails.
+    - cron: '15 19 * * *'
   
   # Also allows manual trigger from GitHub UI
   workflow_dispatch:
+
+# Never let two updater runs write exams.json at the same time: with a backup run
+# added, a delayed main run could otherwise overlap it and cause a push conflict.
+concurrency:
+  group: exam-updater
+  cancel-in-progress: false
 
 jobs:
   update-exams:
