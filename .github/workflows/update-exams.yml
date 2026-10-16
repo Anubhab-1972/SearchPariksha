@@ -6,8 +6,10 @@ name: Update Exam Dates
 
 on:
   schedule:
-    # Runs daily at 8:30 PM UTC (which is 2:00 AM IST every day)
-    - cron: '30 20 * * *'
+    # 07:15 UTC = 00:15 Pacific = 12:45 PM IST.
+    # Deliberately just after the Gemini free-tier daily quota resets at midnight
+    # Pacific Time, so this runs against a fresh quota instead of an already-spent one.
+    - cron: '15 7 * * *'
   
   # Also allows manual trigger from GitHub UI
   workflow_dispatch:

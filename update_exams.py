@@ -56,14 +56,16 @@ _env_model = os.environ.get("GEMINI_MODEL", "").strip()
 if _env_model:
     MODEL_CANDIDATES.append(_env_model)
 MODEL_CANDIDATES += [
-    "gemini-3.8-flash",      # current recommended replacement for gemini-2.0-flash
-    "gemini-3-flash",
+    "gemini-flash-latest",        # Google's rolling alias - cannot be retired under us
+    "gemini-3.8-flash",           # current recommended replacement for gemini-2.0-flash
     "gemini-2.5-flash",
+    "gemini-flash-lite-latest",   # lite models usually carry the most generous free quota
     "gemini-2.5-flash-lite",
+    "gemini-3.5-flash",
 ]
 
 _model_index = 0
-stats = {"queries": 0, "failures": 0, "model_switches": []}
+stats = {"queries": 0, "failures": 0, "retired_models": [], "quota_switches": []}
 
 
 def current_model():
@@ -167,8 +169,10 @@ Search the official website / news and check:
 CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
 
-    max_retries = 3
+    max_retries = 2          # tries on one model before moving to another
+    max_model_hops = 3       # different models to try for a single exam
     attempt = 0
+    hops = 0
     while attempt < max_retries:
         stats["queries"] += 1
         try:
@@ -195,19 +199,32 @@ CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
             is_rate_limit = ("429" in err_msg or "resource_exhausted" in err_msg
                              or "quota" in err_msg)
 
-            # A retired model 404s on every exam. Stepping to the next candidate here
-            # is what keeps the updater alive across model retirements.
-            if is_missing_model and _model_index < len(MODEL_CANDIDATES) - 1:
-                print(f"  [MODEL] '{current_model()}' unavailable -> switching to '{MODEL_CANDIDATES[_model_index + 1]}'")
-                stats["model_switches"].append(current_model())
+            # "This model is retired" and "this model is out of quota" both mean the
+            # same thing to us: it cannot serve us right now. Free-tier quota is
+            # per model, so moving to the next one frequently just works.
+            can_hop = (_model_index < len(MODEL_CANDIDATES) - 1) and (hops < max_model_hops)
+
+            if is_missing_model and can_hop:
+                print(f"  [MODEL] '{current_model()}' is retired -> trying '{MODEL_CANDIDATES[_model_index + 1]}'")
+                stats["retired_models"].append(current_model())
                 _model_index += 1
+                hops += 1
+                attempt = 0
                 continue
 
             if is_rate_limit and attempt < max_retries - 1:
                 attempt += 1
-                wait_secs = attempt * 8
-                print(f"  [RATE-LIMIT] Rate limit hit for {exam_name}. Waiting {wait_secs}s before retry ({attempt+1}/{max_retries})...")
+                wait_secs = attempt * 6
+                print(f"  [RATE-LIMIT] Quota hit for {exam_name} on '{current_model()}'. Waiting {wait_secs}s ({attempt + 1}/{max_retries})...")
                 time.sleep(wait_secs)
+                continue
+
+            if is_rate_limit and can_hop:
+                print(f"  [MODEL] '{current_model()}' is out of quota -> trying '{MODEL_CANDIDATES[_model_index + 1]}'")
+                stats["quota_switches"].append(current_model())
+                _model_index += 1
+                hops += 1
+                attempt = 0
                 continue
 
             if stats["failures"] == 0:
@@ -390,10 +407,12 @@ def update_all_exams():
     
     print(f"\n{'='*50}")
     print(f"UPDATE COMPLETE: {updated_count}/{len(exams)} exams updated")
-    print(f"AI queries: {stats['queries']}   failures: {stats['failures']}")
+    print(f"AI requests: {stats['queries']}   failures: {stats['failures']}")
     print(f"Model in use: {current_model()}")
-    if stats["model_switches"]:
-        print(f"Models that had been retired: {', '.join(stats['model_switches'])}")
+    if stats["retired_models"]:
+        print(f"Models that had been retired: {', '.join(stats['retired_models'])}")
+    if stats["quota_switches"]:
+        print(f"Models skipped due to quota: {', '.join(stats['quota_switches'])}")
     print(f"Timestamp: {datetime.now().isoformat()}")
     print(f"{'='*50}")
 
@@ -406,7 +425,7 @@ def update_all_exams():
                 f.write(
                     "## Exam updater\n\n"
                     f"- Exams updated: **{updated_count}/{len(exams)}**\n"
-                    f"- AI queries: {stats['queries']} (failures: {stats['failures']})\n"
+                    f"- AI requests: {stats['queries']} (failures: {stats['failures']})\n"
                     f"- Model used: `{current_model()}`\n"
                     f"- Currently live: {', '.join(live_now) if live_now else '_none_'}\n"
                 )
