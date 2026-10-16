@@ -1,34 +1,37 @@
-﻿[
+[
   {
     "id": "icmr_bret",
     "name": "DHR ICMR BRET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: October 2026",
-    "hasExactDate": false,
+    "dateStr": "Expected Registration: November 2026",
+    "hasExactDate": true,
     "desc": "Biomedical Research Eligibility Test for DHR-ICMR JRF",
     "goals": [
       "Higher Studies",
       "Research"
     ],
-    "calDate": "2026-10-01",
+    "calDate": "2026-11-20",
     "syllabus_link": "https://aiimsexams.ac.in/landingpage/courses/advertisement/6905044c36116d6a6676a872",
     "syllabus_summary": "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C).",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "iit_jam_bt",
     "name": "IIT JAM Biotechnology (BT)",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Registration Open! Apply by October 19, 2026",
     "hasExactDate": true,
     "desc": "M.Sc / Joint M.Sc-PhD at IITs & IISc (Min 55% in B.Sc/B.Tech with 10+2 Biology/Maths)",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-09-20",
+    "calDate": "2026-10-19",
     "syllabus_link": "",
     "syllabus_summary": "Official website to be announced.",
-    "status_code": "UPCOMING"
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "last_checked_date": "2026-10-16",
+    "archive_after": "2026-10-19"
   },
   {
     "id": "gate_ch",
@@ -47,7 +50,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "aai_je",
@@ -58,18 +62,19 @@
       "Job"
     ],
     "syllabus_summary": "Covers General Intelligence, Reasoning, Numerical Ability, General Awareness, English Language, and discipline-specific technical domain subjects such as Physics and Mathematics for ATC.",
-    "calDate": "2026-09-07",
+    "calDate": "2026-10-21",
     "syllabus_link": "https://www.aai.aero/en/careers/recruitment",
-    "status_code": "UPCOMING",
-    "dateStr": "Registration ended! Exam Date / Admit Card to be announced",
-    "archive_after": "2026-09-07",
-    "hasExactDate": false
+    "status_code": "LIVE_ADMIT_CARD",
+    "dateStr": "Admit Card Released! Exam Date: October 21 & 26, 2026",
+    "archive_after": "2026-10-21",
+    "hasExactDate": true,
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "aai_atc",
     "name": "AAI ATC",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "No official registration for AAI ATC has been announced for the current cycle.",
     "hasExactDate": false,
     "desc": "Airports Authority of India - Air Traffic Controller. Eligibility: B.Sc Physics/Maths or B.Tech (Min 60%). Age: 18-27.",
     "goals": [
@@ -78,7 +83,8 @@
     "calDate": "2026-09-30",
     "status_code": "UPCOMING",
     "syllabus_summary": "Covers Physics, Mathematics, English, General Intelligence, and Air Traffic Control domain knowledge.",
-    "syllabus_link": "https://www.aai.aero/en/careers/recruitment"
+    "syllabus_link": "https://www.aai.aero/en/careers/recruitment",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_bt",
@@ -97,7 +103,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_xl",
@@ -116,7 +123,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_ey",
@@ -134,7 +142,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_cs",
@@ -153,7 +162,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_da",
@@ -172,7 +182,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_me",
@@ -191,7 +202,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_pi",
@@ -210,7 +222,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_xe",
@@ -228,7 +241,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_ce",
@@ -247,7 +261,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_es",
@@ -266,7 +281,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_ee",
@@ -285,7 +301,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_ec",
@@ -304,7 +321,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_in",
@@ -323,7 +341,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_general",
@@ -341,7 +360,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_st",
@@ -360,7 +380,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_ma",
@@ -378,7 +399,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_ph",
@@ -397,7 +419,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gate_cy",
@@ -416,7 +439,8 @@
     "hasExactDate": true,
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
-    "next_cycle_date": "2027-08-27"
+    "next_cycle_date": "2027-08-27",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "csir",
@@ -442,7 +466,7 @@
     "id": "ugc",
     "name": "UGC NET",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Registration Open! Apply by October 28, 2026",
     "hasExactDate": true,
     "desc": "JRF, Assistant Professor (General)",
     "goals": [
@@ -450,10 +474,12 @@
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-20",
+    "calDate": "2026-10-28",
     "syllabus_link": "https://ugcnet.nta.ac.in",
     "syllabus_summary": "Covers Paper 1 (General Paper on Teaching and Research Aptitude, Reasoning, ICT, Higher Education System) and Paper 2 (Elective subject-specific postgraduate discipline).",
-    "status_code": "UPCOMING"
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "last_checked_date": "2026-10-16",
+    "archive_after": "2026-10-28"
   },
   {
     "id": "vitmee",
@@ -469,23 +495,25 @@
     "calDate": "2026-11-20",
     "syllabus_link": "https://vit.ac.in",
     "syllabus_summary": "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: September 2026",
+    "dateStr": "Registration for 2027 cycle closed on Oct 6, 2026.",
     "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-09-20",
+    "calDate": "2026-10-06",
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "tifr",
@@ -517,10 +545,11 @@
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-03-20",
+    "calDate": "2027-03-20",
     "syllabus_link": "https://dbt.nic.in",
     "syllabus_summary": "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor's level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B).",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "gpat",
@@ -535,7 +564,8 @@
     "calDate": "2026-12-20",
     "syllabus_link": "https://natboard.edu.in",
     "syllabus_summary": "Covers core B.Pharm subjects including Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy, Pharmacology, and allied pharmaceutical science disciplines.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "niper",
@@ -547,41 +577,44 @@
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-04-20",
+    "calDate": "2027-04-20",
     "syllabus_link": "https://niperraipur.ac.in",
     "syllabus_summary": "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "barc",
     "name": "BARC OCES/DGFS",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: December 2026",
+    "dateStr": "Registration starts December 22, 2026",
     "hasExactDate": true,
     "desc": "Scientific Officer at BARC (Min 60% in B.Tech/B.Sc/M.Sc, Max Age: 26)",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-12-20",
+    "calDate": "2026-12-22",
     "syllabus_link": "https://www.barc.gov.in",
     "syllabus_summary": "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate's specific discipline.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "upsc_cse",
     "name": "UPSC Civil Services (CSE)",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Aug 21, 2026",
+    "dateStr": "Registration ended! Opens next year (Expected: January 2027)",
     "hasExactDate": true,
     "desc": "IAS, IPS, IFS Officers (Any Degree)",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-08-21",
+    "calDate": "2027-01-20",
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "sbi_po",
@@ -595,9 +628,10 @@
     ],
     "syllabus_link": "https://sbi.co.in/careers",
     "syllabus_summary": "Covers Reasoning Ability, Quantitative Aptitude, English Language, General/Economy/Banking Awareness, and Data Analysis and Interpretation across Prelims and Mains.",
-    "status_code": "UPCOMING",
-    "dateStr": "Registration ended! Next registration: June 2027",
-    "calDate": "2027-06-01"
+    "status_code": "LIVE_RESULTS",
+    "dateStr": "Results Announced! Check Official Website",
+    "calDate": "2027-06-01",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "ibps_po",
@@ -610,13 +644,14 @@
     ],
     "syllabus_link": "https://ibps.in",
     "syllabus_summary": "Covers Reasoning Ability and Computer Aptitude, Quantitative Aptitude and Data Interpretation, General/Economy/Banking Awareness, and English Language including Descriptive Writing.",
-    "calDate": "2026-08-22",
+    "calDate": "2027-07-01",
     "next_cycle_text": "Registration ended! Opens next year (Expected: July 1, 2027)",
     "next_cycle_date": "2027-07-01",
     "status_code": "UPCOMING",
     "dateStr": "Registration ended! Opens next year (Expected: July 1, 2027)",
     "archive_after": "2026-08-23",
-    "hasExactDate": false
+    "hasExactDate": true,
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "rrb_ntpc_grad",
@@ -629,13 +664,14 @@
     ],
     "syllabus_link": "https://www.rrbapply.gov.in/#/auth/landing",
     "syllabus_summary": "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for graduate-level railway posts.",
-    "status_code": "UPCOMING",
-    "dateStr": "CBAT/Skill Test: Sep 30, 2026 | Doc Verification: Dec 2026",
-    "calDate": "2026-09-30",
-    "hasExactDate": false,
-    "archive_after": "2026-12-31",
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "dateStr": "Registration Open! Apply by November 6, 2026",
+    "calDate": "2026-11-06",
+    "hasExactDate": true,
+    "archive_after": "2026-11-06",
     "next_cycle_text": "Recruitment cycle complete. Next notification expected: Late 2026 / Early 2027",
-    "next_cycle_date": "2027-02-01"
+    "next_cycle_date": "2027-02-01",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "rrb_ntpc_ug",
@@ -648,45 +684,48 @@
     ],
     "syllabus_link": "https://www.rrbapply.gov.in/#/auth/landing",
     "syllabus_summary": "Covers General Awareness, Mathematics, and General Intelligence and Reasoning across CBT-1 and CBT-2 for undergraduate-level railway posts.",
-    "status_code": "UPCOMING",
-    "dateStr": "CBT 2 Exam: September 17, 2026 (Scorecards from Aug 26)",
-    "calDate": "2026-09-17",
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "dateStr": "Registration Open! Apply by November 13, 2026",
+    "calDate": "2026-11-13",
     "hasExactDate": true,
-    "archive_after": "2026-09-17",
+    "archive_after": "2026-11-13",
     "next_cycle_text": "CBT 2 complete. Next cycle notification: Expected Nov/Dec 2026",
-    "next_cycle_date": "2026-11-01"
+    "next_cycle_date": "2026-11-01",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "ssc_chsl",
     "name": "SSC CHSL",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: July 2026",
+    "dateStr": "Expected Registration: September 2027",
     "hasExactDate": true,
     "desc": "Lower Division Clerk, Data Entry Operator",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-07-20",
+    "calDate": "2027-09-20",
     "syllabus_link": "https://ssc.gov.in/",
     "syllabus_summary": "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "ibacio",
     "name": "IB ACIO",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: October 2026",
+    "dateStr": "Expected Registration: October - November 2026",
     "hasExactDate": true,
     "desc": "Intelligence Bureau Officer",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-10-20",
+    "calDate": "2026-11-20",
     "syllabus_link": "https://mha.gov.in",
     "syllabus_summary": "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2.",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "ssc",
@@ -709,29 +748,32 @@
     "id": "ctet",
     "name": "CTET",
     "category": "Government & Banking",
-    "dateStr": "Registration ended! Exam Date: Sep 6, 2026",
+    "dateStr": "Registration ended! Opens next year (Expected: Jan 2027)",
     "hasExactDate": true,
     "desc": "Eligibility for Central Government Teaching Jobs",
     "goals": [
       "Job"
     ],
-    "calDate": "2026-09-06",
+    "calDate": "2027-01-20",
     "syllabus_link": "https://ctet.nic.in",
     "syllabus_summary": "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II).",
-    "status_code": "UPCOMING"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-16"
   },
   {
     "id": "atma",
     "name": "ATMA (AIMS Test for Management Admissions)",
     "category": "Management & MBA",
-    "dateStr": "Checking dates...",
-    "hasExactDate": false,
+    "dateStr": "Expected Registration: December 2026",
+    "hasExactDate": true,
     "desc": "National level MBA/PGDM entrance exam",
     "goals": [
       "Higher Studies"
     ],
     "status_code": "UPCOMING",
     "syllabus_link": "https://www.atmaaims.com",
-    "syllabus_summary": "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections."
+    "syllabus_summary": "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections.",
+    "last_checked_date": "2026-10-16",
+    "calDate": "2026-12-20"
   }
 ]
