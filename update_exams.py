@@ -98,7 +98,7 @@ def save_exams(exams):
         json.dump(exams, f, indent=2, ensure_ascii=False)
     print(f"[OK] Saved {len(exams)} exams to {EXAMS_JSON_PATH}")
 
-def query_exam_status(exam_name, exam_desc, current_status="UPCOMING", current_datestr=""):
+def query_exam_status(exam_name, exam_desc, current_status="UPCOMING", current_datestr="", official_link=""):
     """
     Ask Gemini AI for the latest dates and status code with stage-aware rules.
     - If registration hasn't opened yet: ONLY look for registration/notification (NEVER search for admit cards).
@@ -116,33 +116,52 @@ def query_exam_status(exam_name, exam_desc, current_status="UPCOMING", current_d
     )
     
     if is_pre_registration:
-        # STAGE 1: Registration has NOT opened yet (e.g. TIFR, AAI ATC, ICMR BRET)
+        # STAGE 1: Registration has NOT opened yet (e.g. TIFR, AAI ATC, ICMR BRET, GPAT)
         # The bot MUST ONLY check whether registration/notification has opened!
         # It must NEVER search for or return Admit Card status here!
-        prompt = f"""Today is {today}. I am tracking the upcoming Indian competitive exam: "{exam_name}" ({exam_desc}).
+        prompt = f"""Today is {today}. I am tracking the upcoming Indian national-level competitive exam: "{exam_name}" ({exam_desc}).
+Official conducting body portal: {official_link or "Official exam portal"}.
 Current site status: "{current_datestr}".
 
-The application window for the upcoming cycle ({current_year} or {current_year+1}) has NOT opened yet.
-STRICT RULE: Do NOT search for or return Admit Card status! Admit cards CANNOT exist before registration opens. Ignore any old past years' admit card articles.
+The application window for the upcoming cycle ({current_year} or {current_year+1}) has NOT opened yet on our site.
 
-Search the official website / official news and check:
-1. Has official registration / application OPENED for the new cycle?
-   -> If YES: status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
+STRICT VERIFICATION & ANTI-HALLUCINATION RULES:
+1. STRICT EXAM IDENTITY (CRITICAL):
+   - The announcement MUST be SPECIFICALLY and EXCLUSIVELY for "{exam_name}".
+   - DO NOT confuse other exams conducted by the same authority!
+     * NBEMS (natboard.edu.in) conducts GPAT, NEET PG, NEET MDS, DNB PDCET, FMGE, etc. A notice or application form for DNB or NEET is NOT GPAT!
+     * NTA (nta.ac.in) conducts CSIR NET, UGC NET, JEE, NEET, CUET, etc. A notice for CSIR NET is NOT UGC NET or GPAT!
+     * UPSC (upsc.gov.in) conducts CSE, IES/ESE, CDS, NDA, etc. A notice for CDS is NOT IES/ESE!
+     * SSC (ssc.gov.in) conducts CGL, CHSL, MTS, GD, etc. A notice for GD is NOT CGL or CHSL!
+   - If the conducting portal has an active registration form for a DIFFERENT examination, IGNORE IT.
+2. ENTRANCE EXAM VS. COLLEGE ADMISSION / COUNSELLING:
+   - DO NOT mistake state pharmacy/engineering counselling, institutional admission forms, or private college admission rounds for the national "{exam_name}" entrance exam.
+3. DO NOT TRUST SPECULATIVE BLOGS:
+   - Ignore speculative, estimated, or clickbait dates from coaching blogs or aggregators (e.g. Shiksha, Prepp, CollegeDunia) unless the official notification / Information Bulletin is ACTUALLY released on {official_link or 'the official portal'}.
+4. NO ADMIT CARDS:
+   - Admit cards CANNOT exist before registration opens. Ignore past years' articles.
+5. CONSERVATIVE DEFAULT:
+   - When in doubt, or if registration is merely expected/tentative, keep status_code as "UPCOMING". Only return "LIVE_REGISTRATION_OPEN" if the official application link specifically for "{exam_name}" is ACTIVE AND LIVE right now on the official conducting website.
+
+Check official sources:
+1. Has official registration / application form specifically for "{exam_name}" OPENED for the new cycle?
+   -> If YES (confirmed live on official portal specifically for {exam_name}): status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
 2. If registration has NOT opened yet:
-   -> status_code: "UPCOMING", display_text: "Expected Registration: [Month Year]" or "Registration starts [Date]" (if an upcoming start date is officially announced).
+   -> status_code: "UPCOMING", display_text: "Expected Registration: [Month Year]" or "Registration starts [Date]" (if an official start date is formally scheduled).
 
 CRITICAL: Output ONLY a JSON object with:
 - 'status_code': "LIVE_REGISTRATION_OPEN" or "UPCOMING"
 - 'display_text': A short string (max 80 chars)
 """
     elif current_status == "LIVE_REGISTRATION_OPEN":
-        # STAGE 2: Registration is currently OPEN (e.g. GATE)
+        # STAGE 2: Registration is currently OPEN (e.g. GATE, CSIR NET, TIFR)
         prompt = f"""Today is {today}. The Indian competitive exam: "{exam_name}" ({exam_desc}) currently has registration open on our site ("{current_datestr}").
+Official conducting body portal: {official_link or "Official exam portal"}.
 
-Search the official website / news and check:
-1. Is registration still open or has the deadline been extended?
-   -> status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
-2. Has registration officially CLOSED?
+STRICT RULES:
+1. SPECIFIC EXAM ONLY: Ensure all checks apply strictly to "{exam_name}", NOT any other exam conducted by the same body.
+2. Check if registration for "{exam_name}" is still open or has officially CLOSED:
+   - If still open or deadline officially extended: -> status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
    - If closed and Admit Card is ALREADY released: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
    - If closed and waiting for exam/admit card: -> status_code: "UPCOMING", display_text: "Registration ended! Exam Date / Admit Card to be announced"
    - If exam has already concluded: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
@@ -153,18 +172,17 @@ CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
         # STAGE 3: Registration has CLOSED (e.g. SSC CGL, IBPS PO)
         # NOW it is appropriate to look for Admit Card, City Intimation, Exam Date, or Results!
         prompt = f"""Today is {today}. For the Indian competitive exam: "{exam_name}" ({exam_desc}), registration has already closed.
+Official conducting body portal: {official_link or "Official exam portal"}.
 Current site status: "{current_datestr}".
 
-Search the official website / news and check:
-1. Has the Admit Card or City Intimation slip been officially RELEASED for this year's exam?
+STRICT RULES:
+1. SPECIFIC EXAM ONLY: Check strictly for "{exam_name}". Do NOT confuse admit cards or exam dates of other exams held by the same authority.
+2. Check official announcements:
    - If Admit Card released: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
    - If City Intimation slip released: -> status_code: "LIVE_CITY_INTIMATION", display_text: "City Intimation Live! Exam Date: [Date]"
-2. Has the exam already taken place / CONCLUDED?
-   -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
-3. Have final RESULTS been announced?
-   -> status_code: "LIVE_RESULTS", display_text: "Results Announced! Check Official Website"
-4. If still waiting for admit card or city intimation:
-   -> status_code: "UPCOMING", display_text: "{current_datestr}"
+   - If exam has already taken place / CONCLUDED: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
+   - If final RESULTS announced: -> status_code: "LIVE_RESULTS", display_text: "Results Announced! Check Official Website"
+   - If still waiting for admit card or city intimation: -> status_code: "UPCOMING", display_text: "{current_datestr}"
 
 CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
@@ -349,7 +367,8 @@ def update_all_exams():
                 "GATE (Graduate Aptitude Test in Engineering)",
                 "Common notification for all GATE papers - registration and exam dates",
                 current_status=gate_exams[0].get("status_code", "UPCOMING"),
-                current_datestr=gate_exams[0].get("dateStr", "")
+                current_datestr=gate_exams[0].get("dateStr", ""),
+                official_link=gate_exams[0].get("syllabus_link", "https://gate2027.iitm.ac.in/")
             )
             if gate_result and "display_text" in gate_result:
                 print(f"  [GATE] AI says: {gate_result['display_text']} ({gate_result.get('status_code')})")
@@ -380,7 +399,8 @@ def update_all_exams():
                 exam["name"],
                 exam["desc"],
                 current_status=exam.get("status_code", "UPCOMING"),
-                current_datestr=exam.get("dateStr", "")
+                current_datestr=exam.get("dateStr", ""),
+                official_link=exam.get("syllabus_link", "")
             )
             
             if result and "display_text" in result:

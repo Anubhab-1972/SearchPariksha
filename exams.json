@@ -555,18 +555,18 @@
     "id": "gpat",
     "name": "GPAT",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration Open! Apply by November 12, 2026",
-    "hasExactDate": true,
+    "dateStr": "Expected Registration: December 2026",
+    "hasExactDate": false,
     "desc": "Gateway for M.Pharm and NIPER JEE eligibility",
     "goals": [
       "Higher Studies"
     ],
-    "calDate": "2026-11-12",
+    "calDate": "2026-12-20",
+    "check_from_month": 12,
     "syllabus_link": "https://natboard.edu.in",
     "syllabus_summary": "Covers core B.Pharm subjects including Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy, Pharmacology, and allied pharmaceutical science disciplines.",
-    "status_code": "LIVE_REGISTRATION_OPEN",
-    "last_checked_date": "2026-10-20",
-    "archive_after": "2026-11-12"
+    "status_code": "UPCOMING",
+    "last_checked_date": "2026-10-24"
   },
   {
     "id": "niper",
