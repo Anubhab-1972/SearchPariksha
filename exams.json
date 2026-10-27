@@ -513,7 +513,7 @@
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "tifr",
@@ -533,7 +533,7 @@
     "status_code": "UPCOMING",
     "next_cycle_text": "Registration ended! Opens next year (Expected: September 2027)",
     "next_cycle_date": "2027-09-26",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gatb",
@@ -550,7 +550,7 @@
     "syllabus_link": "https://dbt.nic.in",
     "syllabus_summary": "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor's level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gpat",
@@ -583,7 +583,7 @@
     "syllabus_link": "https://niperraipur.ac.in",
     "syllabus_summary": "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "barc",
@@ -599,7 +599,7 @@
     "syllabus_link": "https://www.barc.gov.in",
     "syllabus_summary": "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate's specific discipline.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "upsc_cse",
@@ -616,7 +616,7 @@
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "sbi_po",
@@ -653,7 +653,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: July 2027)",
     "archive_after": "2026-08-23",
     "hasExactDate": true,
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "rrb_ntpc_grad",
@@ -727,7 +727,7 @@
     "syllabus_link": "https://mha.gov.in",
     "syllabus_summary": "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "ssc",
@@ -760,7 +760,7 @@
     "syllabus_link": "https://ctet.nic.in",
     "syllabus_summary": "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "atma",
