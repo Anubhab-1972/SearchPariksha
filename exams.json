@@ -14,7 +14,7 @@
     "syllabus_link": "https://aiimsexams.ac.in/landingpage/courses/advertisement/6905044c36116d6a6676a872",
     "syllabus_summary": "Covers General Aptitude and Scientific Reasoning (Section A), General/Interdisciplinary Knowledge (Section B), and Subject Domain Knowledge in Life Sciences, Biomedical Sciences, or Social Sciences (Section C).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "iit_jam_bt",
@@ -30,7 +30,7 @@
     "syllabus_link": "",
     "syllabus_summary": "Official website to be announced.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26",
+    "last_checked_date": "2026-10-27",
     "archive_after": "2026-10-24"
   },
   {
@@ -51,7 +51,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "aai_je",
@@ -62,13 +62,13 @@
       "Job"
     ],
     "syllabus_summary": "Covers General Intelligence, Reasoning, Numerical Ability, General Awareness, English Language, and discipline-specific technical domain subjects such as Physics and Mathematics for ATC.",
-    "calDate": "2026-10-21",
+    "calDate": "2027-10-20",
     "syllabus_link": "https://www.aai.aero/en/careers/recruitment",
-    "status_code": "LIVE_ADMIT_CARD",
-    "dateStr": "Admit Card Released! Exam Date: October 21 & 26, 2026",
+    "status_code": "UPCOMING",
+    "dateStr": "Registration ended! Opens next year (Expected: October 2027)",
     "archive_after": "2026-10-21",
     "hasExactDate": true,
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "aai_atc",
@@ -84,7 +84,7 @@
     "status_code": "UPCOMING",
     "syllabus_summary": "Covers Physics, Mathematics, English, General Intelligence, and Air Traffic Control domain knowledge.",
     "syllabus_link": "https://www.aai.aero/en/careers/recruitment",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_bt",
@@ -104,7 +104,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_xl",
@@ -124,7 +124,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_ey",
@@ -143,7 +143,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_cs",
@@ -163,7 +163,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_da",
@@ -183,7 +183,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_me",
@@ -203,7 +203,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_pi",
@@ -223,7 +223,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_xe",
@@ -242,7 +242,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_ce",
@@ -262,7 +262,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_es",
@@ -282,7 +282,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_ee",
@@ -302,7 +302,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_ec",
@@ -322,7 +322,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_in",
@@ -342,7 +342,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_general",
@@ -361,7 +361,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_st",
@@ -381,7 +381,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_ma",
@@ -400,7 +400,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_ph",
@@ -420,7 +420,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "gate_cy",
@@ -440,7 +440,7 @@
     "archive_after": "2027-02-14",
     "next_cycle_text": "Registration ended! Opens next year (Expected: August 2027)",
     "next_cycle_date": "2027-08-27",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "csir",
@@ -496,7 +496,7 @@
     "syllabus_link": "https://vit.ac.in",
     "syllabus_summary": "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-26"
+    "last_checked_date": "2026-10-27"
   },
   {
     "id": "ies",
