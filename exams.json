@@ -30,7 +30,7 @@
     "syllabus_link": "",
     "syllabus_summary": "Official website to be announced.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-27",
+    "last_checked_date": "2026-10-28",
     "archive_after": "2026-10-24"
   },
   {
@@ -68,7 +68,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: October 2027)",
     "archive_after": "2026-10-21",
     "hasExactDate": true,
-    "last_checked_date": "2026-10-27"
+    "last_checked_date": "2026-10-28"
   },
   {
     "id": "aai_atc",
@@ -513,7 +513,7 @@
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-10-27"
+    "last_checked_date": "2026-10-28"
   },
   {
     "id": "tifr",
