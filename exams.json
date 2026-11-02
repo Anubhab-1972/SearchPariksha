@@ -30,7 +30,7 @@
     "syllabus_link": "",
     "syllabus_summary": "Official website to be announced.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01",
+    "last_checked_date": "2026-11-02",
     "archive_after": "2026-10-24"
   },
   {
@@ -68,7 +68,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: October 2027)",
     "archive_after": "2026-10-21",
     "hasExactDate": true,
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "aai_atc",
@@ -84,7 +84,7 @@
     "status_code": "UPCOMING",
     "syllabus_summary": "Covers Physics, Mathematics, English, General Intelligence, and Air Traffic Control domain knowledge.",
     "syllabus_link": "https://www.aai.aero/en/careers/recruitment",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "gate_bt",
@@ -502,18 +502,18 @@
     "id": "ies",
     "name": "UPSC IES / ESE",
     "category": "Core Science & Engineering",
-    "dateStr": "Registration for the next cycle is yet to be announced.",
-    "hasExactDate": false,
+    "dateStr": "Registration for UPSC IES / ESE 2027 has closed. Next cycle expected Sep 2027.",
+    "hasExactDate": true,
     "desc": "Engineering Services Examination",
     "goals": [
       "Job",
       "Not Sure"
     ],
-    "calDate": "2026-10-06",
+    "calDate": "2027-09-20",
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies and Engineering Aptitude (Stage-I Paper 1) and core engineering discipline subjects (Civil, Mechanical, Electrical, or Electronics and Telecommunication) for Prelims and Mains.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "tifr",
@@ -550,7 +550,7 @@
     "syllabus_link": "https://dbt.nic.in",
     "syllabus_summary": "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor's level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "gpat",
@@ -583,7 +583,7 @@
     "syllabus_link": "https://niperraipur.ac.in",
     "syllabus_summary": "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "barc",
@@ -599,7 +599,7 @@
     "syllabus_link": "https://www.barc.gov.in",
     "syllabus_summary": "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate's specific discipline.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "upsc_cse",
@@ -616,7 +616,7 @@
     "syllabus_link": "https://upsc.gov.in",
     "syllabus_summary": "Covers General Studies (Prelims and Mains Papers I-IV), CSAT Paper II, Essay, and optional subject discipline alongside qualifying language papers.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "sbi_po",
@@ -653,7 +653,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: July 2027)",
     "archive_after": "2026-08-23",
     "hasExactDate": true,
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "rrb_ntpc_grad",
@@ -699,7 +699,7 @@
     "id": "ssc_chsl",
     "name": "SSC CHSL",
     "category": "Government & Banking",
-    "dateStr": "Expected Registration: April/May 2027",
+    "dateStr": "Registration for SSC CHSL 2027 is expected in April/May 2027.",
     "hasExactDate": true,
     "desc": "Lower Division Clerk, Data Entry Operator",
     "goals": [
@@ -710,7 +710,7 @@
     "syllabus_link": "https://ssc.gov.in/",
     "syllabus_summary": "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "ibacio",
@@ -727,7 +727,7 @@
     "syllabus_link": "https://mha.gov.in",
     "syllabus_summary": "Covers Current Affairs, General Studies, Numerical Aptitude, Reasoning and Logical Aptitude, and English Language in Tier 1, plus Essay Writing and Comprehension in Tier 2.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "ssc",
@@ -745,7 +745,7 @@
     "syllabus_link": "https://ssc.gov.in/",
     "syllabus_summary": "Covers General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension across Tier 1 and Tier 2 for graduate-level posts.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-02"
   },
   {
     "id": "ctet",
@@ -776,7 +776,7 @@
     "status_code": "UPCOMING",
     "syllabus_link": "https://www.atmaaims.com",
     "syllabus_summary": "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections.",
-    "last_checked_date": "2026-11-01",
+    "last_checked_date": "2026-11-02",
     "calDate": "2026-12-20"
   }
 ]
