@@ -478,25 +478,26 @@
     "syllabus_link": "https://ugcnet.nta.ac.in",
     "syllabus_summary": "Covers Paper 1 (General Paper on Teaching and Research Aptitude, Reasoning, ICT, Higher Education System) and Paper 2 (Elective subject-specific postgraduate discipline).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01",
+    "last_checked_date": "2026-11-03",
     "archive_after": "2026-10-31"
   },
   {
     "id": "vitmee",
     "name": "VITMEE",
     "category": "Core Science & Engineering",
-    "dateStr": "Expected Registration: November 2026",
+    "dateStr": "Registration Open! Apply by April 12, 2026",
     "hasExactDate": true,
     "desc": "VIT Masters Entrance Examination",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-11-20",
+    "calDate": "2026-04-12",
     "syllabus_link": "https://vit.ac.in",
     "syllabus_summary": "Covers discipline-specific core engineering or computer application subjects for M.Tech/MCA admissions alongside English Communication Skills.",
-    "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "status_code": "LIVE_REGISTRATION_OPEN",
+    "last_checked_date": "2026-11-03",
+    "archive_after": "2026-04-12"
   },
   {
     "id": "ies",
@@ -583,7 +584,7 @@
     "syllabus_link": "https://niperraipur.ac.in",
     "syllabus_summary": "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-02"
+    "last_checked_date": "2026-11-03"
   },
   {
     "id": "barc",
@@ -599,7 +600,7 @@
     "syllabus_link": "https://www.barc.gov.in",
     "syllabus_summary": "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate's specific discipline.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-02"
+    "last_checked_date": "2026-11-03"
   },
   {
     "id": "upsc_cse",
@@ -653,7 +654,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: July 2027)",
     "archive_after": "2026-08-23",
     "hasExactDate": true,
-    "last_checked_date": "2026-11-02"
+    "last_checked_date": "2026-11-03"
   },
   {
     "id": "rrb_ntpc_grad",
@@ -699,7 +700,7 @@
     "id": "ssc_chsl",
     "name": "SSC CHSL",
     "category": "Government & Banking",
-    "dateStr": "Registration for SSC CHSL 2027 is expected in April/May 2027.",
+    "dateStr": "Expected Registration: April/May 2027",
     "hasExactDate": true,
     "desc": "Lower Division Clerk, Data Entry Operator",
     "goals": [
@@ -710,7 +711,7 @@
     "syllabus_link": "https://ssc.gov.in/",
     "syllabus_summary": "Covers General Intelligence, English Language, Quantitative Aptitude, and General Awareness across Tier 1 and Tier 2 for 10+2 posts.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-02"
+    "last_checked_date": "2026-11-03"
   },
   {
     "id": "ibacio",
@@ -761,7 +762,7 @@
     "syllabus_link": "https://ctet.nic.in",
     "syllabus_summary": "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-01"
+    "last_checked_date": "2026-11-03"
   },
   {
     "id": "atma",
