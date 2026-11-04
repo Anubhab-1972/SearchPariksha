@@ -30,7 +30,7 @@
     "syllabus_link": "",
     "syllabus_summary": "Official website to be announced.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-03",
+    "last_checked_date": "2026-11-04",
     "archive_after": "2026-10-24"
   },
   {
@@ -68,7 +68,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: October 2027)",
     "archive_after": "2026-10-21",
     "hasExactDate": true,
-    "last_checked_date": "2026-11-03"
+    "last_checked_date": "2026-11-04"
   },
   {
     "id": "aai_atc",
@@ -551,7 +551,7 @@
     "syllabus_link": "https://dbt.nic.in",
     "syllabus_summary": "Covers 10+2 level Physics, Chemistry, Mathematics, and Biology (Section A) and Bachelor's level Basic Biology, Life Sciences, Biotechnology, and allied areas (Section B).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-02"
+    "last_checked_date": "2026-11-04"
   },
   {
     "id": "gpat",
@@ -584,7 +584,7 @@
     "syllabus_link": "https://niperraipur.ac.in",
     "syllabus_summary": "Covers B.Pharm core curriculum including Pharmaceutics, Pharmaceutical Analysis, Pharmacology and Toxicology, Medicinal Chemistry, and Natural Products alongside General Aptitude.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-03"
+    "last_checked_date": "2026-11-04"
   },
   {
     "id": "barc",
@@ -600,7 +600,7 @@
     "syllabus_link": "https://www.barc.gov.in",
     "syllabus_summary": "Covers core engineering or science subject knowledge at the graduate/postgraduate level corresponding to the candidate's specific discipline.",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-03"
+    "last_checked_date": "2026-11-04"
   },
   {
     "id": "upsc_cse",
