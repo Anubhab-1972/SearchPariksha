@@ -68,7 +68,7 @@
     "dateStr": "Registration ended! Opens next year (Expected: October 2027)",
     "archive_after": "2026-10-21",
     "hasExactDate": true,
-    "last_checked_date": "2026-11-04"
+    "last_checked_date": "2026-11-05"
   },
   {
     "id": "aai_atc",
@@ -763,7 +763,7 @@
     "syllabus_link": "https://ctet.nic.in",
     "syllabus_summary": "Covers Child Development and Pedagogy, Language I, Language II, Mathematics, Environmental Studies (Paper I) and Science and Mathematics or Social Studies (Paper II).",
     "status_code": "UPCOMING",
-    "last_checked_date": "2026-11-03"
+    "last_checked_date": "2026-11-05"
   },
   {
     "id": "atma",
@@ -778,7 +778,7 @@
     "status_code": "UPCOMING",
     "syllabus_link": "https://www.atmaaims.com",
     "syllabus_summary": "Covers Analytical Reasoning Skills, Verbal Skills, and Quantitative Skills divided across six timed sections.",
-    "last_checked_date": "2026-11-02",
+    "last_checked_date": "2026-11-05",
     "calDate": "2026-12-20"
   }
 ]
