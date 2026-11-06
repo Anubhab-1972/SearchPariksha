@@ -162,27 +162,41 @@ STRICT RULES:
 1. SPECIFIC EXAM ONLY: Ensure all checks apply strictly to "{exam_name}", NOT any other exam conducted by the same body.
 2. Check if registration for "{exam_name}" is still open or has officially CLOSED:
    - If still open or deadline officially extended: -> status_code: "LIVE_REGISTRATION_OPEN", display_text: "Registration Open! Apply by [Date]"
-   - If closed and Admit Card is ALREADY released: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
-   - If closed and waiting for exam/admit card: -> status_code: "UPCOMING", display_text: "Registration ended! Exam Date / Admit Card to be announced"
-   - If exam has already concluded: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
+   - If closed and Admit Card is ALREADY confirmed downloadable on official website: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
+   - If closed and waiting for exam/admit card: -> status_code: "UPCOMING", display_text: "Registration ended! Exam Date: [Date] (Admit Card to be announced)"
+   - If exam has already concluded or results announced: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
 
 CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
     else:
-        # STAGE 3: Registration has CLOSED (e.g. SSC CGL, IBPS PO)
-        # NOW it is appropriate to look for Admit Card, City Intimation, Exam Date, or Results!
+        # STAGE 3: Registration has CLOSED (e.g. SSC CGL, IBPS PO, TIFR GS, SBI PO)
+        # NOW it is appropriate to look for Admit Card, City Intimation, or Exam Date!
         prompt = f"""Today is {today}. For the Indian competitive exam: "{exam_name}" ({exam_desc}), registration has already closed.
 Official conducting body portal: {official_link or "Official exam portal"}.
 Current site status: "{current_datestr}".
 
-STRICT RULES:
-1. SPECIFIC EXAM ONLY: Check strictly for "{exam_name}". Do NOT confuse admit cards or exam dates of other exams held by the same authority.
-2. Check official announcements:
-   - If Admit Card released: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
-   - If City Intimation slip released: -> status_code: "LIVE_CITY_INTIMATION", display_text: "City Intimation Live! Exam Date: [Date]"
-   - If exam has already taken place / CONCLUDED: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
-   - If final RESULTS announced: -> status_code: "LIVE_RESULTS", display_text: "Results Announced! Check Official Website"
-   - If still waiting for admit card or city intimation: -> status_code: "UPCOMING", display_text: "{current_datestr}"
+STRICT VERIFICATION & ANTI-HALLUCINATION RULES:
+1. STRICT ADMIT CARD VERIFICATION (CRITICAL):
+   - The Admit Card / Hall Ticket MUST be confirmed as ACTUALLY AVAILABLE FOR DOWNLOAD on the official conducting portal: {official_link or "official portal"}.
+   - DO NOT TRUST aggregator or coaching articles (Careers360, Shiksha, Adda247, Testbook, Jagran Josh, Prepp, etc.) that publish clickbait titles like "Admit Card Released" or "Hall Ticket Out" with placeholder, tentative, or past years' links!
+   - If the official schedule/portal states the admit card will be released in the future (e.g., "expected mid-November", "available 2 weeks before exam", or a specific future release date), the admit card is NOT out yet! Status MUST remain "UPCOMING".
+2. SPECIFIC EXAM IDENTITY ONLY:
+   - Check strictly for "{exam_name}". Do NOT confuse admit cards, exam dates, or notices of other exams held by the same authority.
+3. CONCLUDED EXAMS & FINAL RESULTS ARE "UPCOMING" (NEVER LIVE):
+   - When an exam has already been held or its final results have been announced, that examination cycle has CONCLUDED. It is NOT a live exam!
+   - Live Exams on our platform is exclusively for active registration forms and downloadable admit cards.
+   - For any concluded cycle or announced results: -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])". NEVER return a LIVE status code for a concluded exam or final results!
+4. CONSERVATIVE DEFAULT:
+   - When in doubt, or while waiting for the official admit card download link to go live on the official portal, KEEP status_code as "UPCOMING" with display_text mentioning the exam date and that admit card is to be announced.
+
+Check official sources:
+1. Has the Admit Card or City Intimation slip been officially RELEASED and confirmed downloadable right now on the official portal?
+   - If Admit Card is active and downloadable on official portal: -> status_code: "LIVE_ADMIT_CARD", display_text: "Admit Card Released! Exam Date: [Date]"
+   - If City Intimation slip is active on official portal: -> status_code: "LIVE_CITY_INTIMATION", display_text: "City Intimation Live! Exam Date: [Date]"
+2. If registration ended and waiting for exam date / admit card:
+   -> status_code: "UPCOMING", display_text: "Registration ended! Exam Date: [Date] (Admit Card to be announced)" or "{current_datestr}"
+3. If exam has already taken place / CONCLUDED or final results announced:
+   -> status_code: "UPCOMING", display_text: "Registration ended! Opens next year (Expected: [Month Year])"
 
 CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
 """
@@ -326,12 +340,12 @@ def should_check_exam(exam):
     # 0. check_from_month: annual exams that only open in a specific season.
     #    Skip entirely until that month arrives each year (e.g. DBT BITP → check_from_month=5 means skip Jan-Apr).
     check_from_month = exam.get("check_from_month")
-    if check_from_month and status not in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_CITY_INTIMATION", "LIVE_RESULTS"):
+    if check_from_month and status not in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_CITY_INTIMATION"):
         if today.month < int(check_from_month):
             return False, f"Seasonal exam — checking starts from month {check_from_month} (currently month {today.month})"
 
     # 1. LIVE exams with a future deadline -> SKIP
-    if status.startswith("LIVE_") and cal_date:
+    if status in ("LIVE_REGISTRATION_OPEN", "LIVE_ADMIT_CARD", "LIVE_CITY_INTIMATION") and cal_date:
         if cal_date.date() > today.date():
             return False, f"Deadline ({cal_date_str}) is in the future"
             

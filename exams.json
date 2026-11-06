@@ -521,21 +521,21 @@
     "id": "tifr",
     "name": "TIFR GS / JGEEBILS",
     "category": "Core Science & Engineering",
-    "dateStr": "Admit Card Released! Exam Date: December 08, 2026",
+    "dateStr": "Registration ended! Exam Date: Dec 13, 2026 (Admit Card to be announced)",
     "hasExactDate": true,
     "desc": "PhD at TIFR / Biology Research PhD",
     "goals": [
       "Higher Studies",
       "Not Sure"
     ],
-    "calDate": "2026-12-08",
-    "archive_after": "2026-12-08",
+    "calDate": "2026-12-13",
+    "archive_after": "2026-12-13",
     "syllabus_link": "https://www.tifr.res.in",
     "syllabus_summary": "Evaluates basic scientific knowledge across General Science (Physics, Chemistry, Math), Biology (Cell/Molecular Biology, Genetics, Biochemistry), and scientific reasoning.",
-    "status_code": "LIVE_ADMIT_CARD",
+    "status_code": "UPCOMING",
     "next_cycle_text": "Registration ended! Opens next year (Expected: September 2027)",
     "next_cycle_date": "2027-09-26",
-    "last_checked_date": "2026-10-31"
+    "last_checked_date": "2026-11-06"
   },
   {
     "id": "gatb",
@@ -632,10 +632,11 @@
     ],
     "syllabus_link": "https://sbi.co.in/careers",
     "syllabus_summary": "Covers Reasoning Ability, Quantitative Aptitude, English Language, General/Economy/Banking Awareness, and Data Analysis and Interpretation across Prelims and Mains.",
-    "status_code": "LIVE_RESULTS",
-    "dateStr": "Results Announced! Check Official Website",
+    "status_code": "UPCOMING",
+    "dateStr": "Registration ended! Opens next year (Expected: June 2027)",
     "calDate": "2027-06-01",
-    "last_checked_date": "2026-10-16"
+    "check_from_month": 5,
+    "last_checked_date": "2026-11-06"
   },
   {
     "id": "ibps_po",

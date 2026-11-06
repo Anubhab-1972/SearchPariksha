@@ -31,6 +31,25 @@ const courseSpecializations = {
 // Master Database of Exams - loaded dynamically from exams.json
 let masterExamsDatabase = [];
 
+// Helper: determine if an exam is actively live (registration open, admit card released, or city intimation live)
+function isExamActiveLive(exam) {
+  if (!exam) return false;
+  if (exam.status_code === 'UPCOMING' || exam.status_code === 'PAST') return false;
+  if (exam.status_code === 'LIVE_REGISTRATION_OPEN' || exam.status_code === 'LIVE_ADMIT_CARD' || exam.status_code === 'LIVE_CITY_INTIMATION') {
+    if (exam.dateStr && (exam.dateStr.toLowerCase().includes('to be announced') || exam.dateStr.toLowerCase().includes('expected') || exam.dateStr.toLowerCase().includes('ended'))) {
+      return false;
+    }
+    return true;
+  }
+  // Fallback for exams without a status_code
+  if (exam.dateStr) {
+    const s = exam.dateStr.toLowerCase();
+    if (s.includes('expected') || s.includes('to be announced') || s.includes('ended') || s.includes('concluded')) return false;
+    return s.includes('registration open') || s.includes('admit card released') || s.includes('city intimation live');
+  }
+  return false;
+}
+
 // Load exam data from exams.json (updated automatically by Gemini AI every week)
 async function loadExamData() {
   try {
@@ -147,11 +166,16 @@ async function loadExamData() {
           if (exam.display_text) delete exam.display_text;
           console.log(`[AUTO-ARCHIVE ADMIT CARD] ${exam.name} → UPCOMING (Exam date ${examDate.toISOString().slice(0,10)} passed)`);
         } else {
-          // Exam date has NOT passed: GUARANTEE it is marked LIVE for Live Exams section
+          // Exam date has NOT passed: only mark LIVE if it is genuinely released and not pending
           if (!exam.status_code || !exam.status_code.startsWith('LIVE_')) {
-            exam.status_code = (exam.dateStr && exam.dateStr.toLowerCase().includes('city intimation'))
-              ? 'LIVE_CITY_INTIMATION'
-              : 'LIVE_ADMIT_CARD';
+            const str = (exam.dateStr || '').toLowerCase();
+            if (!str.includes('to be announced') && !str.includes('expected') && !str.includes('ended')) {
+              if (str.includes('city intimation live')) {
+                exam.status_code = 'LIVE_CITY_INTIMATION';
+              } else if (str.includes('admit card released')) {
+                exam.status_code = 'LIVE_ADMIT_CARD';
+              }
+            }
           }
         }
       }
@@ -242,7 +266,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function sendAdmitCardNotification(isManualCheck) {
   if (!('Notification' in window) || Notification.permission !== 'granted') return;
 
-  const admitExams = masterExamsDatabase.filter(e => e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION');
+  const admitExams = masterExamsDatabase.filter(e => isExamActiveLive(e) && (e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION'));
   if (admitExams.length > 0) {
     admitExams.forEach(exam => {
       const typeLabel = exam.status_code === 'LIVE_CITY_INTIMATION' ? 'City Intimation Live!' : 'Admit Card Released!';
@@ -527,8 +551,8 @@ function getRelevantExams() {
   today.setHours(0, 0, 0, 0);
 
   filteredExams.sort((a, b) => {
-    const isLiveA = a.status_code && a.status_code.startsWith('LIVE_');
-    const isLiveB = b.status_code && b.status_code.startsWith('LIVE_');
+    const isLiveA = isExamActiveLive(a);
+    const isLiveB = isExamActiveLive(b);
 
     // LIVE exams always come first!
     if (isLiveA && !isLiveB) return -1;
@@ -634,8 +658,8 @@ function renderTab3Exams() {
       aaiGroupRenderedMain = true;
       const aaiJe = exam;
       const aaiAtc = masterExamsDatabase.find(e => e.id === 'aai_atc');
-      const jeIsLive = aaiJe.status_code ? aaiJe.status_code.startsWith('LIVE_') : false;
-      const atcIsLive = aaiAtc && aaiAtc.status_code ? aaiAtc.status_code.startsWith('LIVE_') : false;
+      const jeIsLive = isExamActiveLive(aaiJe);
+      const atcIsLive = aaiAtc ? isExamActiveLive(aaiAtc) : false;
       const aaiAnyLive = jeIsLive || atcIsLive;
       const groupTitle = jeIsLive && atcIsLive ? '👷✈️ AAI JE / ATC'
         : jeIsLive ? '👷 AAI JE'
@@ -686,14 +710,14 @@ function renderTab3Exams() {
       gateGroupRendered = true;
 
       // Determine group-level live/status — live if any GATE is live
-      const anyGateLive = gateExamsInList.some(g => g.status_code && g.status_code.startsWith('LIVE_'));
+      const anyGateLive = gateExamsInList.some(g => isExamActiveLive(g));
       const gateIsLive = anyGateLive;
       const gateLiveBadge = gateIsLive ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
       // Build sub-items for each GATE paper
       const gateSubItems = gateExamsInList.map(g => {
         const gElig = evaluateEligibility(g.id);
-        const gIsLive = g.status_code && g.status_code.startsWith('LIVE_');
+        const gIsLive = isExamActiveLive(g);
         const gLiveBadge = gIsLive ? `<span class="live-badge" style="font-size:0.75em;">LIVE<span class="live-indicator"></span></span>` : '';
         const locked = !gElig.eligible;
 
@@ -760,9 +784,7 @@ function renderTab3Exams() {
 
     // ── Regular exam card ─────────────────────────────────────────────────────
     const eligibility = evaluateEligibility(exam.id);
-    const isOpen = exam.status_code
-      ? exam.status_code.startsWith('LIVE_')
-      : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
+    const isOpen = isExamActiveLive(exam);
 
     const item = document.createElement('div');
     item.className = 'exam-item';
@@ -822,7 +844,7 @@ function renderTab3Exams() {
 
   // Admit Card / City Intimation Alert Banner: only include exams where Admit Card or City Intimation is ACTUALLY LIVE
   const admitCardExams = relevantExams.filter(e => {
-    if (e.status_code === 'UPCOMING' || e.status_code === 'PAST') return false;
+    if (!isExamActiveLive(e)) return false;
     if (e.status_code === 'LIVE_ADMIT_CARD' || e.status_code === 'LIVE_CITY_INTIMATION') return true;
     if (e.dateStr && (e.dateStr.toLowerCase().includes('admit card released') || e.dateStr.toLowerCase().includes('city intimation live'))) {
       return true;
@@ -913,9 +935,7 @@ function renderTab4Catalogue() {
         </a>
       `;
 
-      const isOpen = exam.status_code
-        ? exam.status_code.startsWith('LIVE_')
-        : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced")));
+      const isOpen = isExamActiveLive(exam);
       const liveBadge = isOpen ? `<span class="live-badge">LIVE<span class="live-indicator"></span></span>` : '';
 
       item.innerHTML = `
@@ -1061,9 +1081,7 @@ function renderExamDirectory(searchTerm = "") {
   }
 
   // Helper: determine if an exam is live
-  const isExamLive = (exam) => exam.status_code
-    ? exam.status_code.startsWith('LIVE_')
-    : (exam.dateStr && (exam.dateStr.toLowerCase().includes("registration open") || exam.dateStr.toLowerCase().includes("admit card released") || exam.dateStr.toLowerCase().includes("results announced") || exam.dateStr.toLowerCase().includes("city intimation live")));
+  const isExamLive = (exam) => isExamActiveLive(exam);
 
   // Helper: get smart dateStr (auto-bump month for UPCOMING AAI ATC)
   const getSmartDate = (exam) => {
