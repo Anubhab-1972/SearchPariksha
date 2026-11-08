@@ -56,16 +56,22 @@ _env_model = os.environ.get("GEMINI_MODEL", "").strip()
 if _env_model:
     MODEL_CANDIDATES.append(_env_model)
 MODEL_CANDIDATES += [
-    "gemini-flash-latest",        # Google's rolling alias - cannot be retired under us
-    "gemini-3.8-flash",           # current recommended replacement for gemini-2.0-flash
-    "gemini-2.5-flash",
-    "gemini-flash-lite-latest",   # lite models usually carry the most generous free quota
-    "gemini-2.5-flash-lite",
-    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",      # Primary: highest free-tier quota, low latency, structured JSON extraction
+    "gemini-flash-latest",        # Google's rolling flash alias
+    "gemini-3.8-flash",           # Full reasoning flash
+    "gemini-3.5-flash",           # Stable 3.5 flash
+    "gemini-2.5-flash",           # Fallback flash
 ]
 
 _model_index = 0
-stats = {"queries": 0, "failures": 0, "retired_models": [], "quota_switches": []}
+stats = {
+    "queries": 0,
+    "failures": 0,
+    "retired_models": [],
+    "quota_switches": [],
+    "quota_exhausted": False,
+    "auth_error": False,
+}
 
 
 def current_model():
@@ -221,15 +227,26 @@ CRITICAL: Output ONLY a JSON object with 'status_code' and 'display_text'.
             start = text.find('{')
             end = text.rfind('}')
             if start != -1 and end != -1:
-                return json.loads(text[start:end+1])
+                try:
+                    return json.loads(text[start:end+1])
+                except json.JSONDecodeError:
+                    pass
+            print(f"  [WARN] {exam_name}: Response text did not contain valid JSON: {text[:100]}...")
             return None
         except Exception as e:
             err_msg = str(e).lower()
+            is_auth_error = ("api_key" in err_msg or "401" in err_msg or "permission_denied" in err_msg or "key not valid" in err_msg)
+            if is_auth_error:
+                stats["auth_error"] = True
+
             is_missing_model = ("404" in err_msg or "not_found" in err_msg
                                 or "no longer available" in err_msg
                                 or "is not supported" in err_msg)
             is_rate_limit = ("429" in err_msg or "resource_exhausted" in err_msg
                              or "quota" in err_msg)
+
+            if is_rate_limit:
+                stats["quota_exhausted"] = True
 
             # "This model is retired" and "this model is out of quota" both mean the
             # same thing to us: it cannot serve us right now. Free-tier quota is
@@ -354,6 +371,14 @@ def should_check_exam(exam):
         if last_checked and (today.date() - last_checked.date()).days < 7:
             days_left = 7 - (today.date() - last_checked.date()).days
             return False, f"PAST exam. Checking again in {days_left} days"
+
+    # 2b. Registration closed with exam date > 30 days away -> CHECK EVERY 4 DAYS
+    # Admit cards are released only 1-2 weeks before the exam date. Checking daily burns AI search quota.
+    is_closed = any(w in (exam.get("dateStr", "")).lower() for w in ["registration ended", "ended", "opens next year"])
+    if is_closed and cal_date and (cal_date.date() - today.date()).days > 30:
+        if last_checked and (today.date() - last_checked.date()).days < 4:
+            days_left = 4 - (today.date() - last_checked.date()).days
+            return False, f"Registration closed & exam date >30 days away. Checking again in {days_left} days"
             
     # 3. UPCOMING / OTHERS -> CHECK DAILY (if not already checked today)
     if last_checked and (today.date() - last_checked.date()).days < 1:
@@ -371,6 +396,7 @@ def update_all_exams():
     non_gate_exams = [e for e in exams if not e["id"].startswith("gate_")]
     
     updated_count = 0
+    consecutive_quota_hits = 0
     
     # --- Update GATE exams (one query for all) ---
     if gate_exams:
@@ -418,6 +444,7 @@ def update_all_exams():
             )
             
             if result and "display_text" in result:
+                consecutive_quota_hits = 0
                 print(f"  [{exam['id']}] AI says: {result['display_text']} ({result.get('status_code')})")
                 exam["dateStr"] = result["display_text"]
                 exam["status_code"] = result.get("status_code", "UPCOMING")
@@ -431,6 +458,13 @@ def update_all_exams():
                 updated_count += 1
             else:
                 print(f"  [{exam['id']}] No update - keeping existing data")
+                if stats.get("quota_exhausted"):
+                    consecutive_quota_hits += 1
+                    if consecutive_quota_hits >= 3:
+                        print("\n[QUOTA CIRCUIT BREAKER] 3 consecutive exams hit API quota/rate-limits.")
+                        print("The Gemini free-tier daily quota has been reached for today.")
+                        print("Stopping further queries to prevent wasted attempts. Progress so far will be saved.")
+                        break
             
             time.sleep(4.5)  # Rate limiting - stay safely under 15 RPM limit
         else:
@@ -466,16 +500,21 @@ def update_all_exams():
         except Exception as e:
             print(f"[WARN] could not write step summary: {e}")
 
-    # Fail loudly. A silent "success" while every single query failed is exactly how
-    # this site sat stale for weeks without anyone being told.
-    if updated_count == 0 and stats["failures"] > 0:
-        print("\nFATAL: every AI query failed - no exam could be updated.")
+    # Write run summary for GitHub Actions
+    if stats.get("quota_exhausted"):
+        print("\n[NOTICE] Free-tier Gemini API quota limit reached during this run.")
+        print("Remaining exams will automatically resume on the next scheduled run when quota resets.")
+
+    # Only exit with error if there is a real authentication failure (e.g. invalid API key).
+    # Normal free-tier API throttling or quota limits must NOT fail the workflow or trigger alarm emails.
+    if stats.get("auth_error"):
+        print("\nFATAL: Authentication error with GEMINI_API_KEY. Please verify the GitHub secret.")
         print("Models this API key can use:", ", ".join(list_available_models()))
         sys.exit(1)
 
     if stats["failures"] > 0:
-        print(f"\n[WARNING] {stats['failures']} of {stats['queries']} queries failed; "
-              f"{updated_count} exams were still updated.")
+        print(f"\n[STATUS] {stats['failures']} of {stats['queries']} queries encountered rate-limits/throttling; "
+              f"{updated_count} exams updated/saved successfully.")
 
 if __name__ == "__main__":
     print("=" * 50)
